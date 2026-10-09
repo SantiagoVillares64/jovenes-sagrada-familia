@@ -153,7 +153,7 @@ window.CONTENIDO = {
         { texto: "Con Post aprendí a llevar a Dios a la vida diaria. Me llevo muchas cosas nuevas, además de muchos amigos y personas increíbles.", nombre: "Felipe", anio: "2023" },
         { texto: "Una nueva manera de conocer a la Virgen: descubrí su amor y me dejé sorprender.", nombre: "Trinidad", anio: "2023" }
       ],
-      aCompletar: ["Cómo es un encuentro típico"]
+      aCompletar: []
     },
     {
       id: "hpp", pagina: "hpp.html",
