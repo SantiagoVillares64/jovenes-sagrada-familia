@@ -115,7 +115,7 @@ window.CONTENIDO = {
         nota: "Y muchos más que se descubren en el camino.",
         items: ["¿Quién soy?", "Familia y amigos", "Jesús", "Libertad", "Oración", "María", "Espíritu Santo", "Misión"]
       },
-      inscripcion: { estado: "cerrada", link: "https://forms.gle/tzgSySUsKErfRwJ5A", texto: "Formulario de inscripción" },
+      inscripcion: { estado: "cerrada", link: "", texto: "Formulario de inscripción" },
       testimonios: [
         { texto: "El retiro de Confirmación me hizo conocer a Dios de un modo distinto.", nombre: "Mateo", anio: "2025" },
         { texto: "Llegué conociendo al Espíritu Santo, pero sin entenderlo en profundidad. Así me pude dar cuenta de cómo verlo en el día a día y en mi vida.", nombre: "Olivia", anio: "2026" }
@@ -145,7 +145,7 @@ window.CONTENIDO = {
           { nombre: "Contemplativa", temas: ["Culmina con la consagración a María: recibimos a María, el regalo que Jesús nos dejó desde la cruz, para aprender a amarlo de la mejor manera."] }
         ]
       },
-      inscripcion: { estado: "cerrada", link: "https://forms.gle/1oSw8AxAwDFX8yZ97", texto: "Formulario de inscripción" },
+      inscripcion: { estado: "cerrada", link: "", texto: "Formulario de inscripción" },
       siguiente: ["hpp", "puente"],
       siguienteTitulo: "¿Terminaste Post? ¿Qué sigue?",
       siguienteTexto: "Post termina a mitad de 6to año, y ahí arranca HPP: un espacio para tus preguntas sobre qué estudiar, quién sos y hacia dónde vas. Y si querés salir a misionar, sumate a Puente a María.",
