@@ -1,0 +1,7 @@
+# Copia local de las páginas de vatican.va que usa herramientas/lpd.py
+herramientas/.cache_lpd/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -1,0 +1,21 @@
+{
+  "name": "Jóvenes Sagrada Familia",
+  "short_name": "Jóvenes SF",
+  "lang": "es-AR",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4e5f58",
+  "icons": [
+    {
+      "src": "img/icono-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icono-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
