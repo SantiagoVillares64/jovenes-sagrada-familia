@@ -666,3 +666,10 @@ a.lib__item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(29
 #rk-podio .podio { max-width: 620px; margin: 0 auto 14px; background: #fbf1cf; border-radius: 16px; padding: 14px 18px; }
 .rk__cuantos { font-size: .78rem; color: var(--muted); margin-left: .3rem; font-weight: 400; }
 .daily, #diarios, #ranking-seccion, #quiz-seccion { scroll-margin-top: 90px; }
+.rk__desglose { list-style: none; margin: .6rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .3rem .8rem; font-size: .88rem; color: var(--muted); }
+.rk__desglose li.is-ok { color: var(--ink); }
+.rk__reglas { margin-top: .7rem; font-size: .86rem; color: var(--muted); }
+.rk__reglas summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+.rk__reglas ul { margin: .5rem 0 0; padding-left: 1.1rem; }
+.rk__reglas li { margin: .25rem 0; }
+@media (max-width: 520px) { .rk__desglose { grid-template-columns: 1fr; } }

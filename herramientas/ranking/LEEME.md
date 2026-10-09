@@ -34,7 +34,7 @@ Para dar de baja a alguien, destildá **Activo**: deja de aparecer y no puede su
 |---|---|
 | Santo del día | 100 con 1 pista, 80 con 2, 60 con 3, 40 con 4, 20 con 5 |
 | Versículo del día | 100 al primer intento, 50 al segundo, 0 si no sale |
-| Crucigrama | 100 si lo terminás en menos de 3 minutos sin ayudas; −15 por cada palabra revelada y −1 por cada 30 segundos de más (mínimo 20) |
+| Crucigrama | 100 si lo terminás en menos de 3:30 sin revelar palabras; después −1 por cada 30 segundos y −15 por cada palabra revelada (mínimo 20) |
 | Conexiones | 100 sin errores, 80 con 1, 60 con 2, 40 con 3; si perdés, 10 por grupo encontrado |
 
 - Solo cuenta el desafío **del día** y **una vez** por persona.

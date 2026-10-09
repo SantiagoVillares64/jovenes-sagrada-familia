@@ -1384,9 +1384,24 @@
           '<p class="rk__error" id="rk-error" aria-live="polite"></p></form><div id="rk-tablas"><p class="muted">Cargando ranking…</p></div>';
       } else {
         var hoy = 0, jugados = 0;
-        JUEGOS_RK.forEach(function (j) { var p = puntosDe(j); if (p !== null) { hoy += p; jugados++; } });
+        var desglose = DESAFIOS.map(function (d) {
+          var p = puntosDe(d.id), extra = "";
+          if (p !== null) { hoy += p; jugados++; }
+          if (d.id === "crucigrama" && p !== null) {
+            var sc = leer("diario:cruci:" + claveFecha(HOY)) || {};
+            extra = " (" + Math.floor((sc.t || 0) / 60) + ":" + dosD((sc.t || 0) % 60) + (sc.ayudas ? " · " + sc.ayudas + (sc.ayudas === 1 ? " ayuda" : " ayudas") : "") + ")";
+          }
+          return '<li class="' + (p !== null ? "is-ok" : "") + '"><span aria-hidden="true">' + d.icono + "</span> " + esc(d.nombre) + ": <strong>" + (p !== null ? p : "—") + "</strong>" + esc(extra) + "</li>";
+        }).join("");
         cont.innerHTML = '<div class="rk__yo"><p>Jugás como <strong>' + esc(yo.nombre) + '</strong> · <button type="button" class="link" data-rk="salir">Salir</button></p>' +
-          '<p class="rk__hoy">Hoy: <strong>' + hoy + "</strong> de 400 puntos · " + jugados + " de 4 desafíos</p></div>" +
+          '<p class="rk__hoy">Hoy: <strong>' + hoy + "</strong> de 400 puntos · " + jugados + " de 4 desafíos</p>" +
+          '<ul class="rk__desglose">' + desglose + "</ul>" +
+          '<details class="rk__reglas"><summary>¿Cómo se calculan los puntos?</summary><ul>' +
+            "<li><strong>Santo del día:</strong> 100 con 1 pista, 80 con 2, 60 con 3, 40 con 4 y 20 con 5.</li>" +
+            "<li><strong>Versículo del día:</strong> 100 al primer intento, 50 al segundo y 0 si no sale.</li>" +
+            "<li><strong>Conexiones:</strong> 100 sin errores, 80 con 1, 60 con 2 y 40 con 3. Si perdés, 10 por cada grupo encontrado.</li>" +
+            "<li><strong>Crucigrama:</strong> 100 si lo terminás en menos de 3:30 sin revelar palabras. Después, −1 por cada 30 segundos y −15 por cada palabra revelada (mínimo 20).</li>" +
+          "</ul></details></div>" +
           '<div id="rk-tablas"><p class="muted">Cargando ranking…</p></div>';
       }
       llamarRK({ accion: "ranking", codigo: yo ? yo.codigo : "" }, function (err, d) {
