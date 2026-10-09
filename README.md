@@ -88,6 +88,21 @@ y entrá a <http://localhost:8000>.
 
 ## Publicar en GitHub Pages
 
+**La web ya está publicada** en <https://santiagovillares64.github.io/jovenes-sagrada-familia/>
+(repositorio: <https://github.com/SantiagoVillares64/jovenes-sagrada-familia>).
+
+Para publicar un cambio, desde esta carpeta:
+
+```
+git add -A
+git commit -m "Qué cambié"
+git push
+```
+
+A los 1 o 2 minutos se ve online. Los eventos de la planilla de Google **no** necesitan esto: se actualizan solos.
+
+Cómo se armó (por si hay que repetirlo en otra cuenta):
+
 1. Crear un repositorio en GitHub (por ejemplo `jovenes-sagrada-familia`) y subir **todo el contenido de esta carpeta**.
 2. En el repositorio: **Settings → Pages → Build and deployment → Source: Deploy from a branch → `main` / `(root)` → Save**.
 3. En 1 o 2 minutos queda online en `https://<usuario>.github.io/jovenes-sagrada-familia/`.
