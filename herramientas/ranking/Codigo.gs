@@ -32,6 +32,7 @@ function hoja(nombre, encabezados) {
 }
 function hojaJugadores() { return hoja('Jugadores', ['Código', 'Nombre en el ranking', 'Grupo', 'Activo']); }
 function hojaPuntajes() { return hoja('Puntajes', ['Fecha', 'Código', 'Juego', 'Puntos', 'Desafío #', 'Registrado']); }
+function hojaInsignias() { return hoja('Insignias', ['Fecha', 'Código', 'Curso', 'Insignia', 'Nota', 'Registrado']); }
 
 function preparar() {
   var j = hojaJugadores();
@@ -92,6 +93,7 @@ function doGet(e) {
     if (p.accion === 'entrar') return respuesta(entrar(p));
     if (p.accion === 'puntaje') return respuesta(puntaje(p));
     if (p.accion === 'ranking') return respuesta(ranking(p));
+    if (p.accion === 'insignia') return respuesta(insignia(p));
     return respuesta({ ok: false, error: 'accion' });
   } catch (err) {
     return respuesta({ ok: false, error: String(err) });
@@ -125,6 +127,38 @@ function puntaje(p) {
     lock.releaseLock();
   }
   return { ok: true };
+}
+
+/* Curso aprobado en la página de Formación: se guarda una vez por persona y curso. */
+function insignia(p) {
+  var cod = String(p.codigo || '').toUpperCase(), curso = String(p.curso || ''), icono = String(p.icono || '').slice(0, 4), nota = Number(p.nota);
+  if (!jugadores()[cod]) return { ok: false, error: 'codigo' };
+  if (!/^[a-z0-9-]{2,40}$/.test(curso) || !icono) return { ok: false, error: 'curso' };
+  if (!(nota >= 8 && nota <= 10)) return { ok: false, error: 'nota' };
+  var lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    var h = hojaInsignias(), datos = h.getDataRange().getValues();
+    for (var i = 1; i < datos.length; i++) {
+      if (String(datos[i][1]).toUpperCase() === cod && datos[i][2] === curso) return { ok: true, repetido: true };
+    }
+    h.appendRow([hoyAR(), cod, curso, icono, nota, new Date()]);
+    CacheService.getScriptCache().remove('ranking');
+  } finally {
+    lock.releaseLock();
+  }
+  return { ok: true };
+}
+
+function insigniasPorJugador() {
+  var out = {};
+  hojaInsignias().getDataRange().getValues().slice(1).forEach(function (f) {
+    var cod = String(f[1]).toUpperCase();
+    if (!cod || !f[3]) return;
+    out[cod] = out[cod] || [];
+    if (out[cod].indexOf(String(f[3])) < 0) out[cod].push(String(f[3]));
+  });
+  return out;
 }
 
 function tabla(totales, js) {
@@ -180,7 +214,7 @@ function ranking(p) {
     r = {
       semana: tabla(semana, js), historico: tabla(historico, js),
       podio: tabla(pasada, js).filter(function (f) { return f.pos <= 3 && f.puntos > 0; }),
-      grupos: tablaGrupos(semana, js), gruposHistorico: tablaGrupos(historico, js)
+      grupos: tablaGrupos(semana, js), gruposHistorico: tablaGrupos(historico, js), insignias: insigniasPorJugador()
     };
     cache.put('ranking', JSON.stringify(r), 60);
   }
@@ -189,7 +223,8 @@ function ranking(p) {
     var mio = r[k].filter(function (f) { return f.codigo === cod; })[0];
     if (mio) yo[k] = { pos: mio.pos, puntos: mio.puntos };
   });
-  var limpiar = function (filas) { return filas.slice(0, TOP).map(function (f) { return { pos: f.pos, nombre: f.nombre, grupo: f.grupo, puntos: f.puntos }; }); };
+  var ins = r.insignias || {};
+  var limpiar = function (filas) { return filas.slice(0, TOP).map(function (f) { return { pos: f.pos, nombre: f.nombre, grupo: f.grupo, puntos: f.puntos, insignias: ins[f.codigo] || [] }; }); };
   return { ok: true, semana: limpiar(r.semana), historico: limpiar(r.historico), podio: limpiar(r.podio || []),
            grupos: r.grupos || [], gruposHistorico: r.gruposHistorico || [], yo: yo };
 }

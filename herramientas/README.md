@@ -9,6 +9,8 @@ Scripts que generan el contenido de los juegos y del diccionario de santos. Ver 
 | `banco_crucigrama.py`       | Palabras y pistas del crucigrama                                       |
 | `banco_conexiones.py`       | Categorías de Conexiones (4 grupos de 4)                               |
 | `generar_conexiones.py`     | Arma y controla las partidas → `datos/conexiones.json`                 |
+| `banco_formacion.py`        | Cursos de Formación: lecturas y preguntas (con la fuente de cada una)  |
+| `armar_formacion.py`        | Controla los cursos → `../js/formacion-datos.js` y Excel para revisar  |
 | `ranking/`                  | Script de Google para el ranking parroquial (ver `ranking/LEEME.md`)   |
 | `verificar_versiculos.py`   | Verifica los versículos contra vatican.va → `datos/versiculos.json`    |
 | `generar_crucigramas.py`    | Arma y verifica crucigramas → `datos/crucigramas.json`                 |

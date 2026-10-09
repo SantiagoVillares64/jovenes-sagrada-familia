@@ -19,7 +19,8 @@ PAGES = [
     ('horarios.html', 'horarios', 'Horarios · Jóvenes Sagrada Familia', 'Horarios de misa, confesiones y adoración de la Parroquia Sagrada Familia de Nordelta.'),
     ('recursos.html', 'recursos', 'Recursos · Jóvenes Sagrada Familia', 'Biblioteca temática para crecer en la fe: lecturas, podcasts, pelis y santos.'),
     ('santos.html', 'santos', 'Diccionario de santos · Jóvenes Sagrada Familia', 'Diccionario de santos: fiestas, historias y datos de los santos y beatos queridos por la comunidad.'),
-    ('juegos.html', 'juegos', 'Juegos · Jóvenes Sagrada Familia', 'Santo del día, Versículo del día, Crucigrama del día y un quiz sobre la fe y la comunidad.'),
+    ('formacion.html', 'formacion', 'Formación · Jóvenes Sagrada Familia', 'Cursos cortos con examen y certificado: los sacramentos, la misa parte por parte y cómo ser un buen coordinador.'),
+    ('juegos.html', 'juegos', 'Juegos · Jóvenes Sagrada Familia', 'Santo del día, Versículo del día, Conexiones, Crucigrama del día, ranking parroquial y un quiz sobre la fe y la comunidad.'),
     ('calendario.html', 'calendario', 'Calendario · Jóvenes Sagrada Familia', 'Retiros, misiones, peregrinaciones y eventos de los grupos de jóvenes de Sagrada Familia.'),
     ('sumate.html', 'sumate', 'Sumate · Jóvenes Sagrada Familia', 'Inscripciones y contacto de los grupos de jóvenes de Sagrada Familia.'),
 ]
@@ -75,6 +76,8 @@ else:
 todas = PAGES + [('404.html', 'noencontrado', 'Página no encontrada · Jóvenes Sagrada Familia', 'Esta página no existe.')]
 for f, page, title, desc in todas:
     extra = '\n  <script src="js/juegos-datos.js"></script>' if page in ('juegos', 'santos', 'calendario') else ''
+    if page == 'formacion':
+        extra = '\n  <script src="js/formacion-datos.js"></script>'
     pagina_url = url + ('' if f == 'index.html' else f)
     if page == 'noencontrado':
         abs_ = '\n  <meta name="robots" content="noindex">'

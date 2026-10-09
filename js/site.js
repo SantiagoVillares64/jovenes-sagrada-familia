@@ -376,7 +376,7 @@
         navLink("calendario.html", "Calendario", "calendario") +
         navLink("juegos.html", "Juegos", "juegos") +
         navLink("horarios.html", "Horarios", "horarios") +
-        navLink("recursos.html", "Recursos", PAGE === "santos" ? "santos" : "recursos") +
+        navLink("recursos.html", "Recursos", PAGE === "santos" || PAGE === "formacion" ? PAGE : "recursos") +
         '<a class="btn btn--small" href="sumate.html"' + (PAGE === "sumate" ? ' aria-current="page"' : "") + ">Sumate</a>" +
       "</nav></div></header>";
 
@@ -627,7 +627,11 @@
         '<p class="results__count" id="res-count" aria-live="polite"></p><div class="lib" id="lib"></div>' +
       "</div></section>" +
       '<section class="section"><div class="wrap">' + head("Modelos de vida", "Santos queridos por la comunidad", "Más de 60 santos y beatos con su fiesta, su historia y sus datos.", '<a class="link" href="santos.html">Abrir el diccionario de santos →</a>') +
-        '<div class="saints">' + (C.santos || []).slice(0, 3).map(santoCard).join("") + "</div></div></section>";
+        '<div class="saints">' + (C.santos || []).slice(0, 3).map(santoCard).join("") + "</div></div></section>" +
+      '<section class="section section--tight"><div class="wrap"><a class="daily-teaser" href="formacion.html">' +
+        '<span class="daily-teaser__icons" aria-hidden="true">🎓</span><span><strong>Formación con certificado</strong>' +
+        '<span>Cursos cortos con examen: los sacramentos, la misa parte por parte, cómo ser un buen coordinador y más. Aprobá y llevate tu insignia.</span></span>' +
+        '<span class="gcard__go">Ver cursos ' + ICON.right + "</span></a></div></section>";
   };
 
   /* Diccionario de santos: todos los santos del juego, con su ficha completa cuando existe */
@@ -714,6 +718,11 @@
       '<section class="section" id="quiz-seccion"><div class="wrap">' +
         head("Quiz", "¿Cuánto sabés?", "Diez preguntas sobre la Biblia, los santos, los sacramentos y nuestra comunidad. Sumás más puntos si respondés rápido.") +
         '<div class="quiz" id="quiz" aria-live="polite"></div></div></section>';
+  };
+
+  P.formacion = function () {
+    return pagehead("Formación", "Formación con certificado", "Cursos cortos para crecer en la fe: leés un documento, hacés un examen de 10 preguntas y, si aprobás, te llevás una insignia y tu certificado.") +
+      '<section class="section section--first"><div class="wrap"><div id="formacion"><p class="muted">Cargando…</p></div></div></section>';
   };
 
   P.sumate = function () {
@@ -1370,7 +1379,7 @@
     var tablaRK = function (filas, yo) {
       if (!filas || !filas.length) return '<p class="muted">Todavía no hay puntajes. ¡Sé el primero!</p>';
       return '<ol class="rk__tabla">' + filas.map(function (x) {
-        return '<li class="' + (yo && x.nombre === yo.nombre ? "is-yo" : "") + '"><span class="rk__pos">' + x.pos + '</span><span class="rk__nombre">' + esc(x.nombre) + grupoRK(x.grupo) + '</span><span class="rk__pts">' + x.puntos + "</span></li>";
+        return '<li class="' + (yo && x.nombre === yo.nombre ? "is-yo" : "") + '"><span class="rk__pos">' + x.pos + '</span><span class="rk__nombre">' + esc(x.nombre) + grupoRK(x.grupo) + ((x.insignias || []).length ? ' <span class="rk__ins" title="Cursos de Formación aprobados">' + x.insignias.map(esc).join("") + "</span>" : "") + '</span><span class="rk__pts">' + x.puntos + "</span></li>";
       }).join("") + "</ol>";
     };
     var pintarRK = function () {
@@ -1463,6 +1472,139 @@
       try { localStorage.setItem("tip:inicio", "no"); } catch (e) {}
       $("tip-inicio").innerHTML = "";
     });
+  })();
+
+  /* ---------- Formación con certificado ---------- */
+  if ($("formacion") && window.FORMACION) (function () {
+    var FD = window.FORMACION, cont = $("formacion"), N_PREG = 10, APRUEBA = 8;
+    var MESES_C = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+    var hoyF = fechaLocal(new Date());
+    var estado = function (id) { return leerLS("curso:" + id) || {}; };
+    var guardarE = function (id, e) { try { localStorage.setItem("curso:" + id, JSON.stringify(e)); } catch (x) {} };
+    var curso = function (id) { return FD.cursos.filter(function (c) { return c.id === id; })[0]; };
+    var mezclar = function (a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; };
+    var fechaLarga = function (f) { var p = f.split("-"); return (+p[2]) + " de " + MESES_C[+p[1] - 1] + " de " + p[0]; };
+    var examen = null;
+
+    /* la insignia se guarda en la planilla del ranking si la persona entró con su código */
+    var enviarInsignia = function (c) {
+      var yo = leerLS("ranking:yo"), e = estado(c.id);
+      if (!C.ranking || !C.ranking.url || !yo || !e.aprobado || e.enviada) return;
+      var url = C.ranking.url + (C.ranking.url.indexOf("?") < 0 ? "?" : "&") + "accion=insignia&codigo=" + encodeURIComponent(yo.codigo) +
+        "&curso=" + encodeURIComponent(c.id) + "&icono=" + encodeURIComponent(c.icono) + "&nota=" + e.aprobado.nota;
+      fetch(url).then(function (r) { return r.json(); }).then(function (d) { if (d && d.ok) { e.enviada = true; guardarE(c.id, e); } }, function () {});
+    };
+
+    var lista = function () {
+      cont.innerHTML = '<div class="cursos">' + FD.cursos.map(function (c) {
+        var e = estado(c.id);
+        return '<a class="curso" href="#' + esc(c.id) + '"><span class="curso__ico" aria-hidden="true">' + c.icono + "</span>" +
+          "<h3>" + esc(c.titulo) + "</h3><p>" + esc(c.resumen) + "</p>" +
+          '<p class="curso__meta">' + (e.aprobado ? '<span class="curso__ok">🎓 Aprobado · ' + e.aprobado.nota + "/10</span>" : "Unos " + c.minutos + " minutos de lectura + examen") + "</p>" +
+          '<span class="link">' + (e.aprobado ? "Ver mi certificado →" : "Empezar →") + "</span></a>";
+      }).join("") + FD.proximos.map(function (c) {
+        return '<div class="curso is-prox"><span class="curso__ico" aria-hidden="true">' + c.icono + "</span><h3>" + esc(c.titulo) + "</h3><p>" + esc(c.resumen) + '</p><p class="curso__meta">Próximamente</p></div>';
+      }).join("") + "</div>" +
+      '<p class="cursos__nota">Cada examen tiene 10 preguntas sobre la lectura y se aprueba con 8. Es a libro abierto: podés volver al texto todas las veces que quieras. Si no aprobás, podés volver a intentarlo al día siguiente.</p>';
+    };
+
+    var detalle = function (c) {
+      var e = estado(c.id), falloHoy = !e.aprobado && e.ultimoIntento === hoyF;
+      cont.innerHTML = '<a class="link curso__volver" href="#">← Todos los cursos</a>' +
+        '<div class="curso-det"><div class="curso-det__head"><span class="curso__ico" aria-hidden="true">' + c.icono + "</span><div><h2>" + esc(c.titulo) + "</h2><p>" + esc(c.para) + "</p></div></div>" +
+        '<ol class="pasos">' +
+          '<li><h3>Leé</h3><ul class="lecturas">' + c.lecturas.map(function (l) {
+            return "<li>" + ext(l.url, "link", esc(l.texto) + " →") + "<p>" + esc(l.guia) + "</p></li>";
+          }).join("") + "</ul></li>" +
+          "<li><h3>Hacé el examen</h3><p>" + N_PREG + " preguntas sobre la lectura. Aprobás con " + APRUEBA + ".</p>" +
+            (e.aprobado ? '<p class="curso__ok">🎓 Ya lo aprobaste con ' + e.aprobado.nota + "/10 el " + fechaLarga(e.aprobado.fecha) + ".</p>"
+              : falloHoy ? '<p class="curso__espera">Hoy sacaste ' + e.ultimaNota + "/10. Repasá la lectura y volvé a intentarlo mañana.</p>"
+              : '<button type="button" class="btn" data-f="empezar">Empezar el examen</button>') + "</li>" +
+          "<li><h3>Tu certificado</h3>" + (e.aprobado ? certForm(c, e) : "<p>Cuando apruebes, vas a poder descargar tu certificado y sumar la insignia " + c.icono + " al ranking.</p>") + "</li>" +
+        '</ol></div><div id="examen"></div>';
+    };
+
+    var certForm = function (c, e) {
+      var yo = leerLS("ranking:yo");
+      return '<form class="cert-form" data-f="cert"><label for="cert-nombre">Nombre y apellido para el certificado</label>' +
+        '<div class="rk__fila"><input id="cert-nombre" type="text" maxlength="60" required value="' + esc(e.nombre || "") + '" placeholder="Ej.: Juliana Rodríguez">' +
+        '<button type="submit" class="btn btn--small">Descargar certificado</button></div>' +
+        "<p class=\"rk__ayuda\">Se abre para imprimir: elegí <strong>Guardar como PDF</strong>. En el celular, desde Compartir → Imprimir.</p></form>" +
+        '<div class="daily__share">' + ext("https://wa.me/?text=" + encodeURIComponent("🎓 Aprobé el curso «" + c.titulo + "» de Jóvenes Sagrada Familia (" + e.aprobado.nota + "/10)\n" + location.href.split("#")[0]), "btn btn--small btn--ghost", "Compartir por WhatsApp") + "</div>" +
+        (yo ? '<p class="rk__ayuda">' + (e.enviada ? "La insignia " + c.icono + " ya aparece al lado de tu nombre en el ranking." : "La insignia " + c.icono + " se va a sumar a tu nombre en el ranking.") + "</p>"
+            : '<p class="rk__ayuda">Si entrás al ranking con tu código (en Juegos), la insignia ' + c.icono + " aparece al lado de tu nombre.</p>");
+    };
+
+    var empezar = function (c) {
+      examen = { c: c, qs: mezclar(c.preguntas).slice(0, N_PREG).map(function (q) { return { q: q, ops: mezclar([q.ok].concat(q.otras)) }; }) };
+      $("examen").innerHTML = '<form class="examen" data-f="entregar"><h3>Examen: ' + esc(c.titulo) + "</h3>" + examen.qs.map(function (x, i) {
+        return '<fieldset class="examen__q"><legend><span>' + (i + 1) + ".</span> " + esc(x.q.p) + "</legend>" + x.ops.map(function (o, j) {
+          return '<label class="examen__op"><input type="radio" name="q' + i + '" value="' + j + '" required> <span>' + esc(o) + "</span></label>";
+        }).join("") + "</fieldset>";
+      }).join("") + '<button type="submit" class="btn">Entregar</button><p class="examen__falta" aria-live="polite"></p></form>';
+      $("examen").scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    var corregir = function (form) {
+      var c = examen.c, bien = 0, res = examen.qs.map(function (x, i) {
+        var sel = form.querySelector('input[name="q' + i + '"]:checked'), ok = sel && x.ops[+sel.value] === x.q.ok;
+        if (ok) bien++;
+        return { x: x, ok: ok };
+      });
+      var e = estado(c.id), aprobo = bien >= APRUEBA;
+      e.ultimoIntento = hoyF; e.ultimaNota = bien;
+      if (aprobo) e.aprobado = { nota: bien, fecha: hoyF };
+      guardarE(c.id, e);
+      if (aprobo) enviarInsignia(c);
+      detalle(c);
+      $("examen").innerHTML = '<div class="examen__res ' + (aprobo ? "is-ok" : "is-bad") + '"><p class="examen__nota">' + bien + "/10</p>" +
+        "<p>" + (aprobo ? "¡Aprobaste! Ya podés descargar tu certificado." : "Esta vez no alcanzó. Repasá las partes que te marcamos y volvé a intentarlo mañana.") + "</p></div>" +
+        '<ol class="examen__repaso">' + res.map(function (r) {
+          return '<li class="' + (r.ok ? "is-ok" : "is-bad") + '">' + (r.ok ? "✓ " : "✗ ") + esc(r.x.q.p) + (r.ok ? "" : ' <span class="examen__ref">Repasá: ' + esc(r.x.q.ref) + "</span>") + "</li>";
+        }).join("") + "</ol>";
+      examen = null;
+      $("examen").scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    var imprimir = function (c, e, nombre) {
+      var cert = $("cert");
+      if (!cert) { cert = document.createElement("div"); cert.id = "cert"; cert.className = "cert"; document.body.appendChild(cert); }
+      cert.innerHTML = '<div class="cert__marco"><img class="cert__logo" src="img/logo-sagrada.png" alt="Jóvenes Sagrada Familia">' +
+        '<p class="cert__tit">Certificado</p><p class="cert__txt">Jóvenes Sagrada Familia otorga el presente certificado a</p>' +
+        '<p class="cert__nombre">' + esc(nombre) + "</p>" +
+        '<p class="cert__txt">por haber completado el curso</p><p class="cert__curso">' + c.icono + " " + esc(c.titulo) + "</p>" +
+        '<p class="cert__txt">aprobando el examen con ' + e.aprobado.nota + " de 10 respuestas correctas.</p>" +
+        '<p class="cert__pie">Parroquia Sagrada Familia · Nordelta · ' + fechaLarga(e.aprobado.fecha) + "</p></div>";
+      document.body.classList.add("imprimiendo");
+      var fin = function () { document.body.classList.remove("imprimiendo"); window.removeEventListener("afterprint", fin); };
+      window.addEventListener("afterprint", fin);
+      setTimeout(function () { window.print(); setTimeout(fin, 1000); }, 300);
+    };
+
+    var pintar = function () {
+      var c = curso(location.hash.slice(1));
+      if (c) detalle(c); else lista();
+    };
+    cont.addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-f]"); if (!b) return;
+      if (b.getAttribute("data-f") === "empezar") empezar(curso(location.hash.slice(1)));
+    });
+    cont.addEventListener("submit", function (ev) {
+      var f = ev.target; ev.preventDefault();
+      var c = curso(location.hash.slice(1)); if (!c) return;
+      if (f.getAttribute("data-f") === "entregar") {
+        var falta = examen.qs.filter(function (_, i) { return !f.querySelector('input[name="q' + i + '"]:checked'); }).length;
+        if (falta) { f.querySelector(".examen__falta").textContent = "Te " + (falta === 1 ? "falta 1 pregunta" : "faltan " + falta + " preguntas") + "."; return; }
+        corregir(f);
+      } else if (f.getAttribute("data-f") === "cert") {
+        var e = estado(c.id), nombre = String($("cert-nombre").value || "").trim();
+        if (!nombre || !e.aprobado) return;
+        e.nombre = nombre; guardarE(c.id, e); imprimir(c, e, nombre);
+      }
+    });
+    window.addEventListener("hashchange", function () { pintar(); window.scrollTo(0, 0); });
+    FD.cursos.forEach(enviarInsignia); /* por si aprobó antes de entrar con su código */
+    pintar();
   })();
 
   /* ---------- quiz ---------- */
