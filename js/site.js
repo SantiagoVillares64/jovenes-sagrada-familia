@@ -577,8 +577,7 @@
         '<p class="results__count" id="res-count" aria-live="polite"></p><div class="lib" id="lib"></div>' +
       "</div></section>" +
       '<section class="section"><div class="wrap">' + head("Modelos de vida", "Santos queridos por la comunidad", "Más de 60 santos y beatos con su fiesta, su historia y sus datos.", '<a class="link" href="santos.html">Abrir el diccionario de santos →</a>') +
-        '<div class="saints">' + (C.santos || []).slice(0, 3).map(santoCard).join("") + "</div>" +
-        '<div class="todo todo--single"><div class="todo__item"><span class="todo__tag">A completar</span><p>Cursos, charlas y materiales propios de los grupos</p></div></div></div></section>';
+        '<div class="saints">' + (C.santos || []).slice(0, 3).map(santoCard).join("") + "</div></div></section>";
   };
 
   /* Diccionario de santos: todos los santos del juego, con su ficha completa cuando existe */
