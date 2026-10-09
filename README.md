@@ -22,6 +22,8 @@ gratis en **GitHub Pages**.
 | Santos del juego / diccionario                       | `herramientas/banco_santos.py` y después correr `armar_juegos.py` |
 | Versículos del día                                   | `herramientas/banco_versiculos.py` y después `verificar_versiculos.py` + `armar_juegos.py` |
 | Palabras del crucigrama                              | `herramientas/banco_crucigrama.py` y después `generar_crucigramas.py --sumar N` + `armar_juegos.py` |
+| Categorías de Conexiones                             | `herramientas/banco_conexiones.py` y después `generar_conexiones.py --sumar N` + `armar_juegos.py` |
+| Jugadores del ranking                                | La planilla de Google del ranking (ver `herramientas/ranking/LEEME.md`) |
 | Fotos                                                | carpeta `img/` (reemplazá el archivo con el mismo nombre) |
 
 `js/site.js` arma todas las páginas a partir de esos datos: normalmente no hace falta tocarlo.
@@ -52,7 +54,7 @@ Nochebuena, Navidad, Sagrada Familia, las fiestas de los santos del diccionario 
 
 ## Juegos diarios y diccionario de santos (`herramientas/`)
 
-Los juegos (Santo del día, Versículo del día, Crucigrama del día) y el Diccionario de santos salen de
+Los juegos (Santo del día, Versículo del día, Crucigrama del día, Conexiones) y el Diccionario de santos salen de
 `js/juegos-datos.js`, que **no se edita a mano**: se genera con los scripts de `herramientas/`.
 
 Necesitás Python 3 y la librería Pillow (`pip install pillow`). Se corren desde esta carpeta:
@@ -60,6 +62,7 @@ Necesitás Python 3 y la librería Pillow (`pip install pillow`). Se corren desd
 ```
 python herramientas/verificar_versiculos.py     # si cambiaste versículos
 python herramientas/generar_crucigramas.py --sumar 50   # si querés más crucigramas
+python herramientas/generar_conexiones.py --sumar 50    # si querés más partidas de Conexiones
 python herramientas/armar_juegos.py             # siempre, al final
 ```
 

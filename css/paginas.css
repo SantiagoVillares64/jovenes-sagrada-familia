@@ -588,3 +588,48 @@ a.lib__item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(29
 .mcal__filtros { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; padding: 0 24px 16px; background: var(--tint); }
 @media (max-width: 600px) { .mcal__filtros { padding: 0 16px 14px; } .mcal__filtros .fchip { font-size: .8rem; padding: .35rem .7rem; } }
 .mcal__filtros .filter__label { margin-right: .3rem; }
+
+/* ---------- Conexiones ---------- */
+.cx { display: grid; gap: 8px; max-width: 620px; margin: 0 auto; }
+.cx__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.cx__ficha { font: inherit; font-family: "League Spartan", sans-serif; font-weight: 600; font-size: .95rem; letter-spacing: .02em; line-height: 1.1;
+  min-height: 64px; padding: 6px 4px; border: 0; border-radius: 10px; background: #eceee9; color: var(--ink); cursor: pointer;
+  display: flex; align-items: center; justify-content: center; text-align: center; overflow-wrap: anywhere; transition: transform .1s, background .15s; }
+.cx__ficha:hover { background: #e2e5df; }
+.cx__ficha:active { transform: scale(.97); }
+.cx__ficha.is-sel { background: var(--sage-dark); color: #fff; }
+.cx__ficha.is-larga { font-size: .78rem; }
+.cx__grupo { background: var(--gc); border-radius: 10px; min-height: 64px; padding: 10px 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; animation: cxIn .35s ease; }
+.cx__grupo strong { font-family: "League Spartan", sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: .04em; }
+.cx__grupo span { font-size: .85rem; }
+@keyframes cxIn { from { transform: scale(.96); opacity: 0; } to { transform: none; opacity: 1; } }
+.cx__msg { min-height: 1.4em; text-align: center; font-weight: 600; margin: .8rem 0 .2rem; }
+.cx__vidas { text-align: center; font-size: .9rem; color: var(--muted); }
+.cx__vidas > span { letter-spacing: .25em; color: var(--sage-dark); margin-left: .3rem; }
+.cx__vidas .is-off { color: #d6dad5; }
+.cx__tools { display: flex; justify-content: center; flex-wrap: wrap; gap: .5rem; margin-top: .9rem; }
+.cx__tools button[disabled] { opacity: .45; cursor: default; }
+@media (max-width: 520px) { .cx__ficha { font-size: .8rem; min-height: 58px; } .cx__ficha.is-larga { font-size: .66rem; } .cx__grid, .cx { gap: 6px; } }
+@media (prefers-reduced-motion: reduce) { .cx__grupo { animation: none; } }
+
+/* ---------- Ranking parroquial ---------- */
+.rk { max-width: 620px; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+.rk__login label { font-weight: 600; display: block; margin-bottom: .4rem; }
+.rk__fila { display: flex; gap: .5rem; }
+.rk__fila input { flex: 1; min-width: 0; font: inherit; font-size: 1.05rem; letter-spacing: .12em; text-transform: uppercase; padding: .6rem .9rem; border: 1px solid #d8dcd8; border-radius: 12px; }
+.rk__ayuda { font-size: .88rem; color: var(--muted); margin-top: .6rem; }
+.rk__error { min-height: 1.2em; font-size: .9rem; color: #9a3b3b; margin: .3rem 0 1rem; }
+.rk__yo { border-bottom: 1px solid var(--line); padding-bottom: .8rem; margin-bottom: 1rem; }
+.rk__yo .link { font: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+.rk__hoy { color: var(--muted); font-size: .92rem; }
+.rk__tabs { display: flex; gap: .4rem; margin-bottom: .8rem; }
+.rk__tabla { list-style: none; margin: 0; padding: 0; counter-reset: none; }
+.rk__tabla li { display: grid; grid-template-columns: 2.2rem 1fr auto; align-items: center; gap: .5rem; padding: .55rem .4rem; border-bottom: 1px solid var(--line); }
+.rk__tabla li:nth-child(1) .rk__pos { background: #f1d36b; }
+.rk__tabla li:nth-child(2) .rk__pos { background: #dfe3e6; }
+.rk__tabla li:nth-child(3) .rk__pos { background: #e8c6a4; }
+.rk__tabla li.is-yo { background: var(--tint); font-weight: 600; border-radius: 8px; }
+.rk__pos { width: 1.8rem; height: 1.8rem; border-radius: 50%; display: grid; place-items: center; font-size: .85rem; font-weight: 600; background: #f1f3f0; }
+.rk__pts { font-family: "League Spartan", sans-serif; font-weight: 700; }
+.rk__mio, .rk__nota { font-size: .88rem; color: var(--muted); margin-top: .8rem; }
+@media (max-width: 520px) { .rk { padding: 18px 14px; } }

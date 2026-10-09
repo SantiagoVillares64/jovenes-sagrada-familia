@@ -649,14 +649,18 @@
   };
 
   P.juegos = function () {
-    return pagehead("Juegos", "Jugá y aprendé", "Tres desafíos nuevos cada día, iguales para todos, y un quiz para jugar cuando quieras.") +
+    return pagehead("Juegos", "Jugá y aprendé", "Cuatro desafíos nuevos cada día, iguales para todos, un ranking parroquial y un quiz para jugar cuando quieras.") +
       '<section class="section section--first" id="diarios"><div class="wrap">' +
         head("Desafíos del día", "Uno nuevo cada día", "Se juegan una vez por día. Volvé mañana para sumar a tu racha.") +
         '<div class="dailies"><div class="daily" id="diario-santo"><p class="muted">Cargando…</p></div>' +
         '<div class="daily" id="diario-versiculo"><p class="muted">Cargando…</p></div>' +
+        '<div class="daily daily--wide" id="diario-conex"><p class="muted">Cargando…</p></div>' +
         '<div class="daily daily--wide" id="diario-cruci"><p class="muted">Cargando…</p></div></div>' +
       "</div></section>" +
-      '<section class="section section--tint" id="quiz-seccion"><div class="wrap">' +
+      '<section class="section section--tint" id="ranking-seccion"><div class="wrap">' +
+        head("Ranking parroquial", "¿Quién suma más?", "Cada desafío del día suma hasta 100 puntos. Entrá con tu código y competí con toda la comunidad.") +
+        '<div class="rk" id="ranking"><p class="muted">Cargando…</p></div></div></section>' +
+      '<section class="section" id="quiz-seccion"><div class="wrap">' +
         head("Quiz", "¿Cuánto sabés?", "Diez preguntas sobre la Biblia, los santos, los sacramentos y nuestra comunidad. Sumás más puntos si respondés rápido.") +
         '<div class="quiz" id="quiz" aria-live="polite"></div></div></section>';
   };
@@ -877,8 +881,8 @@
     pintar();
   }
 
-  /* ---------- juegos diarios: Santo del día y Versículo del día ---------- */
-  if (window.JUEGOS && ($("diario-santo") || $("diario-versiculo") || $("diario-cruci"))) {
+  /* ---------- juegos diarios: Santo, Versículo, Conexiones, Crucigrama y ranking ---------- */
+  if (window.JUEGOS && ($("diario-santo") || $("diario-versiculo") || $("diario-cruci") || $("diario-conex"))) {
     var JG = window.JUEGOS;
     var dosD = function (n) { return (n < 10 ? "0" : "") + n; };
     var claveFecha = function (d) { return d.getFullYear() + "-" + dosD(d.getMonth() + 1) + "-" + dosD(d.getDate()); };
@@ -980,6 +984,7 @@
           else { est.malas.push(o); est.k = Math.min(5, est.k + 1); }
         } else return;
         guardar(KS, est); pintarSanto();
+        if (est.fin) avisarPuntaje("santo");
       });
       pintarSanto();
     }
@@ -1022,8 +1027,90 @@
         else { ev2.malas.push(o); if (ev2.malas.length >= 2) ev2.fin = true; }
         if (ev2.fin) sumarRacha("versiculo");
         guardar(KV, ev2); pintarVerso();
+        if (ev2.fin) avisarPuntaje("versiculo");
       });
       pintarVerso();
+    }
+
+
+    /* --- Conexiones: 4 grupos de 4 --- */
+    if ($("diario-conex") && JG.conexiones) {
+      var CX = delDia(JG.conexiones, "conexiones").item, KX = "diario:conex:" + claveFecha(HOY);
+      var COLX = { 1: "#f1d36b", 2: "#a9cf7f", 3: "#9ec2e6", 4: "#bf9fe0" }, EMX = { 1: "🟨", 2: "🟩", 3: "🟦", 4: "🟪" };
+      var fichas = [];
+      CX.g.forEach(function (g, gi) { g.w.forEach(function (w) { fichas.push({ w: w, g: gi }); }); });
+      var ex = leer(KX) || { orden: mezclarCon(fichas.map(function (_, i) { return i; }), azar(semilla("conex:" + NUM))), sel: [], hechos: [], intentos: [], errores: 0, fin: false, gano: false, puntos: 0 };
+      var contX = $("diario-conex"), msgX = "";
+      var grupoHtml = function (gi) {
+        var g = CX.g[gi];
+        return '<div class="cx__grupo" style="--gc:' + COLX[g.nivel] + '"><strong>' + esc(g.nombre) + "</strong><span>" + g.w.map(esc).join(" · ") + "</span></div>";
+      };
+      var pintarX = function () {
+        var cab = '<div class="daily__head"><p class="eyebrow">Conexiones · #' + NUM + '</p><h3>Encontrá los 4 grupos</h3></div>';
+        var hechos = ex.hechos.map(grupoHtml).join("");
+        if (!ex.fin) {
+          var quedan = ex.orden.filter(function (i) { return ex.hechos.indexOf(fichas[i].g) < 0; });
+          contX.innerHTML = cab +
+            '<p class="daily__hint">Agrupá las 16 palabras en 4 grupos de 4 que tengan algo en común. Podés equivocarte hasta 4 veces.</p>' +
+            '<div class="cx">' + hechos + '<div class="cx__grid">' + quedan.map(function (i) {
+              var on = ex.sel.indexOf(i) >= 0, w = fichas[i].w;
+              return '<button type="button" class="cx__ficha' + (on ? " is-sel" : "") + (w.length > 11 ? " is-larga" : "") + '" data-f="' + i + '" aria-pressed="' + on + '">' + esc(w) + "</button>";
+            }).join("") + "</div></div>" +
+            '<p class="cx__msg" aria-live="polite">' + esc(msgX) + "</p>" +
+            '<div class="cx__vidas">Errores que te quedan: <span>' + "●".repeat(4 - ex.errores) + '<span class="is-off">' + "●".repeat(ex.errores) + "</span></span></div>" +
+            '<div class="cx__tools"><button type="button" class="btn btn--small btn--ghost" data-cx="mezclar">Mezclar</button>' +
+            '<button type="button" class="btn btn--small btn--ghost" data-cx="limpiar"' + (ex.sel.length ? "" : " disabled") + ">Deseleccionar</button>" +
+            '<button type="button" class="btn btn--small" data-cx="enviar"' + (ex.sel.length === 4 ? "" : " disabled") + ">Enviar</button></div>" +
+            pieHtml("conexiones");
+          return;
+        }
+        var faltan = CX.g.map(function (_, i) { return i; }).filter(function (i) { return ex.hechos.indexOf(i) < 0; });
+        var filas = ex.intentos.map(function (t) { return t.map(function (n) { return EMX[n]; }).join(""); }).join("\n");
+        var texto = "Conexiones #" + NUM + " 🧩\n" + filas + (verRacha("conexiones") > 1 ? "\nRacha de " + verRacha("conexiones") + " días 🔥" : "") + "\n" + urlJuegos;
+        contX.innerHTML = cab + '<div class="cx">' + hechos + faltan.map(grupoHtml).join("") + "</div>" +
+          '<p class="daily__result-v ' + (ex.gano ? "is-ok" : "is-bad") + '">' +
+          (ex.gano ? (ex.errores ? "¡Los encontraste todos con " + ex.errores + (ex.errores === 1 ? " error!" : " errores!") : "¡Perfecto! Sin ningún error.") : "Esta vez no salió: encontraste " + ex.hechos.length + " de 4 grupos.") + "</p>" +
+          compartirHtml(texto) + pieHtml("conexiones");
+      };
+      contX.addEventListener("click", function (ev) {
+        if (ex.fin) return;
+        var f = ev.target.closest("[data-f]"), b = ev.target.closest("[data-cx]");
+        if (f) {
+          var i = +f.getAttribute("data-f"), p = ex.sel.indexOf(i);
+          if (p >= 0) ex.sel.splice(p, 1); else if (ex.sel.length < 4) ex.sel.push(i);
+          msgX = "";
+        } else if (b) {
+          var accion = b.getAttribute("data-cx");
+          if (accion === "mezclar") {
+            var fijos = ex.orden.filter(function (i) { return ex.hechos.indexOf(fichas[i].g) >= 0; });
+            ex.orden = fijos.concat(mezclarCon(ex.orden.filter(function (i) { return fijos.indexOf(i) < 0; }), Math.random));
+          } else if (accion === "limpiar") { ex.sel = []; msgX = ""; }
+          else if (accion === "enviar" && ex.sel.length === 4) {
+            var clave = ex.sel.slice().sort(function (a, b) { return a - b; }).join(",");
+            ex.probadas = ex.probadas || [];
+            if (ex.probadas.indexOf(clave) >= 0) { msgX = "Ya probaste esa combinación."; pintarX(); return; }
+            ex.probadas.push(clave);
+            ex.intentos.push(ex.sel.map(function (i) { return CX.g[fichas[i].g].nivel; }));
+            var cuenta = {};
+            ex.sel.forEach(function (i) { cuenta[fichas[i].g] = (cuenta[fichas[i].g] || 0) + 1; });
+            var maxi = Math.max.apply(null, Object.keys(cuenta).map(function (k) { return cuenta[k]; }));
+            if (maxi === 4) {
+              ex.hechos.push(fichas[ex.sel[0]].g); ex.sel = []; msgX = "";
+              if (ex.hechos.length === 4) { ex.fin = true; ex.gano = true; }
+            } else {
+              ex.errores++; msgX = maxi === 3 ? "¡Casi! Te falta una." : "No es un grupo.";
+              if (ex.errores >= 4) { ex.fin = true; ex.gano = false; ex.sel = []; }
+            }
+            if (ex.fin) {
+              ex.puntos = ex.gano ? 100 - 20 * ex.errores : 10 * ex.hechos.length;
+              sumarRacha("conexiones");
+            }
+          }
+        } else return;
+        guardar(KX, ex); pintarX();
+        if (ex.fin) avisarPuntaje("conexiones");
+      });
+      pintarX();
     }
 
     /* --- Crucigrama del día --- */
@@ -1108,7 +1195,7 @@
         if (i >= 0 && i < ks.length) act.k = ks[i];
       };
       var completo = function () { return Object.keys(cel).every(function (k) { return estC.l[k] === cel[k].ch; }); };
-      var terminar = function () { if (estC.fin || !completo()) return; estC.fin = true; sumarRacha("crucigrama"); guardar(KC, estC); pintarC(); };
+      var terminar = function () { if (estC.fin || !completo()) return; estC.fin = true; sumarRacha("crucigrama"); guardar(KC, estC); pintarC(); avisarPuntaje("crucigrama"); };
       var empezo = function () { return Object.keys(estC.l).length > 0; };
       setInterval(function () {
         if (estC.fin || !empezo() || document.hidden || !$("cw-time")) return;
@@ -1168,6 +1255,98 @@
       });
     }
 
+    /* --- Ranking parroquial: suma de los 4 desafíos del día (máximo 100 puntos cada uno) ---
+       Los jugadores y los puntajes viven en una planilla de Google (ver herramientas/ranking/LEEME.md).
+       Solo juegan quienes tienen un código que dan los coordinadores. */
+    var JUEGOS_RK = ["santo", "versiculo", "crucigrama", "conexiones"];
+    var NOMBRE_RK = { santo: "Santo del día", versiculo: "Versículo del día", crucigrama: "Crucigrama", conexiones: "Conexiones" };
+    var puntosDe = function (juego) {
+      var f = claveFecha(HOY), s;
+      if (juego === "santo") { s = leer("diario:santo:" + f); return s && s.fin ? s.puntos * 20 : null; }
+      if (juego === "versiculo") { s = leer("diario:versiculo:" + f); return s && s.fin ? (s.gano ? (s.malas.length ? 50 : 100) : 0) : null; }
+      if (juego === "crucigrama") {
+        s = leer("diario:cruci:" + f); if (!s || !s.fin) return null;
+        return Math.max(20, Math.min(100, 100 - 15 * (s.ayudas || 0) - Math.max(0, Math.floor(((s.t || 0) - 180) / 30))));
+      }
+      if (juego === "conexiones") { s = leer("diario:conex:" + f); return s && s.fin ? s.puntos : null; }
+      return null;
+    };
+    var RK = (C.ranking && C.ranking.url) ? C.ranking.url : "";
+    var yoRK = function () { return leer("ranking:yo"); };
+    var llamarRK = function (params, cb) {
+      var q = Object.keys(params).map(function (k) { return k + "=" + encodeURIComponent(params[k]); }).join("&");
+      fetch(RK + (RK.indexOf("?") < 0 ? "?" : "&") + q).then(function (r) { return r.json(); })
+        .then(function (d) { cb(null, d); }, function (e) { cb(e || true); });
+    };
+    var enviarRK = function (juego, cb) {
+      var yo = yoRK(), pts = puntosDe(juego), f = claveFecha(HOY), k = "ranking:enviado:" + f + ":" + juego;
+      if (!RK || !yo || pts === null || leer(k)) { if (cb) cb(); return; }
+      llamarRK({ accion: "puntaje", codigo: yo.codigo, fecha: f, juego: juego, puntos: pts, num: NUM }, function (err, d) {
+        if (!err && d && d.ok) guardar(k, true);
+        if (cb) cb();
+      });
+    };
+    var avisarPuntaje = function (juego) { enviarRK(juego, function () { if ($("ranking")) pintarRK(); }); };
+    var vistaRK = "semana";
+    var tablaRK = function (filas, yo) {
+      if (!filas || !filas.length) return '<p class="muted">Todavía no hay puntajes. ¡Sé el primero!</p>';
+      return '<ol class="rk__tabla">' + filas.map(function (x) {
+        return '<li class="' + (yo && x.nombre === yo.nombre ? "is-yo" : "") + '"><span class="rk__pos">' + x.pos + '</span><span class="rk__nombre">' + esc(x.nombre) + '</span><span class="rk__pts">' + x.puntos + "</span></li>";
+      }).join("") + "</ol>";
+    };
+    var pintarRK = function () {
+      var cont = $("ranking"); if (!cont) return;
+      if (!RK) { cont.innerHTML = '<p class="muted">El ranking parroquial arranca muy pronto.</p>'; return; }
+      var yo = yoRK();
+      if (!yo) {
+        cont.innerHTML = '<form class="rk__login" id="rk-login"><label for="rk-codigo">Tu código</label>' +
+          '<div class="rk__fila"><input id="rk-codigo" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="12" placeholder="Ej.: K7PM3Q" required>' +
+          '<button type="submit" class="btn btn--small">Entrar</button></div>' +
+          '<p class="rk__ayuda">¿No tenés código? Pedíselo a los coordinadores por ' + ext(C.redes.instagram, "link", "Instagram") + ". En el ranking solo aparece el nombre que elijan ellos.</p>" +
+          '<p class="rk__error" id="rk-error" aria-live="polite"></p></form><div id="rk-tablas"><p class="muted">Cargando ranking…</p></div>';
+      } else {
+        var hoy = 0, jugados = 0;
+        JUEGOS_RK.forEach(function (j) { var p = puntosDe(j); if (p !== null) { hoy += p; jugados++; } });
+        cont.innerHTML = '<div class="rk__yo"><p>Jugás como <strong>' + esc(yo.nombre) + '</strong> · <button type="button" class="link" data-rk="salir">Salir</button></p>' +
+          '<p class="rk__hoy">Hoy: <strong>' + hoy + "</strong> de 400 puntos · " + jugados + " de 4 desafíos</p></div>" +
+          '<div id="rk-tablas"><p class="muted">Cargando ranking…</p></div>';
+      }
+      llamarRK({ accion: "ranking", codigo: yo ? yo.codigo : "" }, function (err, d) {
+        var t = $("rk-tablas"); if (!t) return;
+        if (err || !d || !d.ok) { t.innerHTML = '<p class="muted">No se pudo cargar el ranking. Probá en un rato.</p>'; return; }
+        t.innerHTML = '<div class="rk__tabs" role="tablist">' +
+          '<button type="button" role="tab" class="fchip' + (vistaRK === "semana" ? " is-on" : "") + '" data-rk="semana" aria-selected="' + (vistaRK === "semana") + '">Esta semana</button>' +
+          '<button type="button" role="tab" class="fchip' + (vistaRK === "historico" ? " is-on" : "") + '" data-rk="historico" aria-selected="' + (vistaRK === "historico") + '">Histórico</button></div>' +
+          tablaRK(d[vistaRK], yo) +
+          (d.yo && d.yo[vistaRK] && d.yo[vistaRK].pos > (d[vistaRK] || []).length ? '<p class="rk__mio">Tu puesto: <strong>' + d.yo[vistaRK].pos + "°</strong> con " + d.yo[vistaRK].puntos + " puntos</p>" : "") +
+          '<p class="rk__nota">' + (vistaRK === "semana" ? "La semana va de lunes a domingo." : "Desde el lanzamiento.") + " Cada desafío suma hasta 100 puntos por día.</p>";
+      });
+    };
+    if ($("ranking")) {
+      $("ranking").addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        var cod = String($("rk-codigo").value || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+        if (!cod) return;
+        $("rk-error").textContent = "Revisando…";
+        llamarRK({ accion: "entrar", codigo: cod }, function (err, d) {
+          if (err || !d) { $("rk-error").textContent = "No se pudo conectar. Probá de nuevo."; return; }
+          if (!d.ok) { $("rk-error").textContent = "Ese código no existe o está dado de baja."; return; }
+          guardar("ranking:yo", { codigo: cod, nombre: d.nombre });
+          /* sube lo que ya jugó hoy antes de entrar */
+          var pend = JUEGOS_RK.length;
+          JUEGOS_RK.forEach(function (j) { enviarRK(j, function () { if (--pend === 0) pintarRK(); }); });
+        });
+      });
+      $("ranking").addEventListener("click", function (ev) {
+        var b = ev.target.closest("[data-rk]"); if (!b) return;
+        var a = b.getAttribute("data-rk");
+        if (a === "salir") { try { localStorage.removeItem("ranking:yo"); } catch (e) {} pintarRK(); }
+        else { vistaRK = a; pintarRK(); }
+      });
+      /* por si jugó sin conexión: reintenta subir lo de hoy */
+      JUEGOS_RK.forEach(function (j) { enviarRK(j); });
+      pintarRK();
+    }
   }
 
   /* ---------- quiz ---------- */

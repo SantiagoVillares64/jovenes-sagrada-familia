@@ -345,6 +345,11 @@ window.CONTENIDO = {
     imagen: "img/bautismo.jpg"
   },
 
+  /* ---------- Ranking parroquial de los juegos ----------
+     url: la dirección de la aplicación web de Google Apps Script (ver herramientas/ranking/LEEME.md).
+     Vacío = el ranking aparece como "muy pronto". */
+  ranking: { url: "" },
+
   /* ---------- Biblioteca (página Recursos) ----------
      pilar: espiritual, intelectual, humano, apostolico
      formato: Lectura, Podcast, Video, App, Curso, Música, Peli o serie

@@ -7,6 +7,9 @@ Scripts que generan el contenido de los juegos y del diccionario de santos. Ver 
 | `banco_santos.py`           | Los santos del juego y del diccionario (nombre, 5 pistas, fiesta, foto) |
 | `banco_versiculos.py`       | Los versículos del día (textuales de El Libro del Pueblo de Dios)      |
 | `banco_crucigrama.py`       | Palabras y pistas del crucigrama                                       |
+| `banco_conexiones.py`       | Categorías de Conexiones (4 grupos de 4)                               |
+| `generar_conexiones.py`     | Arma y controla las partidas → `datos/conexiones.json`                 |
+| `ranking/`                  | Script de Google para el ranking parroquial (ver `ranking/LEEME.md`)   |
 | `verificar_versiculos.py`   | Verifica los versículos contra vatican.va → `datos/versiculos.json`    |
 | `generar_crucigramas.py`    | Arma y verifica crucigramas → `datos/crucigramas.json`                 |
 | `armar_juegos.py`           | Junta todo → `../js/juegos-datos.js` (y optimiza fotos nuevas)         |

@@ -1,0 +1,127 @@
+"""Banco de categorías para Conexiones (encontrá los 4 grupos de 4).
+
+Cada categoría:
+  nombre   Lo que se muestra cuando se descubre el grupo.
+  nivel    1 = fácil (amarillo) · 2 = verde · 3 = azul · 4 = difícil (violeta).
+  usar     Palabras que pueden salir como fichas (salen 4 por partida).
+  tambien  Otras palabras que TAMBIÉN encajan en la categoría aunque no salgan como ficha.
+           Sirven para evitar trampas sin querer: si una ficha encaja en dos grupos de la misma
+           partida, esa combinación se descarta. Ante la duda, sumá la palabra acá.
+
+Para agregar una categoría, copiá una existente. Después:
+  python herramientas/generar_conexiones.py --sumar 50
+  python herramientas/armar_juegos.py
+"""
+
+C = [
+    # ---------------- nivel 1 ----------------
+    dict(nombre='Sacramentos', nivel=1,
+         usar=['BAUTISMO', 'CONFIRMACIÓN', 'EUCARISTÍA', 'RECONCILIACIÓN', 'UNCIÓN', 'ORDEN', 'MATRIMONIO'],
+         tambien=['PENITENCIA', 'CONFESIÓN', 'COMUNIÓN', 'UNCIÓN DE LOS ENFERMOS', 'ORDEN SAGRADO']),
+    dict(nombre='Los cuatro evangelistas', nivel=1,
+         usar=['MATEO', 'MARCOS', 'LUCAS', 'JUAN'], tambien=[]),
+    dict(nombre='Tiempos litúrgicos', nivel=1,
+         usar=['ADVIENTO', 'NAVIDAD', 'CUARESMA', 'PASCUA', 'ORDINARIO'],
+         tambien=['SEMANA SANTA', 'TRIDUO']),
+    dict(nombre='Colores litúrgicos', nivel=1,
+         usar=['VERDE', 'MORADO', 'BLANCO', 'ROJO', 'ROSA'],
+         tambien=['DORADO', 'NEGRO', 'AZUL', 'VIOLETA']),
+    dict(nombre='Pecados capitales', nivel=1,
+         usar=['SOBERBIA', 'AVARICIA', 'LUJURIA', 'IRA', 'GULA', 'ENVIDIA', 'PEREZA'], tambien=[]),
+    dict(nombre='Virtudes cardinales', nivel=1,
+         usar=['PRUDENCIA', 'JUSTICIA', 'FORTALEZA', 'TEMPLANZA'],
+         tambien=['FE', 'ESPERANZA', 'CARIDAD', 'HUMILDAD', 'PACIENCIA', 'CASTIDAD', 'OBEDIENCIA', 'VIRTUDES']),
+    dict(nombre='Grupos de Sagrada Familia', nivel=1,
+         usar=['FARO', 'POST', 'HPP', 'PUENTE A MARÍA', 'NAZARET', 'CONFIRMACIÓN'], tambien=[]),
+
+    # ---------------- nivel 2 ----------------
+    dict(nombre='Apóstoles', nivel=2,
+         usar=['PEDRO', 'ANDRÉS', 'SANTIAGO', 'FELIPE', 'BARTOLOMÉ', 'TOMÁS', 'MATEO', 'SIMÓN', 'TADEO', 'MATÍAS', 'JUDAS', 'JUAN'],
+         tambien=['PABLO', 'BERNABÉ', 'LEVÍ', 'NATANAEL']),
+    dict(nombre='Cosas que se usan en misa', nivel=2,
+         usar=['CÁLIZ', 'PATENA', 'COPÓN', 'CORPORAL', 'PURIFICADOR', 'VINAJERAS', 'PALIA', 'MISAL', 'LECCIONARIO', 'INCENSARIO'],
+         tambien=['CUSTODIA', 'SAGRARIO', 'AMBÓN', 'ALTAR', 'CIRIO', 'VELA', 'CRUZ', 'CRUCIFIJO', 'HOSTIA', 'VINO', 'PAN', 'AGUA', 'CAMPANA', 'MANTEL']),
+    dict(nombre='Vestiduras litúrgicas', nivel=2,
+         usar=['ALBA', 'ESTOLA', 'CASULLA', 'AMITO', 'CÍNGULO', 'DALMÁTICA'],
+         tambien=['SOTANA', 'CAPA PLUVIAL', 'SOLIDEO', 'MITRA', 'ROQUETE', 'CLERGYMAN']),
+    dict(nombre='Lugares de la vida de Jesús', nivel=2,
+         usar=['BELÉN', 'NAZARET', 'CANÁ', 'CAFARNAÚM', 'JERUSALÉN', 'BETANIA', 'GETSEMANÍ', 'EMAÚS', 'JERICÓ'],
+         tambien=['GÓLGOTA', 'CALVARIO', 'GALILEA', 'JORDÁN', 'TABOR', 'SAMARIA', 'EGIPTO', 'JUDEA', 'BETSAIDA', 'NAÍN', 'SICAR', 'MAR DE GALILEA', 'OLIVOS']),
+    dict(nombre='Advocaciones de la Virgen', nivel=2,
+         usar=['LUJÁN', 'GUADALUPE', 'FÁTIMA', 'LOURDES', 'ITATÍ', 'LORETO', 'POMPEYA', 'COPACABANA'],
+         tambien=['CARMEN', 'ROSARIO', 'MERCED', 'MONTSERRAT', 'DESATANUDOS', 'DEL VALLE', 'PILAR', 'MEDJUGORJE', 'SAN NICOLÁS', 'AUXILIADORA', 'MILAGROSA']),
+    dict(nombre='Partes de la misa', nivel=2,
+         usar=['KYRIE', 'GLORIA', 'CREDO', 'ALELUYA', 'HOMILÍA', 'OFERTORIO', 'SANCTUS', 'CONSAGRACIÓN', 'AGNUS DEI', 'COMUNIÓN', 'BENDICIÓN'],
+         tambien=['PADRENUESTRO', 'LECTURAS', 'EVANGELIO', 'SALMO', 'PAZ', 'COLECTA', 'PREFACIO', 'ACTO PENITENCIAL', 'PLEGARIA EUCARÍSTICA', 'ORACIÓN DE LOS FIELES', 'CORDERO']),
+    dict(nombre='Oraciones', nivel=2,
+         usar=['AVEMARÍA', 'PADRENUESTRO', 'SALVE', 'ÁNGELUS', 'MAGNÍFICAT', 'ACORDAOS', 'REGINA COELI'],
+         tambien=['GLORIA', 'CREDO', 'ROSARIO', 'ÁNGEL DE LA GUARDA', 'BENEDICTUS', 'ANIMA CHRISTI', 'TE DEUM', 'SANCTUS', 'AGNUS DEI', 'KYRIE']),
+    dict(nombre='Materia de los sacramentos', nivel=2,
+         usar=['AGUA', 'PAN', 'VINO', 'CRISMA', 'ÓLEO'],
+         tambien=['ACEITE', 'HOSTIA', 'SANGRE']),
+    dict(nombre='Días de Semana Santa', nivel=2,
+         usar=['DOMINGO DE RAMOS', 'JUEVES SANTO', 'VIERNES SANTO', 'SÁBADO SANTO', 'DOMINGO DE PASCUA'],
+         tambien=['LUNES SANTO', 'MARTES SANTO', 'MIÉRCOLES SANTO', 'PASCUA']),
+
+    # ---------------- nivel 3 ----------------
+    dict(nombre='Profetas mayores', nivel=3,
+         usar=['ISAÍAS', 'JEREMÍAS', 'EZEQUIEL', 'DANIEL'],
+         tambien=['ELÍAS', 'ELISEO', 'JONÁS', 'AMÓS', 'OSEAS', 'MIQUEAS', 'SAMUEL', 'MOISÉS', 'NATÁN', 'JOEL', 'ABDÍAS', 'NAHÚM',
+                  'HABACUC', 'SOFONÍAS', 'AGEO', 'ZACARÍAS', 'MALAQUÍAS', 'BARUC', 'JUAN', 'JUAN BAUTISTA', 'DÉBORA', 'ANA', 'MIRIAM']),
+    dict(nombre='Dones del Espíritu Santo', nivel=3,
+         usar=['SABIDURÍA', 'ENTENDIMIENTO', 'CONSEJO', 'FORTALEZA', 'CIENCIA', 'PIEDAD', 'TEMOR DE DIOS'], tambien=[]),
+    dict(nombre='Misterios del Rosario', nivel=3,
+         usar=['GOZOSOS', 'DOLOROSOS', 'GLORIOSOS', 'LUMINOSOS'], tambien=[]),
+    dict(nombre='Plagas de Egipto', nivel=3,
+         usar=['SANGRE', 'RANAS', 'MOSQUITOS', 'TÁBANOS', 'PESTE', 'ÚLCERAS', 'GRANIZO', 'LANGOSTAS', 'TINIEBLAS'],
+         tambien=['PRIMOGÉNITOS', 'MOSCAS', 'PIOJOS']),
+    dict(nombre='Hijos de Jacob', nivel=3,
+         usar=['RUBÉN', 'SIMEÓN', 'LEVÍ', 'JUDÁ', 'DAN', 'NEFTALÍ', 'GAD', 'ASER', 'ISACAR', 'ZABULÓN', 'JOSÉ', 'BENJAMÍN'],
+         tambien=['DINA']),
+    dict(nombre='Reyes de Israel y Judá', nivel=3,
+         usar=['SAÚL', 'DAVID', 'SALOMÓN', 'ROBOAM', 'JEROBOAM', 'AJAB', 'EZEQUÍAS', 'JOSÍAS'],
+         tambien=['HERODES', 'JOÁS', 'OZÍAS', 'ACAZ', 'MANASÉS', 'SEDECÍAS', 'JEHÚ', 'OMRÍ', 'ASÁ', 'JOSAFAT']),
+    dict(nombre='Mujeres del Antiguo Testamento', nivel=3,
+         usar=['SARA', 'REBECA', 'RAQUEL', 'LÍA', 'RUT', 'ESTER', 'JUDIT', 'DÉBORA', 'NOEMÍ', 'ANA'],
+         tambien=['EVA', 'AGAR', 'MIRIAM', 'BETSABÉ', 'DALILA', 'MICAL', 'JEZABEL', 'TAMAR', 'SUSANA', 'ABIGAIL', 'DINA', 'SÉFORA', 'RAJAB', 'ORPÁ']),
+    dict(nombre='Órdenes religiosas', nivel=3,
+         usar=['FRANCISCANOS', 'DOMINICOS', 'JESUITAS', 'BENEDICTINOS', 'SALESIANOS', 'CARMELITAS', 'AGUSTINOS', 'TRAPENSES'],
+         tambien=['CLARISAS', 'CAPUCHINOS', 'PALOTINOS', 'MISIONERAS DE LA CARIDAD', 'LASALLANOS', 'MARISTAS', 'ESCOLAPIOS', 'CARTUJOS']),
+    dict(nombre='Montes de la Biblia', nivel=3,
+         usar=['SINAÍ', 'TABOR', 'CARMELO', 'CALVARIO', 'SION', 'OLIVOS', 'HOREB', 'ARARAT', 'MORIA'],
+         tambien=['GÓLGOTA', 'NEBO', 'HERMÓN', 'GARIZÍN', 'GELBOÉ']),
+    dict(nombre='Ríos y mares de la Biblia', nivel=3,
+         usar=['JORDÁN', 'NILO', 'ÉUFRATES', 'TIGRIS', 'MAR ROJO', 'MAR MUERTO'],
+         tambien=['MAR DE GALILEA', 'TIBERÍADES', 'MAR MEDITERRÁNEO', 'MAR GRANDE']),
+    dict(nombre='Cartas de san Pablo', nivel=3,
+         usar=['ROMANOS', 'CORINTIOS', 'GÁLATAS', 'EFESIOS', 'FILIPENSES', 'COLOSENSES', 'TESALONICENSES', 'TIMOTEO', 'TITO', 'FILEMÓN'],
+         tambien=['HEBREOS']),
+    dict(nombre='Jueces de Israel', nivel=3,
+         usar=['GEDEÓN', 'SANSÓN', 'DÉBORA', 'JEFTÉ', 'OTONIEL', 'EHUD', 'SAMUEL'],
+         tambien=['BARAC', 'ELÍ', 'TOLÁ', 'JAIR', 'ABDÓN', 'SAMGAR']),
+
+    # ---------------- nivel 4 ----------------
+    dict(nombre='Doctoras de la Iglesia', nivel=4,
+         usar=['TERESA DE ÁVILA', 'CATALINA DE SIENA', 'TERESITA', 'HILDEGARDA'], tambien=[]),
+    dict(nombre='Coros de ángeles', nivel=4,
+         usar=['SERAFINES', 'QUERUBINES', 'TRONOS', 'DOMINACIONES', 'VIRTUDES', 'POTESTADES', 'PRINCIPADOS', 'ARCÁNGELES', 'ÁNGELES'],
+         tambien=['ÁNGEL', 'ARCÁNGEL']),
+    dict(nombre='Símbolos de los evangelistas', nivel=4,
+         usar=['ÁNGEL', 'LEÓN', 'TORO', 'ÁGUILA'], tambien=['HOMBRE', 'BUEY']),
+    dict(nombre='Animales de la Biblia', nivel=4,
+         usar=['PALOMA', 'SERPIENTE', 'BURRO', 'CORDERO', 'CUERVO', 'CAMELLO'],
+         tambien=['LEÓN', 'TORO', 'ÁGUILA', 'OVEJA', 'CABRA', 'PEZ', 'BALLENA', 'BUEY', 'CERDO', 'PERRO', 'GALLO', 'BURRA', 'OSO', 'LOBO',
+                  'RANAS', 'LANGOSTAS', 'MOSQUITOS', 'TÁBANOS', 'CABALLO', 'MULA', 'GORRIÓN', 'ZORRO', 'VÍBORA', 'BECERRO', 'CARNERO']),
+    dict(nombre='Parábolas de Jesús', nivel=4,
+         usar=['SEMBRADOR', 'BUEN SAMARITANO', 'HIJO PRÓDIGO', 'OVEJA PERDIDA', 'TALENTOS', 'GRANO DE MOSTAZA', 'LEVADURA', 'PERLA', 'VIÑADORES'],
+         tambien=['TESORO', 'RED', 'FARISEO Y PUBLICANO', 'DIEZ VÍRGENES', 'DRACMA PERDIDA', 'CIZAÑA', 'RICO EPULÓN', 'HIGUERA', 'BANQUETE']),
+    dict(nombre='Nombres de papas', nivel=4,
+         usar=['PÍO', 'BENEDICTO', 'FRANCISCO', 'LEÓN', 'GREGORIO', 'INOCENCIO', 'CLEMENTE', 'URBANO'],
+         tambien=['JUAN', 'PABLO', 'JUAN PABLO', 'PEDRO', 'SIXTO', 'BONIFACIO', 'ALEJANDRO', 'ESTEBAN', 'MARCELO', 'LINO', 'CLETO', 'MARCOS']),
+    dict(nombre='Santos y beatos argentinos', nivel=4,
+         usar=['BROCHERO', 'MAMA ANTULA', 'CEFERINO', 'ANGELELLI', 'CRESCENCIA'],
+         tambien=['ENRIQUE SHAW', 'VALDIVIELSO', 'TRÁNSITO CABANILLAS']),
+    dict(nombre='«Felices los…» (Bienaventuranzas)', nivel=4,
+         usar=['POBRES', 'AFLIGIDOS', 'PACIENTES', 'MISERICORDIOSOS', 'PUROS', 'PERSEGUIDOS', 'HAMBRIENTOS', 'PACÍFICOS'],
+         tambien=[]),
+]

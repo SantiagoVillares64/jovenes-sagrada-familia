@@ -1,0 +1,6602 @@
+[
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "IRA",
+     "GULA",
+     "SOBERBIA",
+     "LUJURIA"
+    ]
+   },
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "ÓLEO",
+     "VINO",
+     "CRISMA",
+     "PAN"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "ÉUFRATES",
+     "JORDÁN",
+     "MAR MUERTO",
+     "NILO"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "NOEMÍ",
+     "ANA",
+     "JUDIT",
+     "LÍA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "MORADO",
+     "ROJO",
+     "BLANCO",
+     "VERDE"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "SALVE",
+     "PADRENUESTRO",
+     "REGINA COELI",
+     "ACORDAOS"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "DOMINGO DE PASCUA",
+     "JUEVES SANTO",
+     "VIERNES SANTO",
+     "DOMINGO DE RAMOS"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "DAVID",
+     "ROBOAM",
+     "EZEQUÍAS",
+     "SALOMÓN"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "FARO",
+     "NAZARET",
+     "PUENTE A MARÍA",
+     "POST"
+    ]
+   },
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "AVARICIA",
+     "ENVIDIA",
+     "IRA",
+     "PEREZA"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "JEREMÍAS",
+     "ISAÍAS",
+     "DANIEL",
+     "EZEQUIEL"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "CRESCENCIA",
+     "ANGELELLI",
+     "MAMA ANTULA",
+     "CEFERINO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "FARO",
+     "PUENTE A MARÍA",
+     "CONFIRMACIÓN",
+     "POST"
+    ]
+   },
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "TEMPLANZA",
+     "FORTALEZA",
+     "PRUDENCIA",
+     "JUSTICIA"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "CREDO",
+     "AGNUS DEI",
+     "SANCTUS",
+     "KYRIE"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "JOSÉ",
+     "DAN",
+     "BENJAMÍN",
+     "ISACAR"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "AGUA",
+     "CRISMA",
+     "VINO",
+     "PAN"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "JEFTÉ",
+     "GEDEÓN",
+     "SANSÓN",
+     "OTONIEL"
+    ]
+   },
+   {
+    "nombre": "Dones del Espíritu Santo",
+    "nivel": 3,
+    "w": [
+     "ENTENDIMIENTO",
+     "PIEDAD",
+     "FORTALEZA",
+     "CONSEJO"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "LEÓN",
+     "ÁNGEL",
+     "TORO",
+     "ÁGUILA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "FORTALEZA",
+     "JUSTICIA",
+     "TEMPLANZA",
+     "PRUDENCIA"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "TADEO",
+     "SIMÓN",
+     "TOMÁS",
+     "SANTIAGO"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "AGNUS DEI",
+     "CONSAGRACIÓN",
+     "ALELUYA",
+     "KYRIE"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "ISAÍAS",
+     "JEREMÍAS",
+     "DANIEL",
+     "EZEQUIEL"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MARCOS",
+     "MATEO",
+     "JUAN",
+     "LUCAS"
+    ]
+   },
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "RECONCILIACIÓN",
+     "BAUTISMO",
+     "ORDEN",
+     "MATRIMONIO"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "JESUITAS",
+     "TRAPENSES",
+     "AGUSTINOS",
+     "BENEDICTINOS"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "SEMBRADOR",
+     "VIÑADORES",
+     "TALENTOS",
+     "GRANO DE MOSTAZA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ORDINARIO",
+     "NAVIDAD",
+     "PASCUA",
+     "CUARESMA"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "LOURDES",
+     "LORETO",
+     "LUJÁN",
+     "POMPEYA"
+    ]
+   },
+   {
+    "nombre": "Dones del Espíritu Santo",
+    "nivel": 3,
+    "w": [
+     "FORTALEZA",
+     "PIEDAD",
+     "SABIDURÍA",
+     "TEMOR DE DIOS"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "TINIEBLAS",
+     "MOSQUITOS",
+     "GRANIZO",
+     "PESTE"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "BLANCO",
+     "ROSA",
+     "MORADO",
+     "ROJO"
+    ]
+   },
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "BAUTISMO",
+     "MATRIMONIO",
+     "UNCIÓN",
+     "EUCARISTÍA"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "JOSÍAS",
+     "AJAB",
+     "EZEQUÍAS",
+     "SALOMÓN"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "POBRES",
+     "PERSEGUIDOS",
+     "MISERICORDIOSOS",
+     "PACÍFICOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "BETANIA",
+     "CANÁ",
+     "GETSEMANÍ",
+     "EMAÚS"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "SIMÓN",
+     "TOMÁS",
+     "MATÍAS",
+     "MATEO"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "SAMUEL",
+     "SANSÓN",
+     "DÉBORA",
+     "EHUD"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "BUEN SAMARITANO",
+     "OVEJA PERDIDA",
+     "HIJO PRÓDIGO",
+     "VIÑADORES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "NAVIDAD",
+     "ADVIENTO",
+     "PASCUA",
+     "ORDINARIO"
+    ]
+   },
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "BLANCO",
+     "VERDE",
+     "MORADO",
+     "ROJO"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "CÍNGULO",
+     "ESTOLA",
+     "ALBA",
+     "DALMÁTICA"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "TRONOS",
+     "SERAFINES",
+     "ÁNGELES",
+     "DOMINACIONES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "CONFIRMACIÓN",
+     "UNCIÓN",
+     "MATRIMONIO",
+     "EUCARISTÍA"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "VIERNES SANTO",
+     "DOMINGO DE PASCUA",
+     "JUEVES SANTO",
+     "DOMINGO DE RAMOS"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "JESUITAS",
+     "FRANCISCANOS",
+     "BENEDICTINOS",
+     "TRAPENSES"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "GLORIOSOS",
+     "DOLOROSOS",
+     "GOZOSOS",
+     "LUMINOSOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "REGINA COELI",
+     "ACORDAOS",
+     "ÁNGELUS",
+     "MAGNÍFICAT"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "GETSEMANÍ",
+     "JERICÓ",
+     "BETANIA",
+     "CAFARNAÚM"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "TÁBANOS",
+     "TINIEBLAS",
+     "ÚLCERAS",
+     "MOSQUITOS"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "PACIENTES",
+     "PACÍFICOS",
+     "AFLIGIDOS",
+     "POBRES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "AVARICIA",
+     "ENVIDIA",
+     "PEREZA",
+     "GULA"
+    ]
+   },
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "CRISMA",
+     "ÓLEO",
+     "VINO",
+     "PAN"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "PEDRO",
+     "TADEO",
+     "JUAN",
+     "MATÍAS"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "CORINTIOS",
+     "EFESIOS",
+     "FILIPENSES",
+     "TESALONICENSES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "PRUDENCIA",
+     "TEMPLANZA",
+     "JUSTICIA",
+     "FORTALEZA"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "EMAÚS",
+     "JERICÓ",
+     "BELÉN",
+     "CANÁ"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "ALBA",
+     "AMITO",
+     "CASULLA",
+     "ESTOLA"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "TRONOS",
+     "POTESTADES",
+     "DOMINACIONES",
+     "QUERUBINES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "JUAN",
+     "MARCOS",
+     "LUCAS",
+     "MATEO"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "FILEMÓN",
+     "TIMOTEO",
+     "EFESIOS",
+     "ROMANOS"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "GOZOSOS",
+     "DOLOROSOS",
+     "GLORIOSOS",
+     "LUMINOSOS"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "ÁNGEL",
+     "TORO",
+     "LEÓN",
+     "ÁGUILA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "HPP",
+     "CONFIRMACIÓN",
+     "NAZARET",
+     "PUENTE A MARÍA"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "EHUD",
+     "OTONIEL",
+     "JEFTÉ",
+     "SANSÓN"
+    ]
+   },
+   {
+    "nombre": "Animales de la Biblia",
+    "nivel": 4,
+    "w": [
+     "SERPIENTE",
+     "PALOMA",
+     "CUERVO",
+     "CAMELLO"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "QUERUBINES",
+     "TRONOS",
+     "ARCÁNGELES",
+     "SERAFINES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "LUJURIA",
+     "IRA",
+     "PEREZA",
+     "AVARICIA"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "GRANIZO",
+     "PESTE",
+     "SANGRE",
+     "TÁBANOS"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "ÁNGEL",
+     "LEÓN",
+     "ÁGUILA",
+     "TORO"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "HILDEGARDA",
+     "TERESITA",
+     "CATALINA DE SIENA",
+     "TERESA DE ÁVILA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ADVIENTO",
+     "ORDINARIO",
+     "NAVIDAD",
+     "PASCUA"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "SALESIANOS",
+     "TRAPENSES",
+     "FRANCISCANOS",
+     "JESUITAS"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "MAMA ANTULA",
+     "CEFERINO",
+     "ANGELELLI",
+     "BROCHERO"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "GRANO DE MOSTAZA",
+     "PERLA",
+     "VIÑADORES",
+     "LEVADURA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "MATRIMONIO",
+     "EUCARISTÍA",
+     "RECONCILIACIÓN",
+     "ORDEN"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "ITATÍ",
+     "COPACABANA",
+     "LOURDES",
+     "LUJÁN"
+    ]
+   },
+   {
+    "nombre": "Nombres de papas",
+    "nivel": 4,
+    "w": [
+     "INOCENCIO",
+     "URBANO",
+     "FRANCISCO",
+     "LEÓN"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "CATALINA DE SIENA",
+     "HILDEGARDA",
+     "TERESA DE ÁVILA",
+     "TERESITA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "DOMINGO DE PASCUA",
+     "DOMINGO DE RAMOS",
+     "SÁBADO SANTO",
+     "VIERNES SANTO"
+    ]
+   },
+   {
+    "nombre": "Montes de la Biblia",
+    "nivel": 3,
+    "w": [
+     "SINAÍ",
+     "CALVARIO",
+     "TABOR",
+     "MORIA"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "PRINCIPADOS",
+     "DOMINACIONES",
+     "QUERUBINES",
+     "VIRTUDES"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "LEVADURA",
+     "PERLA",
+     "OVEJA PERDIDA",
+     "VIÑADORES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "VERDE",
+     "BLANCO",
+     "ROSA",
+     "MORADO"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "BETANIA",
+     "NAZARET",
+     "JERICÓ",
+     "EMAÚS"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "AGUSTINOS",
+     "TRAPENSES",
+     "CARMELITAS",
+     "DOMINICOS"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "TIGRIS",
+     "ÉUFRATES",
+     "MAR MUERTO",
+     "MAR ROJO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "COPACABANA",
+     "LORETO",
+     "ITATÍ",
+     "GUADALUPE"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "ANDRÉS",
+     "SIMÓN",
+     "MATÍAS",
+     "JUDAS"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "DOLOROSOS",
+     "GOZOSOS",
+     "LUMINOSOS",
+     "GLORIOSOS"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "CATALINA DE SIENA",
+     "TERESA DE ÁVILA",
+     "TERESITA",
+     "HILDEGARDA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ROSA",
+     "VERDE",
+     "MORADO",
+     "ROJO"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "LUJÁN",
+     "GUADALUPE",
+     "LORETO",
+     "COPACABANA"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "MATEO",
+     "PEDRO",
+     "JUDAS",
+     "ANDRÉS"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "FILIPENSES",
+     "TESALONICENSES",
+     "ROMANOS",
+     "GÁLATAS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "FORTALEZA",
+     "JUSTICIA",
+     "TEMPLANZA",
+     "PRUDENCIA"
+    ]
+   },
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "VINO",
+     "AGUA",
+     "PAN",
+     "ÓLEO"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "ANA",
+     "RUT",
+     "SARA",
+     "LÍA"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "PRINCIPADOS",
+     "ARCÁNGELES",
+     "SERAFINES",
+     "ÁNGELES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "ORDEN",
+     "UNCIÓN",
+     "MATRIMONIO",
+     "RECONCILIACIÓN"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "MATÍAS",
+     "SIMÓN",
+     "JUDAS",
+     "ANDRÉS"
+    ]
+   },
+   {
+    "nombre": "Montes de la Biblia",
+    "nivel": 3,
+    "w": [
+     "CALVARIO",
+     "OLIVOS",
+     "HOREB",
+     "SINAÍ"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "TERESA DE ÁVILA",
+     "TERESITA",
+     "HILDEGARDA",
+     "CATALINA DE SIENA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "POST",
+     "PUENTE A MARÍA",
+     "NAZARET",
+     "FARO"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "VIERNES SANTO",
+     "SÁBADO SANTO",
+     "JUEVES SANTO",
+     "DOMINGO DE PASCUA"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "MAR ROJO",
+     "MAR MUERTO",
+     "ÉUFRATES",
+     "JORDÁN"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "SAMUEL",
+     "SANSÓN",
+     "DÉBORA",
+     "OTONIEL"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "JUAN",
+     "MARCOS",
+     "MATEO",
+     "LUCAS"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "LANGOSTAS",
+     "TINIEBLAS",
+     "PESTE",
+     "RANAS"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "JOSÍAS",
+     "EZEQUÍAS",
+     "SALOMÓN",
+     "JEROBOAM"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "MAMA ANTULA",
+     "CEFERINO",
+     "BROCHERO",
+     "ANGELELLI"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "VIERNES SANTO",
+     "DOMINGO DE RAMOS",
+     "DOMINGO DE PASCUA",
+     "JUEVES SANTO"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "OTONIEL",
+     "DÉBORA",
+     "GEDEÓN",
+     "SANSÓN"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "PUROS",
+     "MISERICORDIOSOS",
+     "PACIENTES",
+     "AFLIGIDOS"
+    ]
+   },
+   {
+    "nombre": "Nombres de papas",
+    "nivel": 4,
+    "w": [
+     "GREGORIO",
+     "URBANO",
+     "PÍO",
+     "BENEDICTO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "RECONCILIACIÓN",
+     "CONFIRMACIÓN",
+     "EUCARISTÍA",
+     "MATRIMONIO"
+    ]
+   },
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "BLANCO",
+     "ROJO",
+     "MORADO",
+     "ROSA"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "ZABULÓN",
+     "SIMEÓN",
+     "DAN",
+     "JUDÁ"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "QUERUBINES",
+     "DOMINACIONES",
+     "ARCÁNGELES",
+     "TRONOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "JUDAS",
+     "MATEO",
+     "PEDRO",
+     "TOMÁS"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "DOLOROSOS",
+     "LUMINOSOS",
+     "GOZOSOS",
+     "GLORIOSOS"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "HIJO PRÓDIGO",
+     "VIÑADORES",
+     "SEMBRADOR",
+     "GRANO DE MOSTAZA"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "AFLIGIDOS",
+     "PUROS",
+     "PERSEGUIDOS",
+     "POBRES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "PRUDENCIA",
+     "TEMPLANZA",
+     "JUSTICIA",
+     "FORTALEZA"
+    ]
+   },
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "NAVIDAD",
+     "PASCUA",
+     "CUARESMA",
+     "ADVIENTO"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "EZEQUÍAS",
+     "ROBOAM",
+     "SALOMÓN",
+     "AJAB"
+    ]
+   },
+   {
+    "nombre": "Nombres de papas",
+    "nivel": 4,
+    "w": [
+     "GREGORIO",
+     "LEÓN",
+     "PÍO",
+     "BENEDICTO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "EUCARISTÍA",
+     "BAUTISMO",
+     "MATRIMONIO",
+     "CONFIRMACIÓN"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "REGINA COELI",
+     "MAGNÍFICAT",
+     "ACORDAOS",
+     "SALVE"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "MAR MUERTO",
+     "MAR ROJO",
+     "ÉUFRATES",
+     "NILO"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "JOSÉ",
+     "DAN",
+     "BENJAMÍN",
+     "GAD"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "KYRIE",
+     "BENDICIÓN",
+     "OFERTORIO",
+     "COMUNIÓN"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "TÁBANOS",
+     "ÚLCERAS",
+     "MOSQUITOS",
+     "TINIEBLAS"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "ARCÁNGELES",
+     "SERAFINES",
+     "PRINCIPADOS",
+     "QUERUBINES"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "SEMBRADOR",
+     "HIJO PRÓDIGO",
+     "GRANO DE MOSTAZA",
+     "PERLA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "MATRIMONIO",
+     "EUCARISTÍA",
+     "CONFIRMACIÓN",
+     "UNCIÓN"
+    ]
+   },
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "FORTALEZA",
+     "TEMPLANZA",
+     "JUSTICIA",
+     "PRUDENCIA"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "DOMINGO DE RAMOS",
+     "JUEVES SANTO",
+     "SÁBADO SANTO",
+     "VIERNES SANTO"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "TORO",
+     "ÁGUILA",
+     "LEÓN",
+     "ÁNGEL"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "CUARESMA",
+     "ORDINARIO",
+     "ADVIENTO",
+     "PASCUA"
+    ]
+   },
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MARCOS",
+     "MATEO",
+     "JUAN",
+     "LUCAS"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "JERICÓ",
+     "CANÁ",
+     "NAZARET",
+     "BELÉN"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "OVEJA PERDIDA",
+     "HIJO PRÓDIGO",
+     "BUEN SAMARITANO",
+     "PERLA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "FORTALEZA",
+     "TEMPLANZA",
+     "PRUDENCIA",
+     "JUSTICIA"
+    ]
+   },
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "EUCARISTÍA",
+     "MATRIMONIO",
+     "CONFIRMACIÓN",
+     "RECONCILIACIÓN"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "ACORDAOS",
+     "ÁNGELUS",
+     "PADRENUESTRO",
+     "REGINA COELI"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "HILDEGARDA",
+     "TERESA DE ÁVILA",
+     "CATALINA DE SIENA",
+     "TERESITA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MARCOS",
+     "MATEO",
+     "LUCAS",
+     "JUAN"
+    ]
+   },
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "LUJURIA",
+     "SOBERBIA",
+     "ENVIDIA",
+     "IRA"
+    ]
+   },
+   {
+    "nombre": "Montes de la Biblia",
+    "nivel": 3,
+    "w": [
+     "CARMELO",
+     "SION",
+     "SINAÍ",
+     "ARARAT"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "PACIENTES",
+     "MISERICORDIOSOS",
+     "POBRES",
+     "PERSEGUIDOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "AGUA",
+     "ÓLEO",
+     "VINO",
+     "CRISMA"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "JEREMÍAS",
+     "DANIEL",
+     "ISAÍAS",
+     "EZEQUIEL"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "HILDEGARDA",
+     "TERESA DE ÁVILA",
+     "CATALINA DE SIENA",
+     "TERESITA"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "BUEN SAMARITANO",
+     "TALENTOS",
+     "VIÑADORES",
+     "HIJO PRÓDIGO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "MATRIMONIO",
+     "CONFIRMACIÓN",
+     "EUCARISTÍA",
+     "BAUTISMO"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "DOMINGO DE PASCUA",
+     "JUEVES SANTO",
+     "SÁBADO SANTO",
+     "DOMINGO DE RAMOS"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "RANAS",
+     "ÚLCERAS",
+     "TÁBANOS",
+     "TINIEBLAS"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "FRANCISCANOS",
+     "TRAPENSES",
+     "SALESIANOS",
+     "CARMELITAS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "JUAN",
+     "LUCAS",
+     "MARCOS",
+     "MATEO"
+    ]
+   },
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "PRUDENCIA",
+     "TEMPLANZA",
+     "JUSTICIA",
+     "FORTALEZA"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "ESTER",
+     "DÉBORA",
+     "JUDIT",
+     "ANA"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "ÁNGEL",
+     "LEÓN",
+     "TORO",
+     "ÁGUILA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "RECONCILIACIÓN",
+     "ORDEN",
+     "UNCIÓN",
+     "EUCARISTÍA"
+    ]
+   },
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "ENVIDIA",
+     "IRA",
+     "GULA",
+     "AVARICIA"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "SALVE",
+     "ÁNGELUS",
+     "REGINA COELI",
+     "AVEMARÍA"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "TERESITA",
+     "CATALINA DE SIENA",
+     "HILDEGARDA",
+     "TERESA DE ÁVILA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "TEMPLANZA",
+     "JUSTICIA",
+     "PRUDENCIA",
+     "FORTALEZA"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "GETSEMANÍ",
+     "CAFARNAÚM",
+     "BELÉN",
+     "JERUSALÉN"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "GAD",
+     "DAN",
+     "LEVÍ",
+     "RUBÉN"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "JESUITAS",
+     "FRANCISCANOS",
+     "BENEDICTINOS",
+     "AGUSTINOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "JUEVES SANTO",
+     "SÁBADO SANTO",
+     "DOMINGO DE RAMOS",
+     "VIERNES SANTO"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "RUT",
+     "ANA",
+     "SARA",
+     "RAQUEL"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "TESALONICENSES",
+     "FILEMÓN",
+     "TIMOTEO",
+     "FILIPENSES"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "TORO",
+     "ÁNGEL",
+     "LEÓN",
+     "ÁGUILA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "MORADO",
+     "BLANCO",
+     "ROJO",
+     "ROSA"
+    ]
+   },
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "EUCARISTÍA",
+     "CONFIRMACIÓN",
+     "BAUTISMO",
+     "RECONCILIACIÓN"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "ESTOLA",
+     "DALMÁTICA",
+     "AMITO",
+     "ALBA"
+    ]
+   },
+   {
+    "nombre": "Dones del Espíritu Santo",
+    "nivel": 3,
+    "w": [
+     "FORTALEZA",
+     "TEMOR DE DIOS",
+     "ENTENDIMIENTO",
+     "CIENCIA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "PRUDENCIA",
+     "TEMPLANZA",
+     "FORTALEZA",
+     "JUSTICIA"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "CANÁ",
+     "BETANIA",
+     "GETSEMANÍ",
+     "EMAÚS"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "RANAS",
+     "GRANIZO",
+     "PESTE",
+     "TINIEBLAS"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "PACIENTES",
+     "AFLIGIDOS",
+     "HAMBRIENTOS",
+     "MISERICORDIOSOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "TEMPLANZA",
+     "FORTALEZA",
+     "JUSTICIA",
+     "PRUDENCIA"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "JEREMÍAS",
+     "DANIEL",
+     "EZEQUIEL",
+     "ISAÍAS"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "FILEMÓN",
+     "FILIPENSES",
+     "ROMANOS",
+     "TITO"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "QUERUBINES",
+     "PRINCIPADOS",
+     "ÁNGELES",
+     "POTESTADES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "ORDEN",
+     "EUCARISTÍA",
+     "BAUTISMO",
+     "RECONCILIACIÓN"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "DALMÁTICA",
+     "ALBA",
+     "ESTOLA",
+     "AMITO"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "JEFTÉ",
+     "EHUD",
+     "SANSÓN",
+     "GEDEÓN"
+    ]
+   },
+   {
+    "nombre": "Animales de la Biblia",
+    "nivel": 4,
+    "w": [
+     "CUERVO",
+     "CAMELLO",
+     "BURRO",
+     "SERPIENTE"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MARCOS",
+     "MATEO",
+     "LUCAS",
+     "JUAN"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "BENJAMÍN",
+     "LEVÍ",
+     "JUDÁ",
+     "ASER"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "TIMOTEO",
+     "TITO",
+     "CORINTIOS",
+     "GÁLATAS"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "HIJO PRÓDIGO",
+     "LEVADURA",
+     "VIÑADORES",
+     "PERLA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "NAVIDAD",
+     "CUARESMA",
+     "ADVIENTO",
+     "PASCUA"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "GOZOSOS",
+     "LUMINOSOS",
+     "GLORIOSOS",
+     "DOLOROSOS"
+    ]
+   },
+   {
+    "nombre": "Animales de la Biblia",
+    "nivel": 4,
+    "w": [
+     "CUERVO",
+     "CAMELLO",
+     "PALOMA",
+     "SERPIENTE"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "PRINCIPADOS",
+     "ÁNGELES",
+     "ARCÁNGELES",
+     "POTESTADES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "ALBA",
+     "DALMÁTICA",
+     "CASULLA",
+     "CÍNGULO"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "LEVÍ",
+     "JOSÉ",
+     "NEFTALÍ",
+     "ZABULÓN"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "BENEDICTINOS",
+     "AGUSTINOS",
+     "SALESIANOS",
+     "TRAPENSES"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "MISERICORDIOSOS",
+     "PERSEGUIDOS",
+     "POBRES",
+     "PACÍFICOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "CAFARNAÚM",
+     "NAZARET",
+     "JERICÓ",
+     "JERUSALÉN"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "DÉBORA",
+     "JUDIT",
+     "NOEMÍ",
+     "RAQUEL"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "SAÚL",
+     "AJAB",
+     "DAVID",
+     "ROBOAM"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "CRESCENCIA",
+     "ANGELELLI",
+     "MAMA ANTULA",
+     "BROCHERO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "SOBERBIA",
+     "AVARICIA",
+     "IRA",
+     "GULA"
+    ]
+   },
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "BLANCO",
+     "ROSA",
+     "ROJO",
+     "VERDE"
+    ]
+   },
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "PALIA",
+     "CÁLIZ",
+     "INCENSARIO",
+     "PATENA"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "TALENTOS",
+     "BUEN SAMARITANO",
+     "LEVADURA",
+     "HIJO PRÓDIGO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "HPP",
+     "FARO",
+     "POST",
+     "PUENTE A MARÍA"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "ACORDAOS",
+     "MAGNÍFICAT",
+     "AVEMARÍA",
+     "SALVE"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "MATÍAS",
+     "PEDRO",
+     "JUAN",
+     "ANDRÉS"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "ISACAR",
+     "BENJAMÍN",
+     "DAN",
+     "SIMEÓN"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "PASCUA",
+     "NAVIDAD",
+     "ORDINARIO",
+     "ADVIENTO"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "DALMÁTICA",
+     "CASULLA",
+     "AMITO",
+     "ALBA"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "AJAB",
+     "SALOMÓN",
+     "ROBOAM",
+     "EZEQUÍAS"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "ARCÁNGELES",
+     "PRINCIPADOS",
+     "QUERUBINES",
+     "ÁNGELES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "VERDE",
+     "BLANCO",
+     "ROJO",
+     "ROSA"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "JERUSALÉN",
+     "EMAÚS",
+     "CAFARNAÚM",
+     "NAZARET"
+    ]
+   },
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "INCENSARIO",
+     "CORPORAL",
+     "MISAL",
+     "PALIA"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "LEÓN",
+     "ÁNGEL",
+     "ÁGUILA",
+     "TORO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "REGINA COELI",
+     "ÁNGELUS",
+     "PADRENUESTRO",
+     "AVEMARÍA"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "GEDEÓN",
+     "EHUD",
+     "SANSÓN",
+     "SAMUEL"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "SARA",
+     "NOEMÍ",
+     "REBECA",
+     "JUDIT"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "OVEJA PERDIDA",
+     "SEMBRADOR",
+     "PERLA",
+     "LEVADURA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ADVIENTO",
+     "NAVIDAD",
+     "ORDINARIO",
+     "PASCUA"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "LORETO",
+     "COPACABANA",
+     "ITATÍ",
+     "GUADALUPE"
+    ]
+   },
+   {
+    "nombre": "Dones del Espíritu Santo",
+    "nivel": 3,
+    "w": [
+     "ENTENDIMIENTO",
+     "TEMOR DE DIOS",
+     "CONSEJO",
+     "CIENCIA"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "ANGELELLI",
+     "CEFERINO",
+     "MAMA ANTULA",
+     "BROCHERO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "LUCAS",
+     "MARCOS",
+     "MATEO",
+     "JUAN"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "CAFARNAÚM",
+     "CANÁ",
+     "JERICÓ",
+     "BETANIA"
+    ]
+   },
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "INCENSARIO",
+     "PALIA",
+     "PATENA",
+     "PURIFICADOR"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "POTESTADES",
+     "TRONOS",
+     "PRINCIPADOS",
+     "VIRTUDES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "VINO",
+     "ÓLEO",
+     "PAN",
+     "AGUA"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "ÚLCERAS",
+     "GRANIZO",
+     "TINIEBLAS",
+     "LANGOSTAS"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "ISAÍAS",
+     "DANIEL",
+     "EZEQUIEL",
+     "JEREMÍAS"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "PERLA",
+     "BUEN SAMARITANO",
+     "SEMBRADOR",
+     "VIÑADORES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ORDINARIO",
+     "CUARESMA",
+     "ADVIENTO",
+     "NAVIDAD"
+    ]
+   },
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "CÁLIZ",
+     "CORPORAL",
+     "VINAJERAS",
+     "INCENSARIO"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "VIERNES SANTO",
+     "JUEVES SANTO",
+     "DOMINGO DE PASCUA",
+     "SÁBADO SANTO"
+    ]
+   },
+   {
+    "nombre": "Dones del Espíritu Santo",
+    "nivel": 3,
+    "w": [
+     "PIEDAD",
+     "ENTENDIMIENTO",
+     "TEMOR DE DIOS",
+     "CONSEJO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "FÁTIMA",
+     "LOURDES",
+     "COPACABANA",
+     "POMPEYA"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "EMAÚS",
+     "BELÉN",
+     "CAFARNAÚM",
+     "NAZARET"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "COLOSENSES",
+     "EFESIOS",
+     "TIMOTEO",
+     "TESALONICENSES"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "ARCÁNGELES",
+     "QUERUBINES",
+     "DOMINACIONES",
+     "PRINCIPADOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "JUAN",
+     "MARCOS",
+     "LUCAS",
+     "MATEO"
+    ]
+   },
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ROJO",
+     "MORADO",
+     "BLANCO",
+     "ROSA"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "RAQUEL",
+     "ESTER",
+     "NOEMÍ",
+     "ANA"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "LEÓN",
+     "ÁGUILA",
+     "TORO",
+     "ÁNGEL"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "PRUDENCIA",
+     "TEMPLANZA",
+     "JUSTICIA",
+     "FORTALEZA"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "COPACABANA",
+     "FÁTIMA",
+     "GUADALUPE",
+     "LOURDES"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "CRESCENCIA",
+     "BROCHERO",
+     "MAMA ANTULA",
+     "CEFERINO"
+    ]
+   },
+   {
+    "nombre": "Animales de la Biblia",
+    "nivel": 4,
+    "w": [
+     "CUERVO",
+     "BURRO",
+     "CAMELLO",
+     "CORDERO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ADVIENTO",
+     "PASCUA",
+     "ORDINARIO",
+     "CUARESMA"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "JESUITAS",
+     "FRANCISCANOS",
+     "DOMINICOS",
+     "BENEDICTINOS"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "DOMINACIONES",
+     "SERAFINES",
+     "ÁNGELES",
+     "QUERUBINES"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "POBRES",
+     "AFLIGIDOS",
+     "PACÍFICOS",
+     "PUROS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "AVARICIA",
+     "LUJURIA",
+     "ENVIDIA",
+     "SOBERBIA"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "ESTOLA",
+     "CASULLA",
+     "ALBA",
+     "DALMÁTICA"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "DANIEL",
+     "ISAÍAS",
+     "JEREMÍAS",
+     "EZEQUIEL"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "TITO",
+     "TIMOTEO",
+     "CORINTIOS",
+     "FILEMÓN"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "POMPEYA",
+     "LOURDES",
+     "LUJÁN",
+     "GUADALUPE"
+    ]
+   },
+   {
+    "nombre": "Dones del Espíritu Santo",
+    "nivel": 3,
+    "w": [
+     "TEMOR DE DIOS",
+     "CIENCIA",
+     "SABIDURÍA",
+     "FORTALEZA"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "SANGRE",
+     "PESTE",
+     "TINIEBLAS",
+     "GRANIZO"
+    ]
+   },
+   {
+    "nombre": "Animales de la Biblia",
+    "nivel": 4,
+    "w": [
+     "PALOMA",
+     "SERPIENTE",
+     "CUERVO",
+     "CORDERO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "NAZARET",
+     "POST",
+     "CONFIRMACIÓN",
+     "HPP"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "CÍNGULO",
+     "ALBA",
+     "AMITO",
+     "ESTOLA"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "DAVID",
+     "ROBOAM",
+     "SAÚL",
+     "AJAB"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "ESTER",
+     "REBECA",
+     "RUT",
+     "LÍA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "CRISMA",
+     "AGUA",
+     "PAN",
+     "VINO"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "BENJAMÍN",
+     "DAN",
+     "ASER",
+     "GAD"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "ÁGUILA",
+     "ÁNGEL",
+     "TORO",
+     "LEÓN"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "MAMA ANTULA",
+     "CRESCENCIA",
+     "ANGELELLI",
+     "CEFERINO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "PEREZA",
+     "IRA",
+     "LUJURIA",
+     "ENVIDIA"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "ÉUFRATES",
+     "JORDÁN",
+     "MAR ROJO",
+     "NILO"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "SALESIANOS",
+     "CARMELITAS",
+     "AGUSTINOS",
+     "JESUITAS"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "TERESA DE ÁVILA",
+     "CATALINA DE SIENA",
+     "HILDEGARDA",
+     "TERESITA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "EUCARISTÍA",
+     "ORDEN",
+     "MATRIMONIO",
+     "BAUTISMO"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "SANCTUS",
+     "ALELUYA",
+     "CONSAGRACIÓN",
+     "BENDICIÓN"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "DANIEL",
+     "EZEQUIEL",
+     "ISAÍAS",
+     "JEREMÍAS"
+    ]
+   },
+   {
+    "nombre": "Nombres de papas",
+    "nivel": 4,
+    "w": [
+     "INOCENCIO",
+     "FRANCISCO",
+     "URBANO",
+     "PÍO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "LUCAS",
+     "MARCOS",
+     "MATEO",
+     "JUAN"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "ALBA",
+     "DALMÁTICA",
+     "CASULLA",
+     "AMITO"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "ROMANOS",
+     "FILEMÓN",
+     "COLOSENSES",
+     "TESALONICENSES"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "DÉBORA",
+     "REBECA",
+     "RAQUEL",
+     "ESTER"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "CONFIRMACIÓN",
+     "RECONCILIACIÓN",
+     "UNCIÓN",
+     "MATRIMONIO"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "SANTIAGO",
+     "ANDRÉS",
+     "MATEO",
+     "TADEO"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "NILO",
+     "MAR ROJO",
+     "MAR MUERTO",
+     "ÉUFRATES"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "OVEJA PERDIDA",
+     "SEMBRADOR",
+     "LEVADURA",
+     "BUEN SAMARITANO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "AVARICIA",
+     "PEREZA",
+     "LUJURIA",
+     "ENVIDIA"
+    ]
+   },
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "CRISMA",
+     "ÓLEO",
+     "PAN",
+     "VINO"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "REGINA COELI",
+     "ÁNGELUS",
+     "AVEMARÍA",
+     "ACORDAOS"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "PRINCIPADOS",
+     "POTESTADES",
+     "VIRTUDES",
+     "ÁNGELES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "EMAÚS",
+     "BETANIA",
+     "NAZARET",
+     "GETSEMANÍ"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "JEROBOAM",
+     "ROBOAM",
+     "DAVID",
+     "SALOMÓN"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "PERLA",
+     "OVEJA PERDIDA",
+     "HIJO PRÓDIGO",
+     "SEMBRADOR"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "CATALINA DE SIENA",
+     "TERESITA",
+     "TERESA DE ÁVILA",
+     "HILDEGARDA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ROJO",
+     "VERDE",
+     "ROSA",
+     "MORADO"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "EZEQUIEL",
+     "DANIEL",
+     "JEREMÍAS",
+     "ISAÍAS"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "JEFTÉ",
+     "GEDEÓN",
+     "OTONIEL",
+     "EHUD"
+    ]
+   },
+   {
+    "nombre": "Nombres de papas",
+    "nivel": 4,
+    "w": [
+     "CLEMENTE",
+     "GREGORIO",
+     "URBANO",
+     "BENEDICTO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "FORTALEZA",
+     "JUSTICIA",
+     "PRUDENCIA",
+     "TEMPLANZA"
+    ]
+   },
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MATEO",
+     "JUAN",
+     "MARCOS",
+     "LUCAS"
+    ]
+   },
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "AGUA",
+     "VINO",
+     "ÓLEO",
+     "PAN"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "BENJAMÍN",
+     "DAN",
+     "ZABULÓN",
+     "JUDÁ"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "NAZARET",
+     "POST",
+     "CONFIRMACIÓN",
+     "PUENTE A MARÍA"
+    ]
+   },
+   {
+    "nombre": "Montes de la Biblia",
+    "nivel": 3,
+    "w": [
+     "HOREB",
+     "SION",
+     "ARARAT",
+     "SINAÍ"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "GÁLATAS",
+     "TITO",
+     "TIMOTEO",
+     "EFESIOS"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "LEÓN",
+     "ÁNGEL",
+     "TORO",
+     "ÁGUILA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "AGUA",
+     "VINO",
+     "PAN",
+     "ÓLEO"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "NOEMÍ",
+     "ANA",
+     "LÍA",
+     "JUDIT"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "AGUSTINOS",
+     "FRANCISCANOS",
+     "BENEDICTINOS",
+     "DOMINICOS"
+    ]
+   },
+   {
+    "nombre": "Nombres de papas",
+    "nivel": 4,
+    "w": [
+     "CLEMENTE",
+     "PÍO",
+     "LEÓN",
+     "BENEDICTO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "COPACABANA",
+     "LOURDES",
+     "ITATÍ",
+     "GUADALUPE"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "JOSÍAS",
+     "SALOMÓN",
+     "ROBOAM",
+     "SAÚL"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "LUMINOSOS",
+     "GLORIOSOS",
+     "GOZOSOS",
+     "DOLOROSOS"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "TERESA DE ÁVILA",
+     "CATALINA DE SIENA",
+     "HILDEGARDA",
+     "TERESITA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "PASCUA",
+     "NAVIDAD",
+     "ORDINARIO",
+     "CUARESMA"
+    ]
+   },
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "VINO",
+     "CRISMA",
+     "PAN",
+     "ÓLEO"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "TÁBANOS",
+     "RANAS",
+     "TINIEBLAS",
+     "ÚLCERAS"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "VIÑADORES",
+     "GRANO DE MOSTAZA",
+     "OVEJA PERDIDA",
+     "TALENTOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "BAUTISMO",
+     "EUCARISTÍA",
+     "RECONCILIACIÓN",
+     "MATRIMONIO"
+    ]
+   },
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "NAZARET",
+     "HPP",
+     "POST",
+     "PUENTE A MARÍA"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "ÉUFRATES",
+     "NILO",
+     "MAR ROJO",
+     "TIGRIS"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "PERSEGUIDOS",
+     "HAMBRIENTOS",
+     "POBRES",
+     "PACÍFICOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "VINAJERAS",
+     "INCENSARIO",
+     "MISAL",
+     "PURIFICADOR"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "RANAS",
+     "LANGOSTAS",
+     "PESTE",
+     "SANGRE"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "BUEN SAMARITANO",
+     "OVEJA PERDIDA",
+     "LEVADURA",
+     "TALENTOS"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "CATALINA DE SIENA",
+     "TERESA DE ÁVILA",
+     "TERESITA",
+     "HILDEGARDA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "BLANCO",
+     "MORADO",
+     "VERDE",
+     "ROJO"
+    ]
+   },
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "CONFIRMACIÓN",
+     "POST",
+     "PUENTE A MARÍA",
+     "FARO"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "FÁTIMA",
+     "LOURDES",
+     "LUJÁN",
+     "ITATÍ"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "ZABULÓN",
+     "GAD",
+     "BENJAMÍN",
+     "JOSÉ"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "EUCARISTÍA",
+     "CONFIRMACIÓN",
+     "MATRIMONIO",
+     "ORDEN"
+    ]
+   },
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "PEREZA",
+     "IRA",
+     "ENVIDIA",
+     "GULA"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "LUJÁN",
+     "FÁTIMA",
+     "ITATÍ",
+     "LOURDES"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "OVEJA PERDIDA",
+     "GRANO DE MOSTAZA",
+     "HIJO PRÓDIGO",
+     "SEMBRADOR"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "CANÁ",
+     "EMAÚS",
+     "GETSEMANÍ",
+     "JERUSALÉN"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "ESTOLA",
+     "ALBA",
+     "CASULLA",
+     "CÍNGULO"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "SAÚL",
+     "ROBOAM",
+     "SALOMÓN",
+     "DAVID"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "CRESCENCIA",
+     "ANGELELLI",
+     "MAMA ANTULA",
+     "CEFERINO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "GULA",
+     "ENVIDIA",
+     "SOBERBIA",
+     "PEREZA"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "BENDICIÓN",
+     "OFERTORIO",
+     "GLORIA",
+     "CREDO"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "EHUD",
+     "DÉBORA",
+     "SAMUEL",
+     "OTONIEL"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "HAMBRIENTOS",
+     "PUROS",
+     "PERSEGUIDOS",
+     "PACIENTES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "VERDE",
+     "ROSA",
+     "BLANCO",
+     "MORADO"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "JUAN",
+     "TOMÁS",
+     "FELIPE",
+     "BARTOLOMÉ"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "BELÉN",
+     "EMAÚS",
+     "CANÁ",
+     "GETSEMANÍ"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "DOMINICOS",
+     "CARMELITAS",
+     "AGUSTINOS",
+     "SALESIANOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "LUJURIA",
+     "AVARICIA",
+     "ENVIDIA",
+     "PEREZA"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "ASER",
+     "LEVÍ",
+     "ZABULÓN",
+     "JOSÉ"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "DOLOROSOS",
+     "LUMINOSOS",
+     "GLORIOSOS",
+     "GOZOSOS"
+    ]
+   },
+   {
+    "nombre": "Animales de la Biblia",
+    "nivel": 4,
+    "w": [
+     "CUERVO",
+     "CORDERO",
+     "SERPIENTE",
+     "CAMELLO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "MORADO",
+     "VERDE",
+     "BLANCO",
+     "ROJO"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "ALBA",
+     "DALMÁTICA",
+     "ESTOLA",
+     "CASULLA"
+    ]
+   },
+   {
+    "nombre": "Dones del Espíritu Santo",
+    "nivel": 3,
+    "w": [
+     "CIENCIA",
+     "SABIDURÍA",
+     "TEMOR DE DIOS",
+     "FORTALEZA"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "CATALINA DE SIENA",
+     "TERESA DE ÁVILA",
+     "HILDEGARDA",
+     "TERESITA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "REGINA COELI",
+     "PADRENUESTRO",
+     "AVEMARÍA",
+     "ACORDAOS"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "EFESIOS",
+     "FILEMÓN",
+     "ROMANOS",
+     "FILIPENSES"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "BENJAMÍN",
+     "NEFTALÍ",
+     "ISACAR",
+     "JOSÉ"
+    ]
+   },
+   {
+    "nombre": "Nombres de papas",
+    "nivel": 4,
+    "w": [
+     "URBANO",
+     "CLEMENTE",
+     "FRANCISCO",
+     "GREGORIO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "NAZARET",
+     "FARO",
+     "PUENTE A MARÍA",
+     "CONFIRMACIÓN"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "SANTIAGO",
+     "MATÍAS",
+     "BARTOLOMÉ",
+     "JUDAS"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "CREDO",
+     "AGNUS DEI",
+     "BENDICIÓN",
+     "CONSAGRACIÓN"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "VIÑADORES",
+     "OVEJA PERDIDA",
+     "TALENTOS",
+     "GRANO DE MOSTAZA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "UNCIÓN",
+     "RECONCILIACIÓN",
+     "CONFIRMACIÓN",
+     "MATRIMONIO"
+    ]
+   },
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "PATENA",
+     "CORPORAL",
+     "INCENSARIO",
+     "MISAL"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "JERICÓ",
+     "CAFARNAÚM",
+     "JERUSALÉN",
+     "BELÉN"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "MISERICORDIOSOS",
+     "PACÍFICOS",
+     "AFLIGIDOS",
+     "PACIENTES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "HPP",
+     "PUENTE A MARÍA",
+     "CONFIRMACIÓN",
+     "POST"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "TIGRIS",
+     "NILO",
+     "MAR MUERTO",
+     "ÉUFRATES"
+    ]
+   },
+   {
+    "nombre": "Montes de la Biblia",
+    "nivel": 3,
+    "w": [
+     "SINAÍ",
+     "HOREB",
+     "TABOR",
+     "CARMELO"
+    ]
+   },
+   {
+    "nombre": "Nombres de papas",
+    "nivel": 4,
+    "w": [
+     "BENEDICTO",
+     "FRANCISCO",
+     "GREGORIO",
+     "LEÓN"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ROJO",
+     "MORADO",
+     "VERDE",
+     "BLANCO"
+    ]
+   },
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "PASCUA",
+     "ADVIENTO",
+     "NAVIDAD",
+     "CUARESMA"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "DOLOROSOS",
+     "GLORIOSOS",
+     "GOZOSOS",
+     "LUMINOSOS"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "BROCHERO",
+     "MAMA ANTULA",
+     "CEFERINO",
+     "CRESCENCIA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MATEO",
+     "MARCOS",
+     "JUAN",
+     "LUCAS"
+    ]
+   },
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "BAUTISMO",
+     "MATRIMONIO",
+     "EUCARISTÍA",
+     "RECONCILIACIÓN"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "LEVÍ",
+     "GAD",
+     "RUBÉN",
+     "SIMEÓN"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "PERSEGUIDOS",
+     "MISERICORDIOSOS",
+     "PACIENTES",
+     "POBRES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MARCOS",
+     "JUAN",
+     "LUCAS",
+     "MATEO"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "JERUSALÉN",
+     "JERICÓ",
+     "CAFARNAÚM",
+     "EMAÚS"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "NILO",
+     "MAR MUERTO",
+     "ÉUFRATES",
+     "TIGRIS"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "ÚLCERAS",
+     "PESTE",
+     "MOSQUITOS",
+     "RANAS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "CÍNGULO",
+     "DALMÁTICA",
+     "ESTOLA",
+     "AMITO"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "JUEVES SANTO",
+     "VIERNES SANTO",
+     "DOMINGO DE PASCUA",
+     "DOMINGO DE RAMOS"
+    ]
+   },
+   {
+    "nombre": "Dones del Espíritu Santo",
+    "nivel": 3,
+    "w": [
+     "CONSEJO",
+     "PIEDAD",
+     "SABIDURÍA",
+     "CIENCIA"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "ARCÁNGELES",
+     "QUERUBINES",
+     "SERAFINES",
+     "VIRTUDES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ROSA",
+     "ROJO",
+     "VERDE",
+     "BLANCO"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "DANIEL",
+     "JEREMÍAS",
+     "ISAÍAS",
+     "EZEQUIEL"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "GLORIOSOS",
+     "GOZOSOS",
+     "LUMINOSOS",
+     "DOLOROSOS"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "LEÓN",
+     "TORO",
+     "ÁGUILA",
+     "ÁNGEL"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "LUCAS",
+     "JUAN",
+     "MARCOS",
+     "MATEO"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "REGINA COELI",
+     "ÁNGELUS",
+     "SALVE",
+     "ACORDAOS"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "AGUSTINOS",
+     "FRANCISCANOS",
+     "CARMELITAS",
+     "BENEDICTINOS"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "AFLIGIDOS",
+     "PACÍFICOS",
+     "PERSEGUIDOS",
+     "HAMBRIENTOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "ENVIDIA",
+     "AVARICIA",
+     "IRA",
+     "PEREZA"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "MATEO",
+     "PEDRO",
+     "FELIPE",
+     "BARTOLOMÉ"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "EZEQUIEL",
+     "ISAÍAS",
+     "JEREMÍAS",
+     "DANIEL"
+    ]
+   },
+   {
+    "nombre": "Animales de la Biblia",
+    "nivel": 4,
+    "w": [
+     "CAMELLO",
+     "CORDERO",
+     "SERPIENTE",
+     "PALOMA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "TEMPLANZA",
+     "FORTALEZA",
+     "PRUDENCIA",
+     "JUSTICIA"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "CAFARNAÚM",
+     "JERUSALÉN",
+     "BELÉN",
+     "NAZARET"
+    ]
+   },
+   {
+    "nombre": "Montes de la Biblia",
+    "nivel": 3,
+    "w": [
+     "HOREB",
+     "SION",
+     "MORIA",
+     "CARMELO"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "MAMA ANTULA",
+     "CEFERINO",
+     "CRESCENCIA",
+     "ANGELELLI"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ROJO",
+     "MORADO",
+     "VERDE",
+     "ROSA"
+    ]
+   },
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "CORPORAL",
+     "PURIFICADOR",
+     "LECCIONARIO",
+     "INCENSARIO"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "ROMANOS",
+     "GÁLATAS",
+     "COLOSENSES",
+     "CORINTIOS"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "REBECA",
+     "RAQUEL",
+     "ANA",
+     "DÉBORA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MARCOS",
+     "MATEO",
+     "JUAN",
+     "LUCAS"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "SANCTUS",
+     "CONSAGRACIÓN",
+     "BENDICIÓN",
+     "KYRIE"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "GAD",
+     "BENJAMÍN",
+     "JOSÉ",
+     "NEFTALÍ"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "HILDEGARDA",
+     "TERESA DE ÁVILA",
+     "TERESITA",
+     "CATALINA DE SIENA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "PEREZA",
+     "AVARICIA",
+     "ENVIDIA",
+     "LUJURIA"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "LUJÁN",
+     "POMPEYA",
+     "GUADALUPE",
+     "ITATÍ"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "TINIEBLAS",
+     "LANGOSTAS",
+     "ÚLCERAS",
+     "GRANIZO"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "BROCHERO",
+     "CEFERINO",
+     "CRESCENCIA",
+     "ANGELELLI"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "TEMPLANZA",
+     "FORTALEZA",
+     "JUSTICIA",
+     "PRUDENCIA"
+    ]
+   },
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "SOBERBIA",
+     "LUJURIA",
+     "PEREZA",
+     "ENVIDIA"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "CAFARNAÚM",
+     "CANÁ",
+     "JERUSALÉN",
+     "EMAÚS"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "LUMINOSOS",
+     "GLORIOSOS",
+     "DOLOROSOS",
+     "GOZOSOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "CRISMA",
+     "PAN",
+     "AGUA",
+     "ÓLEO"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "NILO",
+     "JORDÁN",
+     "MAR MUERTO",
+     "MAR ROJO"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "AGUSTINOS",
+     "FRANCISCANOS",
+     "DOMINICOS",
+     "JESUITAS"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "POTESTADES",
+     "VIRTUDES",
+     "TRONOS",
+     "SERAFINES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "UNCIÓN",
+     "MATRIMONIO",
+     "ORDEN",
+     "CONFIRMACIÓN"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "AVEMARÍA",
+     "ACORDAOS",
+     "ÁNGELUS",
+     "SALVE"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "EHUD",
+     "OTONIEL",
+     "JEFTÉ",
+     "SANSÓN"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "LÍA",
+     "NOEMÍ",
+     "SARA",
+     "ANA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "MORADO",
+     "ROJO",
+     "ROSA",
+     "VERDE"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "SÁBADO SANTO",
+     "JUEVES SANTO",
+     "DOMINGO DE RAMOS",
+     "DOMINGO DE PASCUA"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "BELÉN",
+     "JERUSALÉN",
+     "NAZARET",
+     "CAFARNAÚM"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "TERESITA",
+     "TERESA DE ÁVILA",
+     "CATALINA DE SIENA",
+     "HILDEGARDA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "PUENTE A MARÍA",
+     "HPP",
+     "CONFIRMACIÓN",
+     "FARO"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "TRAPENSES",
+     "SALESIANOS",
+     "JESUITAS",
+     "DOMINICOS"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "ÉUFRATES",
+     "TIGRIS",
+     "JORDÁN",
+     "NILO"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "AFLIGIDOS",
+     "PACÍFICOS",
+     "POBRES",
+     "PERSEGUIDOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "GULA",
+     "LUJURIA",
+     "AVARICIA",
+     "SOBERBIA"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "AVEMARÍA",
+     "ACORDAOS",
+     "PADRENUESTRO",
+     "MAGNÍFICAT"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "REBECA",
+     "RAQUEL",
+     "ESTER",
+     "NOEMÍ"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "RANAS",
+     "MOSQUITOS",
+     "PESTE",
+     "TINIEBLAS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "PASCUA",
+     "ADVIENTO",
+     "NAVIDAD",
+     "CUARESMA"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "COPACABANA",
+     "ITATÍ",
+     "GUADALUPE",
+     "LOURDES"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "CRESCENCIA",
+     "ANGELELLI",
+     "BROCHERO",
+     "MAMA ANTULA"
+    ]
+   },
+   {
+    "nombre": "Animales de la Biblia",
+    "nivel": 4,
+    "w": [
+     "CAMELLO",
+     "PALOMA",
+     "CUERVO",
+     "BURRO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "IRA",
+     "ENVIDIA",
+     "LUJURIA",
+     "GULA"
+    ]
+   },
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "PALIA",
+     "LECCIONARIO",
+     "CORPORAL",
+     "MISAL"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "KYRIE",
+     "OFERTORIO",
+     "ALELUYA",
+     "GLORIA"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "RANAS",
+     "LANGOSTAS",
+     "TINIEBLAS",
+     "ÚLCERAS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ORDINARIO",
+     "NAVIDAD",
+     "PASCUA",
+     "ADVIENTO"
+    ]
+   },
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "FARO",
+     "CONFIRMACIÓN",
+     "PUENTE A MARÍA",
+     "POST"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "FILIPENSES",
+     "CORINTIOS",
+     "TITO",
+     "ROMANOS"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "TERESA DE ÁVILA",
+     "TERESITA",
+     "CATALINA DE SIENA",
+     "HILDEGARDA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "AVEMARÍA",
+     "PADRENUESTRO",
+     "ÁNGELUS",
+     "ACORDAOS"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "DALMÁTICA",
+     "AMITO",
+     "CÍNGULO",
+     "ALBA"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "TÁBANOS",
+     "TINIEBLAS",
+     "RANAS",
+     "MOSQUITOS"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "PACIENTES",
+     "PERSEGUIDOS",
+     "POBRES",
+     "MISERICORDIOSOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "CONFIRMACIÓN",
+     "POST",
+     "NAZARET",
+     "FARO"
+    ]
+   },
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "COPÓN",
+     "PALIA",
+     "INCENSARIO",
+     "VINAJERAS"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "EZEQUIEL",
+     "DANIEL",
+     "JEREMÍAS",
+     "ISAÍAS"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "PRINCIPADOS",
+     "ÁNGELES",
+     "DOMINACIONES",
+     "POTESTADES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "SOBERBIA",
+     "IRA",
+     "AVARICIA",
+     "ENVIDIA"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "CONSAGRACIÓN",
+     "COMUNIÓN",
+     "BENDICIÓN",
+     "HOMILÍA"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "ÁNGELUS",
+     "ACORDAOS",
+     "REGINA COELI",
+     "MAGNÍFICAT"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "ISACAR",
+     "SIMEÓN",
+     "DAN",
+     "JOSÉ"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "CUARESMA",
+     "NAVIDAD",
+     "PASCUA",
+     "ORDINARIO"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "BELÉN",
+     "GETSEMANÍ",
+     "CAFARNAÚM",
+     "JERUSALÉN"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "ROBOAM",
+     "AJAB",
+     "JOSÍAS",
+     "DAVID"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "GOZOSOS",
+     "GLORIOSOS",
+     "LUMINOSOS",
+     "DOLOROSOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "ORDEN",
+     "UNCIÓN",
+     "MATRIMONIO",
+     "BAUTISMO"
+    ]
+   },
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "FARO",
+     "PUENTE A MARÍA",
+     "NAZARET",
+     "HPP"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "JUEVES SANTO",
+     "VIERNES SANTO",
+     "SÁBADO SANTO",
+     "DOMINGO DE RAMOS"
+    ]
+   },
+   {
+    "nombre": "Nombres de papas",
+    "nivel": 4,
+    "w": [
+     "URBANO",
+     "BENEDICTO",
+     "LEÓN",
+     "CLEMENTE"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "MORADO",
+     "ROJO",
+     "BLANCO",
+     "ROSA"
+    ]
+   },
+   {
+    "nombre": "Montes de la Biblia",
+    "nivel": 3,
+    "w": [
+     "CARMELO",
+     "MORIA",
+     "SINAÍ",
+     "ARARAT"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "DOLOROSOS",
+     "GOZOSOS",
+     "GLORIOSOS",
+     "LUMINOSOS"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "VIRTUDES",
+     "PRINCIPADOS",
+     "ÁNGELES",
+     "TRONOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "ENVIDIA",
+     "PEREZA",
+     "IRA",
+     "AVARICIA"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "MAGNÍFICAT",
+     "SALVE",
+     "REGINA COELI",
+     "ÁNGELUS"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "HOMILÍA",
+     "CONSAGRACIÓN",
+     "ALELUYA",
+     "COMUNIÓN"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "MAMA ANTULA",
+     "CEFERINO",
+     "BROCHERO",
+     "ANGELELLI"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "JUEVES SANTO",
+     "DOMINGO DE RAMOS",
+     "SÁBADO SANTO",
+     "VIERNES SANTO"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "FRANCISCANOS",
+     "AGUSTINOS",
+     "TRAPENSES",
+     "SALESIANOS"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "MISERICORDIOSOS",
+     "PACIENTES",
+     "POBRES",
+     "PACÍFICOS"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "POTESTADES",
+     "ARCÁNGELES",
+     "DOMINACIONES",
+     "SERAFINES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "SOBERBIA",
+     "PEREZA",
+     "ENVIDIA",
+     "LUJURIA"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "GLORIA",
+     "CREDO",
+     "SANCTUS",
+     "KYRIE"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "LOURDES",
+     "FÁTIMA",
+     "LORETO",
+     "COPACABANA"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "CEFERINO",
+     "CRESCENCIA",
+     "BROCHERO",
+     "ANGELELLI"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ROJO",
+     "ROSA",
+     "MORADO",
+     "BLANCO"
+    ]
+   },
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "VINO",
+     "CRISMA",
+     "ÓLEO",
+     "PAN"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "AJAB",
+     "JOSÍAS",
+     "ROBOAM",
+     "EZEQUÍAS"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "JORDÁN",
+     "TIGRIS",
+     "NILO",
+     "MAR ROJO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "AVARICIA",
+     "ENVIDIA",
+     "IRA",
+     "SOBERBIA"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "SALESIANOS",
+     "JESUITAS",
+     "BENEDICTINOS",
+     "DOMINICOS"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "OTONIEL",
+     "GEDEÓN",
+     "EHUD",
+     "SANSÓN"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "TERESA DE ÁVILA",
+     "TERESITA",
+     "HILDEGARDA",
+     "CATALINA DE SIENA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "PAN",
+     "ÓLEO",
+     "VINO",
+     "AGUA"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "EZEQUIEL",
+     "JEREMÍAS",
+     "ISAÍAS",
+     "DANIEL"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "RUT",
+     "REBECA",
+     "LÍA",
+     "ESTER"
+    ]
+   },
+   {
+    "nombre": "Animales de la Biblia",
+    "nivel": 4,
+    "w": [
+     "CUERVO",
+     "CAMELLO",
+     "CORDERO",
+     "SERPIENTE"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MARCOS",
+     "JUAN",
+     "LUCAS",
+     "MATEO"
+    ]
+   },
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "GULA",
+     "PEREZA",
+     "SOBERBIA",
+     "ENVIDIA"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "TIMOTEO",
+     "GÁLATAS",
+     "TESALONICENSES",
+     "COLOSENSES"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "VIÑADORES",
+     "HIJO PRÓDIGO",
+     "LEVADURA",
+     "PERLA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Tiempos litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ORDINARIO",
+     "NAVIDAD",
+     "ADVIENTO",
+     "CUARESMA"
+    ]
+   },
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "EUCARISTÍA",
+     "MATRIMONIO",
+     "ORDEN",
+     "CONFIRMACIÓN"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "HOMILÍA",
+     "SANCTUS",
+     "OFERTORIO",
+     "GLORIA"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "LUMINOSOS",
+     "DOLOROSOS",
+     "GLORIOSOS",
+     "GOZOSOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "PEDRO",
+     "SANTIAGO",
+     "JUDAS",
+     "ANDRÉS"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "NEFTALÍ",
+     "ISACAR",
+     "JOSÉ",
+     "ASER"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "TINIEBLAS",
+     "TÁBANOS",
+     "RANAS",
+     "ÚLCERAS"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "CRESCENCIA",
+     "CEFERINO",
+     "BROCHERO",
+     "ANGELELLI"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MARCOS",
+     "LUCAS",
+     "JUAN",
+     "MATEO"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "AVEMARÍA",
+     "SALVE",
+     "ACORDAOS",
+     "MAGNÍFICAT"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "NOEMÍ",
+     "LÍA",
+     "RUT",
+     "DÉBORA"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "MISERICORDIOSOS",
+     "AFLIGIDOS",
+     "HAMBRIENTOS",
+     "PACIENTES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "FARO",
+     "POST",
+     "PUENTE A MARÍA",
+     "NAZARET"
+    ]
+   },
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "BAUTISMO",
+     "EUCARISTÍA",
+     "UNCIÓN",
+     "RECONCILIACIÓN"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "SÁBADO SANTO",
+     "JUEVES SANTO",
+     "DOMINGO DE RAMOS",
+     "DOMINGO DE PASCUA"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "LEÓN",
+     "ÁNGEL",
+     "TORO",
+     "ÁGUILA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "AVARICIA",
+     "PEREZA",
+     "IRA",
+     "ENVIDIA"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "JEREMÍAS",
+     "ISAÍAS",
+     "EZEQUIEL",
+     "DANIEL"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "ÉUFRATES",
+     "MAR ROJO",
+     "MAR MUERTO",
+     "NILO"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "PERSEGUIDOS",
+     "HAMBRIENTOS",
+     "PUROS",
+     "PACIENTES"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "VINO",
+     "AGUA",
+     "PAN",
+     "ÓLEO"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "ITATÍ",
+     "GUADALUPE",
+     "LOURDES",
+     "FÁTIMA"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "EHUD",
+     "DÉBORA",
+     "JEFTÉ",
+     "OTONIEL"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "SEMBRADOR",
+     "BUEN SAMARITANO",
+     "PERLA",
+     "LEVADURA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "DOMINGO DE RAMOS",
+     "DOMINGO DE PASCUA",
+     "VIERNES SANTO",
+     "JUEVES SANTO"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "REBECA",
+     "RAQUEL",
+     "ANA",
+     "RUT"
+    ]
+   },
+   {
+    "nombre": "Ríos y mares de la Biblia",
+    "nivel": 3,
+    "w": [
+     "MAR ROJO",
+     "MAR MUERTO",
+     "ÉUFRATES",
+     "JORDÁN"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "BROCHERO",
+     "ANGELELLI",
+     "CEFERINO",
+     "CRESCENCIA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "JUSTICIA",
+     "PRUDENCIA",
+     "TEMPLANZA",
+     "FORTALEZA"
+    ]
+   },
+   {
+    "nombre": "Vestiduras litúrgicas",
+    "nivel": 2,
+    "w": [
+     "ALBA",
+     "ESTOLA",
+     "AMITO",
+     "CÍNGULO"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "DANIEL",
+     "ISAÍAS",
+     "JEREMÍAS",
+     "EZEQUIEL"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "SALOMÓN",
+     "ROBOAM",
+     "JEROBOAM",
+     "AJAB"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MARCOS",
+     "JUAN",
+     "LUCAS",
+     "MATEO"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "PADRENUESTRO",
+     "SALVE",
+     "ACORDAOS",
+     "AVEMARÍA"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "FILIPENSES",
+     "TESALONICENSES",
+     "EFESIOS",
+     "COLOSENSES"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "TERESITA",
+     "TERESA DE ÁVILA",
+     "CATALINA DE SIENA",
+     "HILDEGARDA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "AVARICIA",
+     "LUJURIA",
+     "PEREZA",
+     "IRA"
+    ]
+   },
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "MATÍAS",
+     "BARTOLOMÉ",
+     "PEDRO",
+     "SANTIAGO"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "GLORIOSOS",
+     "GOZOSOS",
+     "DOLOROSOS",
+     "LUMINOSOS"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "PACIENTES",
+     "AFLIGIDOS",
+     "PERSEGUIDOS",
+     "PUROS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "VERDE",
+     "ROSA",
+     "BLANCO",
+     "ROJO"
+    ]
+   },
+   {
+    "nombre": "Sacramentos",
+    "nivel": 1,
+    "w": [
+     "MATRIMONIO",
+     "UNCIÓN",
+     "RECONCILIACIÓN",
+     "CONFIRMACIÓN"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "LOURDES",
+     "COPACABANA",
+     "LORETO",
+     "GUADALUPE"
+    ]
+   },
+   {
+    "nombre": "Profetas mayores",
+    "nivel": 3,
+    "w": [
+     "DANIEL",
+     "JEREMÍAS",
+     "ISAÍAS",
+     "EZEQUIEL"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "JERUSALÉN",
+     "JERICÓ",
+     "CAFARNAÚM",
+     "EMAÚS"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "TINIEBLAS",
+     "LANGOSTAS",
+     "MOSQUITOS",
+     "RANAS"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "TERESA DE ÁVILA",
+     "CATALINA DE SIENA",
+     "HILDEGARDA",
+     "TERESITA"
+    ]
+   },
+   {
+    "nombre": "«Felices los…» (Bienaventuranzas)",
+    "nivel": 4,
+    "w": [
+     "PACIENTES",
+     "MISERICORDIOSOS",
+     "PUROS",
+     "PERSEGUIDOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "FORTALEZA",
+     "JUSTICIA",
+     "PRUDENCIA",
+     "TEMPLANZA"
+    ]
+   },
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "DOMINGO DE PASCUA",
+     "VIERNES SANTO",
+     "SÁBADO SANTO",
+     "DOMINGO DE RAMOS"
+    ]
+   },
+   {
+    "nombre": "Órdenes religiosas",
+    "nivel": 3,
+    "w": [
+     "TRAPENSES",
+     "DOMINICOS",
+     "SALESIANOS",
+     "JESUITAS"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "SAMUEL",
+     "GEDEÓN",
+     "OTONIEL",
+     "SANSÓN"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "BLANCO",
+     "ROJO",
+     "VERDE",
+     "MORADO"
+    ]
+   },
+   {
+    "nombre": "Pecados capitales",
+    "nivel": 1,
+    "w": [
+     "SOBERBIA",
+     "PEREZA",
+     "IRA",
+     "ENVIDIA"
+    ]
+   },
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "PAN",
+     "VINO",
+     "ÓLEO",
+     "AGUA"
+    ]
+   },
+   {
+    "nombre": "Coros de ángeles",
+    "nivel": 4,
+    "w": [
+     "SERAFINES",
+     "VIRTUDES",
+     "DOMINACIONES",
+     "PRINCIPADOS"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "ÓLEO",
+     "PAN",
+     "VINO",
+     "AGUA"
+    ]
+   },
+   {
+    "nombre": "Oraciones",
+    "nivel": 2,
+    "w": [
+     "PADRENUESTRO",
+     "ACORDAOS",
+     "MAGNÍFICAT",
+     "REGINA COELI"
+    ]
+   },
+   {
+    "nombre": "Misterios del Rosario",
+    "nivel": 3,
+    "w": [
+     "GOZOSOS",
+     "GLORIOSOS",
+     "DOLOROSOS",
+     "LUMINOSOS"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "BROCHERO",
+     "ANGELELLI",
+     "CEFERINO",
+     "MAMA ANTULA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Apóstoles",
+    "nivel": 2,
+    "w": [
+     "TADEO",
+     "ANDRÉS",
+     "FELIPE",
+     "JUDAS"
+    ]
+   },
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "COPÓN",
+     "LECCIONARIO",
+     "PATENA",
+     "CORPORAL"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "ESTER",
+     "ANA",
+     "RUT",
+     "LÍA"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "ÁNGEL",
+     "ÁGUILA",
+     "LEÓN",
+     "TORO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Colores litúrgicos",
+    "nivel": 1,
+    "w": [
+     "ROJO",
+     "VERDE",
+     "MORADO",
+     "BLANCO"
+    ]
+   },
+   {
+    "nombre": "Materia de los sacramentos",
+    "nivel": 2,
+    "w": [
+     "ÓLEO",
+     "CRISMA",
+     "AGUA",
+     "PAN"
+    ]
+   },
+   {
+    "nombre": "Lugares de la vida de Jesús",
+    "nivel": 2,
+    "w": [
+     "JERICÓ",
+     "NAZARET",
+     "CANÁ",
+     "EMAÚS"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "TALENTOS",
+     "VIÑADORES",
+     "GRANO DE MOSTAZA",
+     "SEMBRADOR"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "TEMPLANZA",
+     "FORTALEZA",
+     "PRUDENCIA",
+     "JUSTICIA"
+    ]
+   },
+   {
+    "nombre": "Jueces de Israel",
+    "nivel": 3,
+    "w": [
+     "GEDEÓN",
+     "EHUD",
+     "JEFTÉ",
+     "SANSÓN"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "BROCHERO",
+     "CRESCENCIA",
+     "MAMA ANTULA",
+     "CEFERINO"
+    ]
+   },
+   {
+    "nombre": "Símbolos de los evangelistas",
+    "nivel": 4,
+    "w": [
+     "ÁGUILA",
+     "TORO",
+     "ÁNGEL",
+     "LEÓN"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "HOMILÍA",
+     "AGNUS DEI",
+     "GLORIA",
+     "COMUNIÓN"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "LANGOSTAS",
+     "RANAS",
+     "TÁBANOS",
+     "TINIEBLAS"
+    ]
+   },
+   {
+    "nombre": "Montes de la Biblia",
+    "nivel": 3,
+    "w": [
+     "OLIVOS",
+     "ARARAT",
+     "HOREB",
+     "SION"
+    ]
+   },
+   {
+    "nombre": "Parábolas de Jesús",
+    "nivel": 4,
+    "w": [
+     "TALENTOS",
+     "BUEN SAMARITANO",
+     "PERLA",
+     "HIJO PRÓDIGO"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "JUSTICIA",
+     "FORTALEZA",
+     "TEMPLANZA",
+     "PRUDENCIA"
+    ]
+   },
+   {
+    "nombre": "Cartas de san Pablo",
+    "nivel": 3,
+    "w": [
+     "FILEMÓN",
+     "EFESIOS",
+     "FILIPENSES",
+     "TESALONICENSES"
+    ]
+   },
+   {
+    "nombre": "Reyes de Israel y Judá",
+    "nivel": 3,
+    "w": [
+     "SALOMÓN",
+     "JOSÍAS",
+     "ROBOAM",
+     "JEROBOAM"
+    ]
+   },
+   {
+    "nombre": "Doctoras de la Iglesia",
+    "nivel": 4,
+    "w": [
+     "TERESA DE ÁVILA",
+     "CATALINA DE SIENA",
+     "TERESITA",
+     "HILDEGARDA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Días de Semana Santa",
+    "nivel": 2,
+    "w": [
+     "JUEVES SANTO",
+     "SÁBADO SANTO",
+     "DOMINGO DE RAMOS",
+     "VIERNES SANTO"
+    ]
+   },
+   {
+    "nombre": "Partes de la misa",
+    "nivel": 2,
+    "w": [
+     "OFERTORIO",
+     "ALELUYA",
+     "AGNUS DEI",
+     "SANCTUS"
+    ]
+   },
+   {
+    "nombre": "Mujeres del Antiguo Testamento",
+    "nivel": 3,
+    "w": [
+     "DÉBORA",
+     "ANA",
+     "RAQUEL",
+     "JUDIT"
+    ]
+   },
+   {
+    "nombre": "Santos y beatos argentinos",
+    "nivel": 4,
+    "w": [
+     "ANGELELLI",
+     "CEFERINO",
+     "BROCHERO",
+     "CRESCENCIA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Virtudes cardinales",
+    "nivel": 1,
+    "w": [
+     "PRUDENCIA",
+     "JUSTICIA",
+     "FORTALEZA",
+     "TEMPLANZA"
+    ]
+   },
+   {
+    "nombre": "Cosas que se usan en misa",
+    "nivel": 2,
+    "w": [
+     "INCENSARIO",
+     "LECCIONARIO",
+     "CÁLIZ",
+     "CORPORAL"
+    ]
+   },
+   {
+    "nombre": "Hijos de Jacob",
+    "nivel": 3,
+    "w": [
+     "ASER",
+     "BENJAMÍN",
+     "ISACAR",
+     "JUDÁ"
+    ]
+   },
+   {
+    "nombre": "Montes de la Biblia",
+    "nivel": 3,
+    "w": [
+     "OLIVOS",
+     "CARMELO",
+     "CALVARIO",
+     "MORIA"
+    ]
+   }
+  ]
+ },
+ {
+  "g": [
+   {
+    "nombre": "Grupos de Sagrada Familia",
+    "nivel": 1,
+    "w": [
+     "POST",
+     "PUENTE A MARÍA",
+     "FARO",
+     "CONFIRMACIÓN"
+    ]
+   },
+   {
+    "nombre": "Los cuatro evangelistas",
+    "nivel": 1,
+    "w": [
+     "MATEO",
+     "MARCOS",
+     "LUCAS",
+     "JUAN"
+    ]
+   },
+   {
+    "nombre": "Advocaciones de la Virgen",
+    "nivel": 2,
+    "w": [
+     "FÁTIMA",
+     "LUJÁN",
+     "LORETO",
+     "COPACABANA"
+    ]
+   },
+   {
+    "nombre": "Plagas de Egipto",
+    "nivel": 3,
+    "w": [
+     "RANAS",
+     "SANGRE",
+     "GRANIZO",
+     "LANGOSTAS"
+    ]
+   }
+  ]
+ }
+]
