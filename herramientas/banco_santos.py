@@ -7,7 +7,7 @@ Cada santo tiene:
   fiesta       "12 de octubre" (o vacío si no tiene). Aparece en el calendario.
   ficha        id de la historia completa en js/contenido.js (santos[]), o vacío.
   foto         Foto ya optimizada dentro de la web (img/...). Si está vacía, se genera desde foto_origen.
-  foto_origen  Nombre del archivo original en la carpeta "fotos-santos" (al lado de la carpeta de la web).
+  foto_origen  Nombre del archivo original en la carpeta "Fotos y logos/Fotos de santos" (al lado de la carpeta de la web).
 
 Para sumar un santo: copiá un bloque al final, completalo y corré  python herramientas/armar_juegos.py
 """

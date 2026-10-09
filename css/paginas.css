@@ -573,6 +573,6 @@ a.lib__item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(29
 
 /* ---------- 404 ---------- */
 .nf .wrap { text-align: center; }
-.nf__img img { display: block; width: 100%; max-width: 900px; height: auto; margin: 0 auto 2rem; border-radius: 16px; }
+.nf__img img { display: block; width: 100%; max-width: 760px; height: auto; margin: 0 auto 1rem; border-radius: 16px; }
 .nf h1 { margin-bottom: .5rem; }
 .nf .hero__ctas { margin-top: 1.5rem; }

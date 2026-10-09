@@ -15,7 +15,7 @@ import unicodedata
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
 WEB = os.path.dirname(AQUI)
-FOTOS_ORIGEN = os.path.join(os.path.dirname(WEB), 'fotos-santos')  # carpeta al lado de la web
+FOTOS_ORIGEN = os.path.join(os.path.dirname(WEB), 'Fotos y logos', 'Fotos de santos')  # originales, fuera de la web
 sys.path.insert(0, AQUI)
 from banco_santos import SANTOS  # noqa: E402
 

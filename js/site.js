@@ -675,11 +675,11 @@
         '<div class="faq">' + C.preguntas.map(function (q) { return "<details><summary>" + esc(q.p) + "</summary><p>" + esc(q.r) + "</p></details>"; }).join("") + "</div></div></section>";
   };
 
-  /* 404: muestra img/404-horizontal.png (compu) o img/404-vertical.png (celu); si no están, solo el texto */
+  /* 404: muestra img/404-horizontal.webp (compu) o img/404-vertical.webp (celu); si no están, solo el texto */
   P.noencontrado = function () {
     return '<section class="section section--first nf"><div class="wrap">' +
-      '<picture class="nf__img"><source media="(max-width: 700px)" srcset="img/404-vertical.png">' +
-        '<img src="img/404-horizontal.png" alt="" onerror="this.parentNode.remove()"></picture>' +
+      '<picture class="nf__img"><source media="(max-width: 700px)" srcset="img/404-vertical.webp">' +
+        '<img src="img/404-horizontal.webp" alt="" onerror="this.parentNode.remove()"></picture>' +
       '<h1>Esta página no existe</h1><p class="muted">Puede que el link esté mal escrito o que la página se haya movido.</p>' +
       '<div class="hero__ctas hero__ctas--center"><a class="btn" href="index.html">Volver al inicio</a><a class="btn btn--ghost" href="calendario.html">Ver el calendario</a></div>' +
       "</div></section>";

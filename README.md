@@ -65,7 +65,7 @@ python herramientas/armar_juegos.py             # siempre, al final
 
 - **Versículos:** tienen que ser textuales de *El Libro del Pueblo de Dios*. `verificar_versiculos.py` los compara
   con el texto publicado en vatican.va y avisa si alguno no coincide.
-- **Santos:** al sumar uno, poné su foto original en la carpeta `fotos-santos` (al lado de la carpeta de la web) y
+- **Santos:** al sumar uno, poné su foto original en la carpeta `Fotos y logos/Fotos de santos` (al lado de la carpeta de la web) y
   su nombre en `foto_origen`; `armar_juegos.py` la optimiza y la copia a `img/santos-juego/`.
 - **Orden de los desafíos:** `herramientas/datos/orden.json` guarda en qué orden salen. Lo nuevo se suma al final,
   así agregar contenido no cambia el desafío de hoy. No borres ese archivo.
