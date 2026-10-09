@@ -814,7 +814,7 @@
       var res = B.recursos.filter(function (r) {
         return (!F.pilar || r.pilar === F.pilar) && (!F.formato || r.formato === F.formato) && (!F.nivel || r.nivel === F.nivel) &&
           (!F.multimedia || MULTI.indexOf(r.formato) >= 0) &&
-          (!q || norm(r.titulo + " " + r.detalle + " " + (pil[r.pilar] || {}).nombre + " " + r.formato).indexOf(q) >= 0);
+          (!q || norm(r.titulo + " " + r.detalle + " " + (pil[r.pilar] || {}).nombre + " " + r.formato + " " + (r.links || []).map(function (l) { return l.texto; }).join(" ") + " " + (Array.isArray(r.pedir) ? r.pedir.join(" ") : "")).indexOf(q) >= 0);
       });
       $("res-count").textContent = res.length + (res.length === 1 ? " recurso" : " recursos");
       var resto = Math.max(0, res.length - limite);
@@ -825,10 +825,13 @@
         var inner = (r.imagen ? '<img class="lib__poster" src="' + esc(r.imagen) + '" alt="" loading="lazy">' : "") + '<p class="lib__tags"><span class="lib__pilar"><span class="dot"></span>' + esc(p.nombre) + "</span><span>" + esc(r.formato) + "</span><span>" + esc(r.nivel) + "</span></p>" +
           "<h3>" + esc(r.titulo) + "</h3><p>" + esc(r.detalle) + "</p>" + (r.link ? '<span class="link">Abrir →</span>' : "");
         var botones = (r.links || []).filter(function (l) { return l.url; });
-        if (r.links) {
+        /* pedir: true (el recurso entero) o una lista de títulos que no se publican: se piden por Instagram */
+        var pedir = r.pedir ? '<div class="lib__pedir">' + (Array.isArray(r.pedir) ? '<p class="lib__pedir-label">También en la biblioteca, a pedido</p><ul>' + r.pedir.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("") + "</ul>" : '<p class="lib__pedir-label">Para acceder</p>') +
+          ext(C.redes.instagram, "link", (Array.isArray(r.pedir) ? "Pedilos" : "Pedilo") + " por Instagram →") + "</div>" : "";
+        if (r.links || r.pedir) {
           inner = inner.replace('<span class="link">Abrir →</span>', "");
           return '<div class="lib__item' + (r.imagen ? " has-poster" : "") + '" style="--c:' + esc(p.color) + '">' + inner +
-            (botones.length ? '<div class="lib__links">' + botones.map(function (l) { return ext(l.url, "link", esc(l.texto) + " →"); }).join("") + "</div>" : "") + "</div>";
+            (botones.length ? '<div class="lib__links">' + botones.map(function (l) { return ext(l.url, "link", esc(l.texto) + " →"); }).join("") + "</div>" : "") + pedir + "</div>";
         }
         return r.link ? '<a class="lib__item' + (r.imagen ? " has-poster" : "") + '" style="--c:' + esc(p.color) + '" href="' + esc(r.link) + '" target="_blank" rel="noopener">' + inner + "</a>"
                       : '<div class="lib__item' + (r.imagen ? " has-poster" : "") + '" style="--c:' + esc(p.color) + '">' + inner + "</div>";
