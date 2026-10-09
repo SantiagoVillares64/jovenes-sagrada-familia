@@ -583,3 +583,8 @@ a.lib__item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(29
 .lib__pedir ul { margin: 0 0 .6rem; padding-left: 1.1rem; font-size: .85rem; color: var(--muted); }
 .lib__pedir li { margin: .15rem 0; }
 .lib__links + .lib__pedir { margin-top: 1rem; }
+
+/* calendario: filtros de tipo de evento */
+.mcal__filtros { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; padding: 0 24px 16px; background: var(--tint); }
+@media (max-width: 600px) { .mcal__filtros { padding: 0 16px 14px; } .mcal__filtros .fchip { font-size: .8rem; padding: .35rem .7rem; } }
+.mcal__filtros .filter__label { margin-right: .3rem; }

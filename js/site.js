@@ -635,6 +635,10 @@
             '<div class="mcal__nav"><button type="button" class="mcal__today" id="mcal-hoy">Hoy</button>' +
             '<button type="button" class="round" id="mcal-prev" aria-label="Mes anterior">' + ICON.left + "</button>" +
             '<button type="button" class="round" id="mcal-next" aria-label="Mes siguiente">' + ICON.right + "</button></div></div>" +
+          '<div class="mcal__filtros" role="group" aria-label="Qué mostrar"><span class="filter__label">Mostrar</span>' +
+            '<button type="button" class="fchip" data-tipo="especiales">Eventos especiales</button>' +
+            '<button type="button" class="fchip" data-tipo="semanales">Actividades semanales</button>' +
+            '<button type="button" class="fchip" data-tipo="santos">Santos</button></div>' +
           '<div class="mcal__dows" aria-hidden="true"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>' +
           '<div class="mcal__weeks" id="mcal-weeks"><p class="muted mcal__loading">Cargando eventos…</p></div>' +
         "</div>" +
@@ -725,6 +729,24 @@
     dlg.querySelector(".evdlg__close").addEventListener("click", function () { dlg.close(); });
     dlg.addEventListener("click", function (ev) { if (ev.target === dlg) dlg.close(); });
 
+    /* filtros: qué tipos de eventos se ven (se recuerda en este navegador) */
+    var VER = { especiales: true, semanales: true, santos: true };
+    try { var g0 = JSON.parse(localStorage.getItem("cal:ver")); if (g0) for (var t0 in VER) if (typeof g0[t0] === "boolean") VER[t0] = g0[t0]; } catch (e) {}
+    function tipoDe(x) { return x.santo ? "santos" : x.semanal ? "semanales" : "especiales"; }
+    function pintarFiltros() {
+      document.querySelectorAll(".mcal__filtros .fchip").forEach(function (b) {
+        var on = VER[b.getAttribute("data-tipo")];
+        b.classList.toggle("is-on", on); b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+    }
+    document.querySelector(".mcal__filtros").addEventListener("click", function (ev) {
+      var b = ev.target.closest(".fchip"); if (!b) return;
+      var t = b.getAttribute("data-tipo"); VER[t] = !VER[t];
+      try { localStorage.setItem("cal:ver", JSON.stringify(VER)); } catch (e) {}
+      pintarFiltros(); pintar();
+    });
+    pintarFiltros();
+
     function colorDe(x) {
       if (x.e.color) return x.e.color;
       var clave = String(x.e.grupo || "").trim().toLowerCase(), g = grupo(ALIAS[clave] || clave);
@@ -738,7 +760,7 @@
       var primero = new Date(y, m, 1), ultimo = new Date(y, m + 1, 0);
       var inicio = new Date(primero); inicio.setDate(1 - ((primero.getDay() + 6) % 7));
       var fin = new Date(ultimo); fin.setDate(ultimo.getDate() + (7 - ((ultimo.getDay() + 6) % 7) - 1));
-      vista = ocurrencias(crudos, rec, inicio, fin);
+      vista = ocurrencias(crudos, rec, inicio, fin).filter(function (x) { return VER[tipoDe(x)]; });
       $("mcal-title").textContent = MESES[m].charAt(0).toUpperCase() + MESES[m].slice(1) + " " + y;
 
       var semanas = Math.round((fin - inicio) / 864e5 + 1) / 7, html = "";
