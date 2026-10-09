@@ -13,6 +13,42 @@
   }
   function grupo(id) { return C.grupos.filter(function (g) { return g.id === id; })[0]; }
   function ext(href, cls, html) { return '<a class="' + cls + '" href="' + esc(href) + '" target="_blank" rel="noopener">' + html + "</a>"; }
+
+  /* ---------- desafíos de hoy: estado y puntos (lo usan el inicio y la página de juegos) ---------- */
+  var DESAFIOS = [
+    { id: "santo", clave: "santo", nombre: "Santo del día", icono: "🕊️", ancla: "diario-santo" },
+    { id: "versiculo", clave: "versiculo", nombre: "Versículo del día", icono: "📖", ancla: "diario-versiculo" },
+    { id: "conexiones", clave: "conex", nombre: "Conexiones", icono: "🧩", ancla: "diario-conex" },
+    { id: "crucigrama", clave: "cruci", nombre: "Crucigrama", icono: "✏️", ancla: "diario-cruci" }
+  ];
+  function fechaLocal(d) { return d.getFullYear() + "-" + (d.getMonth() < 9 ? "0" : "") + (d.getMonth() + 1) + "-" + (d.getDate() < 10 ? "0" : "") + d.getDate(); }
+  function leerLS(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
+  /* puntos de hoy para el ranking (hasta 100 por desafío); null = todavía no lo terminó */
+  function puntosHoy(id) {
+    var d = DESAFIOS.filter(function (x) { return x.id === id; })[0], s = leerLS("diario:" + d.clave + ":" + fechaLocal(new Date()));
+    if (!s || !s.fin) return null;
+    if (id === "santo") return s.puntos * 20;
+    if (id === "versiculo") return s.gano ? (s.malas.length ? 50 : 100) : 0;
+    if (id === "crucigrama") return Math.max(20, Math.min(100, 100 - 15 * (s.ayudas || 0) - Math.max(0, Math.floor(((s.t || 0) - 180) / 30))));
+    return s.puntos;
+  }
+  function mejorRacha() {
+    var hoy = new Date(), ayer = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate() - 1), m = 0;
+    DESAFIOS.forEach(function (d) {
+      var r = leerLS("racha:" + d.id);
+      if (r && (r.ultimo === fechaLocal(hoy) || r.ultimo === fechaLocal(ayer))) m = Math.max(m, r.n);
+    });
+    return m;
+  }
+  /* podio de la semana pasada, del ranking parroquial */
+  function podioHtml(podio) {
+    if (!podio || !podio.length) return "";
+    var med = ["🥇", "🥈", "🥉"];
+    return '<div class="podio"><p class="podio__title">🏆 Ganadores de la semana pasada</p><ol>' + podio.map(function (f) {
+      return '<li><span class="podio__med">' + (med[f.pos - 1] || f.pos + "°") + '</span><span class="podio__nombre">' + esc(f.nombre) + "</span>" +
+        (f.grupo ? '<span class="podio__grupo">' + esc(f.grupo) + "</span>" : "") + '<span class="podio__pts">' + f.puntos + " pts</span></li>";
+    }).join("") + "</ol></div>";
+  }
   var ICON = {
     play: '<svg viewBox="0 0 24 24" aria-hidden="true" class="i-fill"><path d="M8 5.5v13l11-6.5z"/></svg>',
     clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
@@ -387,6 +423,22 @@
   /* ---------- páginas ---------- */
   var P = {};
 
+  function hoyJuegosHtml() {
+    var hechos = 0, total = 0, racha = mejorRacha();
+    var items = DESAFIOS.map(function (d) {
+      var p = puntosHoy(d.id); if (p !== null) { hechos++; total += p; }
+      return '<li class="' + (p !== null ? "is-ok" : "") + '"><a href="juegos.html#' + d.ancla + '"><span class="hoyj__ico" aria-hidden="true">' + d.icono + "</span>" +
+        "<span><strong>" + esc(d.nombre) + "</strong><span>" + (p !== null ? "✓ Jugado · " + p + " pts" : "Sin jugar") + "</span></span></a></li>";
+    }).join("");
+    return '<section class="section section--tight" id="hoy-juegos"><div class="wrap"><div class="hoyj">' +
+      '<div class="hoyj__top"><div><p class="eyebrow">Juegos</p><h2 class="hoyj__title">Desafíos de hoy</h2>' +
+        '<p class="muted">' + (hechos === 4 ? "¡Hiciste los 4! Sumaste " + total + " de 400 puntos. Volvé mañana." : hechos ? "Te " + (4 - hechos === 1 ? "falta 1" : "faltan " + (4 - hechos)) + ". Llevás " + total + " puntos hoy." : "Cuatro desafíos nuevos cada día, iguales para todos.") + "</p></div>" +
+        (racha ? '<span class="daily__racha">🔥 Racha de ' + racha + (racha === 1 ? " día" : " días") + "</span>" : "") + "</div>" +
+      '<ul class="hoyj__lista">' + items + "</ul>" +
+      '<div class="hoyj__pie"><div id="hoyj-podio"></div><a class="btn btn--small" href="' + (hechos === 4 ? "juegos.html#ranking-seccion" : "juegos.html#diarios") + '">' + (hechos === 4 ? "Ver el ranking" : "Jugar ahora") + "</a></div>" +
+    "</div></div></section>";
+  }
+
   P.inicio = function () {
     var I = C.inicio;
     return '<section class="hero" id="inicio"><div class="wrap hero__inner"><div class="hero__text">' +
@@ -416,9 +468,7 @@
         head("Calendario", "Próximos eventos", "", '<a class="link" href="calendario.html">Ver calendario completo →</a>') +
         '<div class="agenda agenda--home" id="agenda-home"><p class="muted">Cargando eventos…</p></div></div></section>' +
 
-      '<section class="section section--tight"><div class="wrap"><a class="daily-teaser" href="juegos.html#diarios">' +
-        '<span class="daily-teaser__icons" aria-hidden="true">🕊️ 📖 ✏️</span><span><strong>Desafíos del día</strong>' +
-        '<span>Adiviná el santo, completá el versículo y resolvé el crucigrama. Nuevos cada día.</span></span><span class="gcard__go">Jugar ' + ICON.right + "</span></a></div></section>" +
+      hoyJuegosHtml() +
       '<section class="section section--tint" id="encuentros"><div class="wrap">' +
         head("Abiertos a todos", "Encuentros para todas las edades", "No hace falta estar en un grupo. Vení cuando quieras.", '<a class="link" href="horarios.html">Todos los horarios →</a>') +
         encuentrosHtml() + "</div></section>" +
@@ -659,7 +709,7 @@
       "</div></section>" +
       '<section class="section section--tint" id="ranking-seccion"><div class="wrap">' +
         head("Ranking parroquial", "¿Quién suma más?", "Cada desafío del día suma hasta 100 puntos. Entrá con tu código y competí con toda la comunidad.") +
-        '<div class="rk" id="ranking"><p class="muted">Cargando…</p></div></div></section>' +
+        '<div id="rk-podio"></div><div class="rk" id="ranking"><p class="muted">Cargando…</p></div></div></section>' +
       '<section class="section" id="quiz-seccion"><div class="wrap">' +
         head("Quiz", "¿Cuánto sabés?", "Diez preguntas sobre la Biblia, los santos, los sacramentos y nuestra comunidad. Sumás más puntos si respondés rápido.") +
         '<div class="quiz" id="quiz" aria-live="polite"></div></div></section>';
@@ -699,6 +749,12 @@
     document.title = G.nombre + " · Jóvenes Sagrada Familia";
   } else {
     main.innerHTML = (P[PAGE] || P.inicio)();
+  }
+
+  /* ---------- inicio: podio de la semana pasada ---------- */
+  if ($("hoyj-podio") && C.ranking && C.ranking.url) {
+    fetch(C.ranking.url + (C.ranking.url.indexOf("?") < 0 ? "?" : "&") + "accion=ranking").then(function (r) { return r.json(); })
+      .then(function (d) { if (d && d.ok) $("hoyj-podio").innerHTML = podioHtml(d.podio); }, function () {});
   }
 
   /* ---------- calendario: completar cuando llegan los datos ---------- */
@@ -1275,17 +1331,7 @@
        Solo juegan quienes tienen un código que dan los coordinadores. */
     var JUEGOS_RK = ["santo", "versiculo", "crucigrama", "conexiones"];
     var NOMBRE_RK = { santo: "Santo del día", versiculo: "Versículo del día", crucigrama: "Crucigrama", conexiones: "Conexiones" };
-    var puntosDe = function (juego) {
-      var f = claveFecha(HOY), s;
-      if (juego === "santo") { s = leer("diario:santo:" + f); return s && s.fin ? s.puntos * 20 : null; }
-      if (juego === "versiculo") { s = leer("diario:versiculo:" + f); return s && s.fin ? (s.gano ? (s.malas.length ? 50 : 100) : 0) : null; }
-      if (juego === "crucigrama") {
-        s = leer("diario:cruci:" + f); if (!s || !s.fin) return null;
-        return Math.max(20, Math.min(100, 100 - 15 * (s.ayudas || 0) - Math.max(0, Math.floor(((s.t || 0) - 180) / 30))));
-      }
-      if (juego === "conexiones") { s = leer("diario:conex:" + f); return s && s.fin ? s.puntos : null; }
-      return null;
-    };
+    var puntosDe = puntosHoy;
     var RK = (C.ranking && C.ranking.url) ? C.ranking.url : "";
     var yoRK = function () { return leer("ranking:yo"); };
     var llamarRK = function (params, cb) {
@@ -1312,6 +1358,13 @@
         return a === n || g.id === n || a.indexOf(n) === 0 || n.indexOf(a) === 0;
       })[0];
       return ' <span class="rk__grupo" style="--c:' + esc(g ? g.color : "#6b7571") + '">' + esc(txt) + "</span>";
+    };
+    var tablaGruposRK = function (filas) {
+      if (!filas || !filas.length) return '<p class="muted">Todavía no hay puntajes de grupos esta semana.</p>';
+      return '<ol class="rk__tabla">' + filas.map(function (x) {
+        return '<li><span class="rk__pos">' + x.pos + '</span><span class="rk__nombre">' + grupoRK(x.grupo) +
+          ' <span class="rk__cuantos">' + x.jugadores + (x.jugadores === 1 ? " jugador" : " jugadores") + '</span></span><span class="rk__pts">' + x.promedio + "</span></li>";
+      }).join("") + "</ol>";
     };
     var tablaRK = function (filas, yo) {
       if (!filas || !filas.length) return '<p class="muted">Todavía no hay puntajes. ¡Sé el primero!</p>';
@@ -1341,10 +1394,12 @@
         if (err || !d || !d.ok) { t.innerHTML = '<p class="muted">No se pudo cargar el ranking. Probá en un rato.</p>'; return; }
         t.innerHTML = '<div class="rk__tabs" role="tablist">' +
           '<button type="button" role="tab" class="fchip' + (vistaRK === "semana" ? " is-on" : "") + '" data-rk="semana" aria-selected="' + (vistaRK === "semana") + '">Esta semana</button>' +
-          '<button type="button" role="tab" class="fchip' + (vistaRK === "historico" ? " is-on" : "") + '" data-rk="historico" aria-selected="' + (vistaRK === "historico") + '">Histórico</button></div>' +
-          tablaRK(d[vistaRK], yo) +
+          '<button type="button" role="tab" class="fchip' + (vistaRK === "historico" ? " is-on" : "") + '" data-rk="historico" aria-selected="' + (vistaRK === "historico") + '">Histórico</button>' +
+          '<button type="button" role="tab" class="fchip' + (vistaRK === "grupos" ? " is-on" : "") + '" data-rk="grupos" aria-selected="' + (vistaRK === "grupos") + '">Por grupos</button></div>' +
+          (vistaRK === "grupos" ? tablaGruposRK(d.grupos) : tablaRK(d[vistaRK], yo)) +
           (d.yo && d.yo[vistaRK] && d.yo[vistaRK].pos > (d[vistaRK] || []).length ? '<p class="rk__mio">Tu puesto: <strong>' + d.yo[vistaRK].pos + "°</strong> con " + d.yo[vistaRK].puntos + " puntos</p>" : "") +
-          '<p class="rk__nota">' + (vistaRK === "semana" ? "La semana va de lunes a domingo." : "Desde el lanzamiento.") + " Cada desafío suma hasta 100 puntos por día.</p>";
+          '<p class="rk__nota">' + (vistaRK === "grupos" ? "Promedio de puntos de esta semana por cada jugador del grupo que sumó algo. Así no gana el grupo con más chicos." : (vistaRK === "semana" ? "La semana va de lunes a domingo." : "Desde el lanzamiento.") + " Cada desafío suma hasta 100 puntos por día.") + "</p>";
+        if ($("rk-podio")) $("rk-podio").innerHTML = podioHtml(d.podio);
       });
     };
     if ($("ranking")) {

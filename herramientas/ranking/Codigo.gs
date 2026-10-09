@@ -136,18 +136,52 @@ function tabla(totales, js) {
   return filas;
 }
 
+/* Nombre "oficial" del grupo, para que "faro", "Faro" o "FARO" cuenten como el mismo. */
+var GRUPOS = [['faro', 'FARO'], ['confir', 'Confirmación'], ['post', 'Post'], ['hpp', 'HPP'], ['puente', 'Puente a María'], ['naza', 'Nazaret']];
+function grupoOficial(texto) {
+  var t = String(texto || '').trim(), n = t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  if (!n) return '';
+  for (var i = 0; i < GRUPOS.length; i++) if (n.indexOf(GRUPOS[i][0]) === 0) return GRUPOS[i][1];
+  return t;
+}
+
+/* Promedio de puntos por jugador que sumó algo en el período (así no gana el grupo con más chicos). */
+function tablaGrupos(totales, js) {
+  var g = {};
+  Object.keys(totales).forEach(function (c) {
+    if (!js[c] || !totales[c]) return;
+    var nombre = grupoOficial(js[c].grupo);
+    if (!nombre) return;
+    g[nombre] = g[nombre] || { grupo: nombre, suma: 0, jugadores: 0 };
+    g[nombre].suma += totales[c];
+    g[nombre].jugadores++;
+  });
+  var filas = Object.keys(g).map(function (k) { return { grupo: k, promedio: Math.round(g[k].suma / g[k].jugadores), jugadores: g[k].jugadores }; })
+    .sort(function (a, b) { return b.promedio - a.promedio || b.jugadores - a.jugadores; });
+  var pos = 0, ant = null;
+  filas.forEach(function (f, i) { if (f.promedio !== ant) { pos = i + 1; ant = f.promedio; } f.pos = pos; });
+  return filas;
+}
+
 function ranking(p) {
   var cache = CacheService.getScriptCache(), base = cache.get('ranking'), r;
   if (base) r = JSON.parse(base);
   else {
     var js = jugadores(), datos = hojaPuntajes().getDataRange().getValues(), lunes = lunesAR();
-    var semana = {}, historico = {};
+    var d = new Date(lunes + 'T12:00:00'); d.setDate(d.getDate() - 7);
+    var lunesPasado = Utilities.formatDate(d, ZONA, 'yyyy-MM-dd');
+    var semana = {}, historico = {}, pasada = {};
     datos.slice(1).forEach(function (f) {
       var cod = String(f[1]).toUpperCase(), pts = Number(f[3]) || 0, fecha = textoFecha(f[0]);
       historico[cod] = (historico[cod] || 0) + pts;
       if (fecha >= lunes) semana[cod] = (semana[cod] || 0) + pts;
+      else if (fecha >= lunesPasado) pasada[cod] = (pasada[cod] || 0) + pts;
     });
-    r = { semana: tabla(semana, js), historico: tabla(historico, js) };
+    r = {
+      semana: tabla(semana, js), historico: tabla(historico, js),
+      podio: tabla(pasada, js).filter(function (f) { return f.pos <= 3 && f.puntos > 0; }),
+      grupos: tablaGrupos(semana, js), gruposHistorico: tablaGrupos(historico, js)
+    };
     cache.put('ranking', JSON.stringify(r), 60);
   }
   var cod = String(p.codigo || '').toUpperCase(), yo = {};
@@ -156,5 +190,6 @@ function ranking(p) {
     if (mio) yo[k] = { pos: mio.pos, puntos: mio.puntos };
   });
   var limpiar = function (filas) { return filas.slice(0, TOP).map(function (f) { return { pos: f.pos, nombre: f.nombre, grupo: f.grupo, puntos: f.puntos }; }); };
-  return { ok: true, semana: limpiar(r.semana), historico: limpiar(r.historico), yo: yo };
+  return { ok: true, semana: limpiar(r.semana), historico: limpiar(r.historico), podio: limpiar(r.podio || []),
+           grupos: r.grupos || [], gruposHistorico: r.gruposHistorico || [], yo: yo };
 }
