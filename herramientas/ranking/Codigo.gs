@@ -52,7 +52,7 @@ function generarCodigos() {
       do { c = ''; for (var k = 0; k < 6; k++) c += letras.charAt(Math.floor(Math.random() * letras.length)); } while (usados[c]);
       usados[c] = true;
       h.getRange(i + 1, 1).setValue(c);
-      if (datos[i][3] === '') h.getRange(i + 1, 4).setValue(true);
+      h.getRange(i + 1, 4).setValue(true); // un jugador nuevo queda activo
       nuevos++;
     }
   }
