@@ -673,3 +673,7 @@ a.lib__item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(29
 .rk__reglas ul { margin: .5rem 0 0; padding-left: 1.1rem; }
 .rk__reglas li { margin: .25rem 0; }
 @media (max-width: 520px) { .rk__desglose { grid-template-columns: 1fr; } }
+.tip-inicio { display: flex; align-items: flex-start; gap: .7rem; margin: 0 0 18px; padding: 14px 16px; border-radius: 16px; background: #eef3f0; border: 1px solid #d9e4dd; font-size: .9rem; }
+.tip-inicio p { margin: 0; flex: 1; }
+.tip-inicio__ico { font-size: 1.4rem; line-height: 1; }
+.tip-inicio__x { border: 0; background: none; font-size: 1.4rem; line-height: 1; cursor: pointer; color: var(--muted); padding: 0 .2rem; }

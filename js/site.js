@@ -702,6 +702,7 @@
     return pagehead("Juegos", "Jugá y aprendé", "Cuatro desafíos nuevos cada día, iguales para todos, un ranking parroquial y un quiz para jugar cuando quieras.") +
       '<section class="section section--first" id="diarios"><div class="wrap">' +
         head("Desafíos del día", "Uno nuevo cada día", "Se juegan una vez por día. Volvé mañana para sumar a tu racha.") +
+        '<div id="tip-inicio"></div>' +
         '<div class="dailies"><div class="daily" id="diario-santo"><p class="muted">Cargando…</p></div>' +
         '<div class="daily" id="diario-versiculo"><p class="muted">Cargando…</p></div>' +
         '<div class="daily daily--wide" id="diario-conex"><p class="muted">Cargando…</p></div>' +
@@ -1443,6 +1444,26 @@
       pintarRK();
     }
   }
+
+  /* ---------- juegos: tip para agregar la web a la pantalla de inicio (solo celulares) ---------- */
+  if ($("tip-inicio")) (function () {
+    var ua = navigator.userAgent || "";
+    var ios = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var android = /Android/.test(ua);
+    var instalada = (window.matchMedia && matchMedia("(display-mode: standalone)").matches) || navigator.standalone;
+    var cerrado = false; try { cerrado = localStorage.getItem("tip:inicio") === "no"; } catch (e) {}
+    if (instalada || cerrado || !(ios || android)) return;
+    var pasos = ios
+      ? "Tocá <strong>Compartir</strong> (el cuadrado con la flecha para arriba) y después <strong>Agregar a inicio</strong>."
+      : "Tocá los <strong>tres puntitos ⋮</strong> arriba a la derecha y después <strong>Agregar a la pantalla principal</strong>.";
+    $("tip-inicio").innerHTML = '<div class="tip-inicio"><span class="tip-inicio__ico" aria-hidden="true">📲</span>' +
+      "<p><strong>Tip:</strong> agregá la web a tu pantalla de inicio y jugá todos los días con un toque. " + pasos + "</p>" +
+      '<button type="button" class="tip-inicio__x" aria-label="Cerrar el tip">×</button></div>';
+    $("tip-inicio").querySelector(".tip-inicio__x").addEventListener("click", function () {
+      try { localStorage.setItem("tip:inicio", "no"); } catch (e) {}
+      $("tip-inicio").innerHTML = "";
+    });
+  })();
 
   /* ---------- quiz ---------- */
   if ($("quiz")) {
