@@ -633,3 +633,5 @@ a.lib__item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(29
 .rk__pts { font-family: "League Spartan", sans-serif; font-weight: 700; }
 .rk__mio, .rk__nota { font-size: .88rem; color: var(--muted); margin-top: .8rem; }
 @media (max-width: 520px) { .rk { padding: 18px 14px; } }
+.rk__grupo { display: inline-block; margin-left: .4rem; padding: .05rem .5rem; border-radius: 99px; font-size: .72rem; font-weight: 600; letter-spacing: .03em;
+  color: var(--c); border: 1px solid var(--c); vertical-align: middle; white-space: nowrap; }

@@ -1288,10 +1288,20 @@
     };
     var avisarPuntaje = function (juego) { enviarRK(juego, function () { if ($("ranking")) pintarRK(); }); };
     var vistaRK = "semana";
+    /* etiqueta del grupo (columna Grupo de la planilla), con el color del grupo si coincide */
+    var grupoRK = function (txt) {
+      txt = String(txt || "").trim(); if (!txt) return "";
+      var n = txt.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+      var g = C.grupos.filter(function (g) {
+        var a = g.nombre.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+        return a === n || g.id === n || a.indexOf(n) === 0 || n.indexOf(a) === 0;
+      })[0];
+      return ' <span class="rk__grupo" style="--c:' + esc(g ? g.color : "#6b7571") + '">' + esc(txt) + "</span>";
+    };
     var tablaRK = function (filas, yo) {
       if (!filas || !filas.length) return '<p class="muted">Todavía no hay puntajes. ¡Sé el primero!</p>';
       return '<ol class="rk__tabla">' + filas.map(function (x) {
-        return '<li class="' + (yo && x.nombre === yo.nombre ? "is-yo" : "") + '"><span class="rk__pos">' + x.pos + '</span><span class="rk__nombre">' + esc(x.nombre) + '</span><span class="rk__pts">' + x.puntos + "</span></li>";
+        return '<li class="' + (yo && x.nombre === yo.nombre ? "is-yo" : "") + '"><span class="rk__pos">' + x.pos + '</span><span class="rk__nombre">' + esc(x.nombre) + grupoRK(x.grupo) + '</span><span class="rk__pts">' + x.puntos + "</span></li>";
       }).join("") + "</ol>";
     };
     var pintarRK = function () {

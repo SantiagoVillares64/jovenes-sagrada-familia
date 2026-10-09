@@ -68,7 +68,7 @@ function jugadores() {
   var datos = hojaJugadores().getDataRange().getValues(), out = {};
   datos.slice(1).forEach(function (f) {
     var cod = String(f[0] || '').toUpperCase().trim();
-    if (cod && f[1] && f[3] === true) out[cod] = { nombre: String(f[1]).trim(), grupo: f[2] };
+    if (cod && f[1] && f[3] === true) out[cod] = { nombre: String(f[1]).trim(), grupo: String(f[2] || '').trim() };
   });
   return out;
 }
@@ -129,7 +129,7 @@ function puntaje(p) {
 
 function tabla(totales, js) {
   var filas = Object.keys(totales).filter(function (c) { return js[c]; })
-    .map(function (c) { return { codigo: c, nombre: js[c].nombre, puntos: totales[c] }; })
+    .map(function (c) { return { codigo: c, nombre: js[c].nombre, grupo: js[c].grupo, puntos: totales[c] }; })
     .sort(function (a, b) { return b.puntos - a.puntos || a.nombre.localeCompare(b.nombre); });
   var pos = 0, ant = null;
   filas.forEach(function (f, i) { if (f.puntos !== ant) { pos = i + 1; ant = f.puntos; } f.pos = pos; });
@@ -155,6 +155,6 @@ function ranking(p) {
     var mio = r[k].filter(function (f) { return f.codigo === cod; })[0];
     if (mio) yo[k] = { pos: mio.pos, puntos: mio.puntos };
   });
-  var limpiar = function (filas) { return filas.slice(0, TOP).map(function (f) { return { pos: f.pos, nombre: f.nombre, puntos: f.puntos }; }); };
+  var limpiar = function (filas) { return filas.slice(0, TOP).map(function (f) { return { pos: f.pos, nombre: f.nombre, grupo: f.grupo, puntos: f.puntos }; }); };
   return { ok: true, semana: limpiar(r.semana), historico: limpiar(r.historico), yo: yo };
 }
