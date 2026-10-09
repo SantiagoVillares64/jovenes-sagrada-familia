@@ -348,7 +348,7 @@ window.CONTENIDO = {
   /* ---------- Ranking parroquial de los juegos ----------
      url: la dirección de la aplicación web de Google Apps Script (ver herramientas/ranking/LEEME.md).
      Vacío = el ranking aparece como "muy pronto". */
-  ranking: { url: "" },
+  ranking: { url: "https://script.google.com/macros/s/AKfycbwHWJrFhnWdO1au2H4ADRgBqy7zVptiTgfRi7DL_79QJ0Hy_t97QdX7yxGT2ffMsAB4og/exec" },
 
   /* ---------- Biblioteca (página Recursos) ----------
      pilar: espiritual, intelectual, humano, apostolico
