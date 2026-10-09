@@ -1136,6 +1136,8 @@
       var act = { k: clave(CR.e[0].r, CR.e[0].c), d: CR.e[0].d };
       var normal = function (s) { s = String(s || "").toUpperCase(); if (s === "Ñ") return s; return s.normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^A-ZÑ]/g, ""); };
       var reloj = function (t) { return Math.floor(t / 60) + ":" + dosD(t % 60); };
+      /* récord personal: el mejor tiempo sin revelar palabras (se guarda en este celular o compu) */
+      var recordC = function () { return leer("record:crucigrama"); };
 
       var lista = function (d) {
         return CR.e.filter(function (e) { return e.d === d; }).sort(function (a, b) { return a.n - b.n; }).map(function (e) {
@@ -1181,12 +1183,17 @@
         $("cw-tools").innerHTML = estC.fin ? "" :
           '<button type="button" class="btn btn--small" data-cw="comprobar">Comprobar</button>' +
           '<button type="button" class="btn btn--small btn--ghost" data-cw="revelar">Revelar palabra</button>' +
-          '<span class="cw__time" id="cw-time">' + reloj(estC.t) + "</span>";
+          '<span class="cw__time" id="cw-time">' + reloj(estC.t) + "</span>" +
+          (recordC() ? '<span class="cw__record" title="Tu mejor tiempo sin revelar palabras">🏆 ' + reloj(recordC().t) + "</span>" : "");
         if (estC.fin) {
           var ayudaTxt = estC.ayudas ? (estC.ayudas === 1 ? "con 1 ayuda" : "con " + estC.ayudas + " ayudas") : "sin ayudas";
-          var texto = "Crucigrama del día #" + NUM + " ✏️\n✅ en " + reloj(estC.t) + " · " + ayudaTxt +
+          var texto = "Crucigrama del día #" + NUM + " ✏️\n✅ en " + reloj(estC.t) + " · " + ayudaTxt + (estC.record ? " · 🏆 ¡Nuevo récord!" : "") +
             (verRacha("crucigrama") > 1 ? " · Racha de " + verRacha("crucigrama") + " días 🔥" : "") + "\n" + urlJuegos;
-          $("cw-fin").innerHTML = '<p class="daily__result-v is-ok">¡Lo completaste en ' + reloj(estC.t) + " " + ayudaTxt + "!</p>" + compartirHtml(texto) + pieHtml("crucigrama");
+          var rec = recordC();
+          var recTxt = estC.record ? '<p class="cw__nuevo">🏆 ¡Nuevo récord personal!</p>'
+            : estC.primero ? '<p class="cw__rec-txt">🏆 Tu primer récord: ' + reloj(estC.t) + ". A ver si lo superás mañana.</p>"
+            : rec ? '<p class="cw__rec-txt">🏆 Tu récord: ' + reloj(rec.t) + (estC.ayudas ? " (solo cuenta si no revelás palabras)" : "") + "</p>" : "";
+          $("cw-fin").innerHTML = '<p class="daily__result-v is-ok">¡Lo completaste en ' + reloj(estC.t) + " " + ayudaTxt + "!</p>" + recTxt + compartirHtml(texto) + pieHtml("crucigrama");
         } else $("cw-fin").innerHTML = pieHtml("crucigrama");
       };
       var foco = function () { var inp = contC.querySelector('input[data-k="' + act.k + '"]'); if (inp) inp.focus({ preventScroll: true }); };
@@ -1195,7 +1202,15 @@
         if (i >= 0 && i < ks.length) act.k = ks[i];
       };
       var completo = function () { return Object.keys(cel).every(function (k) { return estC.l[k] === cel[k].ch; }); };
-      var terminar = function () { if (estC.fin || !completo()) return; estC.fin = true; sumarRacha("crucigrama"); guardar(KC, estC); pintarC(); avisarPuntaje("crucigrama"); };
+      var terminar = function () {
+        if (estC.fin || !completo()) return;
+        estC.fin = true; sumarRacha("crucigrama");
+        if (!estC.ayudas) {
+          var rec = recordC();
+          if (!rec || estC.t < rec.t) { estC.record = !!rec; estC.primero = !rec; guardar("record:crucigrama", { t: estC.t, num: NUM, fecha: claveFecha(HOY) }); }
+        }
+        guardar(KC, estC); pintarC(); avisarPuntaje("crucigrama");
+      };
       var empezo = function () { return Object.keys(estC.l).length > 0; };
       setInterval(function () {
         if (estC.fin || !empezo() || document.hidden || !$("cw-time")) return;

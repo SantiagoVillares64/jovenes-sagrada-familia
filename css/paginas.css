@@ -635,3 +635,6 @@ a.lib__item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(29
 @media (max-width: 520px) { .rk { padding: 18px 14px; } }
 .rk__grupo { display: inline-block; margin-left: .4rem; padding: .05rem .5rem; border-radius: 99px; font-size: .72rem; font-weight: 600; letter-spacing: .03em;
   color: var(--c); border: 1px solid var(--c); vertical-align: middle; white-space: nowrap; }
+.cw__record { font-size: .85rem; color: var(--muted); margin-left: .6rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cw__nuevo { font-weight: 700; color: #8a6a12; background: #fbf1cf; border-radius: 10px; padding: .5rem .8rem; display: inline-block; margin: .3rem 0 .6rem; }
+.cw__rec-txt { font-size: .92rem; color: var(--muted); margin: .2rem 0 .6rem; }
