@@ -347,7 +347,7 @@ window.CONTENIDO = {
 
   /* ---------- Biblioteca (página Recursos) ----------
      pilar: espiritual, intelectual, humano, apostolico
-     formato: Lectura, Podcast, Video, App, Música, Peli o serie
+     formato: Lectura, Podcast, Video, App, Curso, Música, Peli o serie
      nivel: Inicial, Intermedio, Profundo */
   biblioteca: {
     pilares: [
@@ -371,12 +371,44 @@ window.CONTENIDO = {
       { titulo: "Teología del cuerpo", detalle: "Podcast hecho por una integrante de la comunidad sobre la afectividad, el cuerpo y el amor según el plan de Dios.", pilar: "humano", formato: "Podcast", nivel: "Intermedio", link: "https://open.spotify.com/show/4ihEBBGlMCjeEzCgCfQCkY" },
       { titulo: "Christus vivit", detalle: "La carta del Papa Francisco a los jóvenes (2019).", pilar: "apostolico", formato: "Lectura", nivel: "Intermedio", link: "https://www.vatican.va/content/francesco/es/apost_exhortations/documents/papa-francesco_esortazione-ap_20190325_christus-vivit.html" },
       { titulo: "Evangelio del día", detalle: "Las lecturas de la misa de hoy con un breve comentario, de Vatican News.", pilar: "espiritual", formato: "Lectura", nivel: "Inicial", link: "https://www.vaticannews.va/es/evangelio-de-hoy.html" },
+      { titulo: "Horarios de Misa", detalle: "App gratuita para encontrar misas, confesiones y adoración cerca tuyo cuando estás en otro lado. Más de 130.000 iglesias en todo el mundo.", pilar: "espiritual", formato: "App", nivel: "Inicial", link: "https://horariosdemisa.com/" },
       { titulo: "Hallow", detalle: "App para rezar: rosario, meditaciones guiadas, examen de conciencia y planes de oración. Tiene versión en español.", pilar: "espiritual", formato: "App", nivel: "Inicial", link: "https://hallow.com/es/" },
       { titulo: "Dilexit nos", detalle: "Carta del Papa Francisco sobre el amor del Corazón de Jesús (2024).", pilar: "espiritual", formato: "Lectura", nivel: "Intermedio", link: "https://www.vatican.va/content/francesco/es/encyclicals/documents/20241024-enciclica-dilexit-nos.html" },
       { titulo: "Gaudete et exsultate", detalle: "El llamado a la santidad en el mundo de hoy, en la vida de todos los días (Francisco, 2018).", pilar: "espiritual", formato: "Lectura", nivel: "Intermedio", link: "https://www.vatican.va/content/francesco/es/apost_exhortations/documents/papa-francesco_esortazione-ap_20180319_gaudete-et-exsultate.html" },
       { titulo: "Deus caritas est", detalle: "«Dios es amor»: qué es el amor cristiano y cómo se vive (Benedicto XVI, 2005).", pilar: "intelectual", formato: "Lectura", nivel: "Profundo", link: "https://www.vatican.va/content/benedict-xvi/es/encyclicals/documents/hf_ben-xvi_enc_20051225_deus-caritas-est.html" },
       { titulo: "Carta de Juan Pablo II a los jóvenes", detalle: "Dilecti amici: el proyecto de vida, la vocación y el amor, escrita para los jóvenes del mundo (1985).", pilar: "humano", formato: "Lectura", nivel: "Intermedio", link: "https://www.vatican.va/content/john-paul-ii/es/apost_letters/1985/documents/hf_jp-ii_apl_31031985_dilecti-amici.html" },
       { titulo: "Amoris laetitia", detalle: "Sobre el amor en la familia. El capítulo 4 («El amor en el matrimonio») comenta el himno de la caridad de san Pablo (Francisco, 2016).", pilar: "humano", formato: "Lectura", nivel: "Profundo", link: "https://www.vatican.va/content/francesco/es/apost_exhortations/documents/papa-francesco_esortazione-ap_20160319_amoris-laetitia.html" },
+      { titulo: "Creados para amar · Feminidad auténtica", detalle: "Del módulo Creados para amar de HPP. Videos y lecturas sobre la dignidad, la belleza y la vocación de la mujer.", pilar: "humano", formato: "Curso", nivel: "Intermedio",
+        links: [
+          { texto: "Los 4 pilares de la feminidad según Edith Stein", url: "https://es.aleteia.org/2018/08/21/los-4-pilares-de-la-feminidad-segun-edith-stein/" },
+          { texto: "Santa Clara de Asís, una vida para emular (Benedicto XVI)", url: "https://www.vatican.va/content/benedict-xvi/es/audiences/2010/documents/hf_ben-xvi_aud_20100915.html" },
+          { texto: "¿Qué es la modestia? (Leah Darrow) (en inglés)", url: "https://www.youtube.com/watch?v=SQ84oSJcrFE" },
+          { texto: "You: Of Whom the World is Not Worthy (en inglés)", url: "https://www.youtube.com/watch?v=KIy9Wmu_Q7g" },
+          { texto: "Qué nos dice hoy santa Juana de Arco (en inglés)", url: "https://www.youtube.com/watch?v=mUswlnpnT_w" },
+          { texto: "La mujer que me enseñó a ir contra la corriente (en inglés)", url: "https://www.youtube.com/watch?v=59kzZB3UjK8" },
+          { texto: "Cómo ser una mujer virtuosa (en inglés)", url: "https://www.youtube.com/watch?v=8QzERcA-0XQ" },
+          { texto: "The Victoria's Secret Fashion Show (en inglés)", url: "https://www.youtube.com/watch?v=rkBdCRYCseU" }
+        ] },
+      { titulo: "Creados para amar · Masculinidad auténtica", detalle: "Del módulo Creados para amar de HPP. Qué significa ser un hombre de verdad: virtud, fortaleza y entrega.", pilar: "humano", formato: "Curso", nivel: "Intermedio",
+        links: [
+          { texto: "¿Es la castidad un castigo? Testimonio de Eduardo Verástegui", url: "https://www.youtube.com/watch?v=DzUVMD6Mjpg" },
+          { texto: "¿Qué es la masculinidad auténtica? (en inglés)", url: "https://www.youtube.com/watch?v=8xT2L1DJOz4" },
+          { texto: "Qué significa ser un hombre de virtud (en inglés)", url: "https://www.youtube.com/watch?v=DujkQdtik0Y" },
+          { texto: "Qué podemos aprender de Máximo Décimo Meridio (en inglés)", url: "https://www.youtube.com/watch?v=u-LsLd4RP5g" },
+          { texto: "Hombres fuertes y débiles a la luz de Notre Dame (en inglés)", url: "https://thosecatholicmen.com/articles/men-in-light-of-notre-dame/" },
+          { texto: "Los buenos chicos siempre pierden (en inglés)", url: "https://thosecatholicmen.com/articles/nice-guys-finish-last/" },
+          { texto: "Curso Into the Breach (en inglés)", url: "https://www.kofc.org/intothebreach" }
+        ] },
+      { titulo: "Creados para amar · Amor y noviazgo", detalle: "Del módulo Creados para amar de HPP. Cómo reconocer a la persona indicada, vivir la castidad y soñar con un amor para toda la vida.", pilar: "humano", formato: "Curso", nivel: "Intermedio",
+        links: [
+          { texto: "¿Cómo sé si es la persona indicada? (en inglés)", url: "https://www.youtube.com/watch?v=x0g1AAgiGSo" },
+          { texto: "¿Alguna vez voy a encontrar a esa persona? (en inglés)", url: "https://www.youtube.com/watch?v=14VAz80R9-0" },
+          { texto: "¿La castidad hizo incómoda nuestra noche de bodas? (en inglés)", url: "https://www.youtube.com/watch?v=P3OKZRIEV4M" },
+          { texto: "Amar como María y José (en inglés)", url: "https://www.youtube.com/watch?v=zWht7mesRD8" },
+          { texto: "¿Es posible un matrimonio de santos? Luis y Celia Martin (en inglés)", url: "https://www.wordonfire.org/resources/blog/the-civilization-of-love-in-sts-louis-and-zelie-martin/24536/" },
+          { texto: "¿Puedo ser feliz estando soltera? (en inglés)", url: "https://couragegulfcoast.wixsite.com/blog/single-post/2018/06/08/Can-I-Be-Happy-and-Single" },
+          { texto: "¿Habrá sexo en el cielo? (Peter Kreeft) (en inglés)", url: "https://www.peterkreeft.com/topics/sex-in-heaven.htm" }
+        ] },
       { titulo: "Evangelii gaudium", detalle: "La alegría del Evangelio: cómo anunciar a Jesús hoy (Francisco, 2013).", pilar: "apostolico", formato: "Lectura", nivel: "Profundo", link: "https://www.vatican.va/content/francesco/es/apost_exhortations/documents/papa-francesco_esortazione-ap_20131124_evangelii-gaudium.html" },
       { titulo: "Dilexi te", detalle: "El amor a los pobres como centro de la fe. Primera exhortación del Papa León XIV (2025).", pilar: "apostolico", formato: "Lectura", nivel: "Intermedio", link: "https://www.vatican.va/content/leo-xiv/es/apost_exhortations/documents/20251004-dilexi-te.html" },
       { titulo: "Laudato si'", detalle: "El cuidado de la casa común (Francisco, 2015).", pilar: "apostolico", formato: "Lectura", nivel: "Intermedio", link: "https://www.vatican.va/content/francesco/es/encyclicals/documents/papa-francesco_20150524_enciclica-laudato-si.html" },
