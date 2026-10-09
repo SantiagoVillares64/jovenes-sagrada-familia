@@ -1299,10 +1299,10 @@
       if (!RK) { cont.innerHTML = '<p class="muted">El ranking parroquial arranca muy pronto.</p>'; return; }
       var yo = yoRK();
       if (!yo) {
-        cont.innerHTML = '<form class="rk__login" id="rk-login"><label for="rk-codigo">Tu código</label>' +
+        cont.innerHTML = '<form class="rk__login" id="rk-login"><label for="rk-codigo">Entrá con tu código</label>' +
           '<div class="rk__fila"><input id="rk-codigo" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="12" placeholder="Ej.: K7PM3Q" required>' +
           '<button type="submit" class="btn btn--small">Entrar</button></div>' +
-          '<p class="rk__ayuda">¿No tenés código? Pedíselo a los coordinadores por ' + ext(C.redes.instagram, "link", "Instagram") + ". En el ranking solo aparece el nombre que elijan ellos.</p>" +
+          '<p class="rk__ayuda"><strong>' + esc(C.ranking.pedirUsuario || "¿Querés tu propio usuario? Pedíselo a los coordinadores.") + "</strong> En el ranking solo aparece el nombre que elijan ellos.</p>" +
           '<p class="rk__error" id="rk-error" aria-live="polite"></p></form><div id="rk-tablas"><p class="muted">Cargando ranking…</p></div>';
       } else {
         var hoy = 0, jugados = 0;
