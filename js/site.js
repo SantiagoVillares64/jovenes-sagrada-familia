@@ -804,11 +804,29 @@
 
   P.academia = function () {
     return '<section class="ac-hero"><div class="wrap ac-hero__in">' +
-        '<div class="ac-hero__marca">' + isoSVG("ac-hero__iso") + '<p class="ac-rotulo ac-rotulo--claro">Academia</p><h1 class="ac-h1">Frassati</h1><p class="ac-lema">Hacia lo alto</p></div>' +
-        '<div class="ac-hero__txt"><p>La Academia Frassati es el espacio de formación de Jóvenes Sagrada Familia. Cada curso es una cumbre: leés, rendís y, si llegás arriba, te llevás tu certificado.</p>' +
-        "<p>Lleva el nombre de san Pier Giorgio Frassati (1901–1925): estudiante, alpinista y amigo de los pobres de Turín. Su lema era <em>Verso l'alto</em>: hacia lo alto.</p></div>" +
+        '<div class="ac-hero__marca">' + isoSVG("ac-hero__iso") + '<p class="ac-rotulo ac-rotulo--claro">Academia</p><h1 class="ac-h1">Frassati</h1><p class="ac-lema">Hacia lo alto</p>' +
+        '<p class="ac-hero__intro">La Academia Frassati es el espacio de formación de Jóvenes Sagrada Familia. Cada curso es una cumbre: leés, rendís y, si llegás arriba, te llevás tu certificado.</p></div>' +
+        '<figure class="ac-hero__foto"><img src="img/academia/frassati-nubes.jpg" alt="Pier Giorgio Frassati de pie sobre una roca, por encima de un mar de nubes" fetchpriority="high">' +
+        "<figcaption>Pier Giorgio en la montaña, por encima de las nubes.</figcaption></figure>" +
       "</div></section>" +
       '<section class="ac-cuerpo"><div class="wrap"><div id="formacion"><p class="ac-ayuda">Cargando…</p></div></div></section>' +
+      '<section class="ac-quien"><div class="wrap ac-quien__in">' +
+        '<div class="ac-quien__fotos">' +
+          '<figure class="ac-f ac-f--cumbre"><img src="img/academia/frassati-cumbre.jpg" alt="Pier Giorgio Frassati en una cumbre nevada, con su piolet y su pipa" loading="lazy"></figure>' +
+          '<figure class="ac-f ac-f--amigos"><img src="img/academia/frassati-amigos.jpg" alt="Pier Giorgio riéndose con sus amigos y un sacerdote" loading="lazy"></figure>' +
+          '<figure class="ac-f ac-f--esqui"><img src="img/academia/frassati-esqui.jpg" alt="Pier Giorgio con esquíes en la nieve" loading="lazy"></figure>' +
+        "</div>" +
+        '<div class="ac-quien__txt"><p class="ac-rotulo">Nuestro patrono</p><h2 class="ac-h2">Quién fue Pier Giorgio</h2>' +
+          "<p>San Pier Giorgio Frassati nació en Turín en 1901 y murió en 1925, con apenas 24 años. Estudiaba ingeniería, era de la Acción Católica, de la Conferencia de San Vicente de Paúl y terciario dominico, y pasaba su tiempo libre con los pobres de su ciudad. Juan Pablo II lo llamó «el hombre de las ocho bienaventuranzas» y León XIV lo canonizó el 7 de septiembre de 2025.</p>" +
+          '<ul class="ac-pilares">' +
+            "<li><h3>La montaña</h3><p>Escalaba con sus amigos y en la cumbre rezaba. De ahí sale nuestro isotipo.</p></li>" +
+            "<li><h3>La amistad</h3><p>Hacía todo con amigos: los «Tipi Loschi», su grupo de amigos en la fe.</p></li>" +
+            "<li><h3>El estudio</h3><p>Lector de Dante y de santo Tomás. Estudiar en serio también es subir.</p></li>" +
+            "<li><h3>Los pobres</h3><p>Visitaba a las familias más pobres de Turín, casi siempre sin que nadie se enterara.</p></li>" +
+          "</ul>" +
+          '<p class="ac-fiesta">Su fiesta es el <strong>4 de julio</strong>. ' + '<a class="ac-link" href="santos.html#pier-giorgio-frassati">Leé su historia completa →</a></p>' +
+        "</div>" +
+      "</div></section>" +
       '<section class="ac-cita"><div class="wrap ac-cita__in">' + selloSVG("ac-sello") +
         '<div><p class="ac-cita__txt">«Vivir sin fe, sin un patrimonio que defender, sin luchar por la verdad, no es vivir, sino ir tirando.»</p><p class="ac-rotulo">San Pier Giorgio Frassati</p></div>' +
       "</div></section>";

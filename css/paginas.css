@@ -707,12 +707,14 @@ a.lib__item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(29
 
 /* portada */
 .ac-hero { background: var(--ac-noche); color: #fff; padding: clamp(56px, 9vw, 110px) 0 clamp(48px, 8vw, 96px); }
-.ac-hero__in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: end; }
+.ac-hero__in { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 88px); align-items: center; }
 .ac-hero__iso { width: 150px; color: #fff; display: block; margin-bottom: 2.2rem; }
 .ac-hero__iso path { stroke-width: 1.9; }
-.ac-hero__txt { font-family: var(--ac-txt); color: rgba(255, 255, 255, .86); font-size: 1rem; border-top: 1px solid rgba(127, 176, 242, .35); padding-top: 1.4rem; }
-.ac-hero__txt p { margin: 0 0 1rem; line-height: 1.75; }
-.ac-hero__txt em { color: #fff; }
+.ac-hero__intro { font-family: var(--ac-txt); color: rgba(255, 255, 255, .86); font-size: 1.02rem; line-height: 1.75; max-width: 30rem; margin: 2.2rem 0 0; padding-top: 1.3rem; border-top: 1px solid rgba(127, 176, 242, .35); }
+.ac-hero__foto { margin: 0; justify-self: end; width: 100%; max-width: 420px; position: relative; }
+.ac-hero__foto::before { content: ""; position: absolute; inset: 16px -16px -16px 16px; border: 1px solid rgba(127, 176, 242, .55); pointer-events: none; }
+.ac-hero__foto img { position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 35%; }
+.ac-hero__foto figcaption { position: relative; margin-top: 1.6rem; font-family: var(--ac-tit); font-style: italic; font-size: 1.05rem; color: #7fb0f2; }
 
 /* cuerpo */
 .ac-cuerpo { padding: clamp(48px, 7vw, 88px) 0; }
@@ -773,6 +775,28 @@ a.ac-cumbre:hover { border-color: var(--ac-celeste); background: #fff; }
 .ac-repaso li.is-ok span { color: var(--ac-celeste-p); }
 .ac-repaso li.is-bad span { color: #9a3b3b; }
 .ac-repaso em { display: inline-block; margin-left: .4rem; font-size: .82rem; color: var(--ac-celeste-p); }
+
+/* quién fue Pier Giorgio */
+.ac-quien { background: #fff; padding: clamp(56px, 8vw, 104px) 0; border-top: 1px solid var(--ac-linea); }
+.ac-quien__in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: center; }
+.ac-quien__fotos { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); grid-template-rows: auto auto; gap: 12px; }
+.ac-f { margin: 0; overflow: hidden; background: var(--ac-papel); }
+.ac-f img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.ac-f--cumbre { grid-row: 1 / 3; }
+.ac-f--cumbre img { aspect-ratio: auto; min-height: 100%; object-position: 50% 30%; }
+.ac-f--amigos img { aspect-ratio: 3 / 2; object-position: 55% 30%; }
+.ac-f--esqui img { aspect-ratio: 4 / 5; object-position: 50% 20%; }
+.ac-quien__txt > p { color: var(--ac-tinta); }
+.ac-pilares { list-style: none; margin: 1.6rem 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 24px; }
+.ac-pilares li { border-top: 1px solid var(--ac-celeste); padding-top: .7rem; }
+.ac-pilares h3 { font-family: var(--ac-tit); font-weight: 500; font-size: 1.35rem; margin: 0 0 .25rem; color: var(--ac-tinta); }
+.ac-pilares p { font-size: .9rem; color: var(--ac-gris); margin: 0; line-height: 1.6; }
+.ac-fiesta { font-size: .95rem; }
+@media (max-width: 860px) {
+  .ac-quien__in { grid-template-columns: 1fr; }
+  .ac-hero__foto { justify-self: start; max-width: 360px; margin: 8px 16px 8px 0; }
+}
+@media (max-width: 520px) { .ac-pilares { grid-template-columns: 1fr; } }
 
 /* cita y sello */
 .ac-cita { padding: clamp(48px, 7vw, 88px) 0; border-top: 1px solid var(--ac-linea); background: var(--ac-papel); }
