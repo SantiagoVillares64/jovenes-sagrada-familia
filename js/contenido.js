@@ -351,7 +351,7 @@ window.CONTENIDO = {
      pedirUsuario: el texto que ve quien todavía no entró.
      Vacío = el ranking aparece como "muy pronto". */
   ranking: {
-    url: "https://script.google.com/macros/s/AKfycbwHWJrFhnWdO1au2H4ADRgBqy7zVptiTgfRi7DL_79QJ0Hy_t97QdX7yxGT2ffMsAB4og/exec",
+    url: "https://script.google.com/macros/s/AKfycbxFGsbyPTfuyV6mXaysbG6h3TrK4MV55QIHj0NqjGns-j68M6WFsiGnYmCS42dmVfYa/exec",
     clientId: "938247619466-bc1mftrsnnrbh9f3hk1i3j1o5r3stoq2.apps.googleusercontent.com",
     pedirUsuario: "¿Querés sumarte? Pedile a Pola que apruebe tu cuenta.",
     aprueba: "Pola"
