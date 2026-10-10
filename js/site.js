@@ -1478,7 +1478,7 @@
         cont.innerHTML = '<div class="rk__login"><p class="rk__entrar">Entrá con tu cuenta de Google para sumar tus puntos al ranking.</p>' +
           '<div id="rk-google" class="rk__google"></div>' +
           (msgRK ? '<p class="rk__msg" aria-live="polite">' + msgRK + "</p>" : "") +
-          '<p class="rk__ayuda">' + esc(C.ranking.pedirUsuario || "") + ' La primera vez, tu cuenta queda pendiente hasta que la aprueben. En el ranking solo se ve tu nombre, nunca tu mail. <a href="privacidad.html">Privacidad</a></p></div>' +
+          '<p class="rk__ayuda">' + esc(C.ranking.pedirUsuario || "") + ' En el ranking solo se ve tu nombre, nunca tu mail. <a href="privacidad.html">Privacidad</a></p></div>' +
           '<div id="rk-tablas"><p class="muted">Cargando ranking…</p></div>';
         CUENTA.boton($("rk-google"), function (estado, nombre) {
           if (CUENTA.datos()) {

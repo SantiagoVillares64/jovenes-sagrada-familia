@@ -353,7 +353,7 @@ window.CONTENIDO = {
   ranking: {
     url: "https://script.google.com/macros/s/AKfycbxFGsbyPTfuyV6mXaysbG6h3TrK4MV55QIHj0NqjGns-j68M6WFsiGnYmCS42dmVfYa/exec",
     clientId: "938247619466-bc1mftrsnnrbh9f3hk1i3j1o5r3stoq2.apps.googleusercontent.com",
-    pedirUsuario: "¿Querés sumarte? Pedile a Pola que apruebe tu cuenta.",
+    pedirUsuario: "Entrás y empezás a sumar al instante. Para aparecer en la tabla pública, Pola aprueba tu cuenta.",
     aprueba: "Pola"
   },
 
