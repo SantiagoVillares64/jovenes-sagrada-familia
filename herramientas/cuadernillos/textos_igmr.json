@@ -1,0 +1,454 @@
+[
+ {
+  "t": "titulo",
+  "texto": "La estructura general de la Misa"
+ },
+ {
+  "t": "par",
+  "n": 27,
+  "texto": "En la Misa, o Cena del Señor, el pueblo de Dios es convocado y reunido, bajo la presidencia del sacerdote, quien obra en la persona de Cristo (in persona Christi) para celebrar el memorial del Señor o sacrificio eucarístico. De manera que para esta reunión local de la santa Iglesia vale eminentemente la promesa de Cristo: “Donde dos o tres están reunidos en mi nombre, allí estoy yo en medio de ellos” (Mt 18, 20). Pues en la celebración de la Misa, en la cual se perpetúa el sacrificio de la cruz, Cristo está realmente presente en la misma asamblea congregada en su nombre, en la persona del ministro, en su palabra y, más aún, de manera sustancial y permanente en las especies eucarísticas."
+ },
+ {
+  "t": "par",
+  "n": 28,
+  "texto": "La Misa consta, en cierto modo, de dos partes, a saber, la Liturgia de la Palabra y la Liturgia Eucarística, las cuales están tan estrechamente unidas entre sí, que constituyen un solo acto de culto. En efecto, en la Misa se prepara la mesa, tanto de la Palabra de Dios, como del Cuerpo de Cristo, de la cual los fieles son instruidos y alimentados. Consta además de algunos ritos que inician y concluyen la celebración."
+ },
+ {
+  "t": "titulo",
+  "texto": "La lectura de la Palabra de Dios y su explicación"
+ },
+ {
+  "t": "par",
+  "n": 29,
+  "texto": "Cuando se leen las sagradas Escrituras en la Iglesia, Dios mismo habla a su pueblo, y Cristo, presente en su palabra, anuncia el Evangelio. Por eso las lecturas de la Palabra de Dios, que proporcionan a la Liturgia un elemento de máxima importancia, deben ser escuchadas por todos con veneración. Aunque la palabra divina en las lecturas de la sagrada Escritura se dirija a todos los hombres de todos los tiempos y sea inteligible para ellos, sin embargo, su más plena inteligencia y eficacia se favorece con una explicación viva, es decir, con la homilía, que viene así a ser parte de la acción litúrgica."
+ },
+ {
+  "t": "titulo",
+  "texto": "Las oraciones y otras partes que corresponden al sacerdote"
+ },
+ {
+  "t": "par",
+  "n": 30,
+  "texto": "Entre las cosas que se asignan al sacerdote, ocupa el primer lugar la Plegaria Eucarística, que es la cumbre de toda la celebración. Vienen en seguida las oraciones, es decir, la colecta, la oración sobre las ofrendas y la oración después de la Comunión. El sacerdote que preside la asamblea en representación de Cristo, dirige estas oraciones a Dios en nombre de todo el pueblo santo y de todos los circunstantes. Con razón, pues, se denominan «oraciones presidenciales»."
+ },
+ {
+  "t": "par",
+  "n": 31,
+  "texto": "También corresponde al sacerdote que ejerce el ministerio de presidente de la asamblea congregada, hacer algunas moniciones previstas en el mismo rito. Donde las rúbricas lo determinan, está permitido al celebrante adaptarlas hasta cierto grado para que respondan a la capacidad de los participantes; procure, sin embargo, el sacerdote conservar siempre el sentido de las moniciones que se proponen en el Misal y expresarlo en pocas palabras. Al sacerdote que preside le compete también moderar la Palabra de Dios y dar la bendición final. A él, además, le está permitido introducir a los fieles, con brevísimas palabras, a la Misa del día, después del saludo inicial y antes del rito penitencial; a la Liturgia de la Palabra, antes de las lecturas; a la Plegaria Eucarística, antes del Prefacio, pero nunca dentro de la misma Plegaria; e igualmente, dar por concluida toda la acción sagrada, antes de la despedida."
+ },
+ {
+  "t": "par",
+  "n": 32,
+  "texto": "La naturaleza de las partes “presidenciales” exige que se pronuncien con voz clara y alta, y que todos las escuchen con atención. Por consiguiente, mientras el sacerdote las dice, no se tengan cantos ni oraciones y callen el órgano y otros instrumentos musicales."
+ },
+ {
+  "t": "par",
+  "n": 33,
+  "texto": "Y en efecto, como presidente, el sacerdote pronuncia las oraciones en nombre de la Iglesia y de la comunidad congregada, mientras que algunas veces lo hace solamente en su nombre, para poder cumplir su ministerio con mayor atención y piedad. De tal manera que las oraciones que se proponen antes de la lectura del Evangelio, en la preparación de los dones, así como antes y después de la Comunión, se dicen en secreto"
+ },
+ {
+  "t": "titulo",
+  "texto": "Otras fórmulas que ocurren en la celebración"
+ },
+ {
+  "t": "par",
+  "n": 34,
+  "texto": "Ya que por su naturaleza la celebración de la Misa tiene carácter “comunitario”, los diálogos entre el celebrante y los fieles congregados, así como las aclamaciones, tienen una gran importancia, puesto que no son sólo señales exteriores de una celebración común, sino que fomentan y realizan la comunión entre el sacerdote y el pueblo."
+ },
+ {
+  "t": "par",
+  "n": 35,
+  "texto": "Las aclamaciones y las respuestas de los fieles a los saludos del sacerdote y a las oraciones constituyen el grado de participación activa que deben observar los fieles congregados en cualquier forma de Misa, para que se exprese claramente y se promueva como acción de toda la comunidad."
+ },
+ {
+  "t": "par",
+  "n": 36,
+  "texto": "Otras partes muy útiles para manifestar y favorecer la participación activa de los fieles, y que se encomiendan a toda la asamblea convocada, son principalmente el acto penitencial, la profesión de fe, la oración universal y la Oración del Señor."
+ },
+ {
+  "t": "par",
+  "n": 37,
+  "texto": "Finalmente, de las otras fórmulas: a) Algunas poseen por sí mismas el valor de rito o de acto, como el himno del Gloria, el salmo responsorial, el Aleluya, el verso antes del Evangelio, el Santo, la aclamación de la anámnesis, el canto después de la Comunión. b) Otras, en cambio, como los cantos de entrada, al ofertorio, de la fracción (Cordero de Dios) y de la Comunión, simplemente acompañan algún rito."
+ },
+ {
+  "t": "titulo",
+  "texto": "Las maneras de pronunciar los diversos textos"
+ },
+ {
+  "t": "par",
+  "n": 38,
+  "texto": "En los textos que han de pronunciarse en voz alta y clara, sea por el sacerdote o por el diácono, o por el lector, o por todos, la voz debe responder a la índole del respectivo texto, según éste sea una lectura, oración, monición, aclamación o canto; como también a la forma de la celebración y de la solemnidad de la asamblea. Además, téngase en cuenta la índole de las diversas lenguas y la naturaleza de los pueblos. En las rúbricas y en las normas que siguen, los verbos “decir” o “pronunciar”, deben entenderse, entonces, sea del canto, sea de la lectura en voz alta, observándose los principios arriba expuestos."
+ },
+ {
+  "t": "titulo",
+  "texto": "Importancia del canto"
+ },
+ {
+  "t": "par",
+  "n": 39,
+  "texto": "Amonesta el Apóstol a los fieles que se reúnen esperando unidos la venida de su Señor, que canten todos juntos salmos, himnos y cánticos inspirados (cfr. Col 3,16). Pues el canto es signo de la exultación del corazón (cfr. Hch 2, 46). De ahí que San Agustín dice con razón: “Cantar es propio del que ama”, mientras que ya de tiempos muy antiguos viene el proverbio: “Quien canta bien, ora dos veces”."
+ },
+ {
+  "t": "par",
+  "n": 40,
+  "texto": "Téngase, por consiguiente, en gran estima el uso del canto en la celebración de la Misa, atendiendo a la índole de cada pueblo y a las posibilidades de cada asamblea litúrgica. Aunque no sea siempre necesario, como por ejemplo en las Misas fériales, cantar todos los textos que de por sí se destinan a ser cantados, hay que cuidar absolutamente que no falte el canto de los ministros y del pueblo en las celebraciones que se llevan a cabo los domingos y fiestas de precepto. Sin embargo, al determinar las partes que en efecto se van a cantar, prefiéranse aquellas que son más importantes, y en especial, aquellas en las cuales el pueblo responde al canto del sacerdote, del diácono o del lector, y aquellas en las que el sacerdote y el pueblo cantan al unísono."
+ },
+ {
+  "t": "par",
+  "n": 41,
+  "texto": "En igualdad de circunstancias, dése el primer lugar al canto gregoriano, ya que es propio de la Liturgia romana. De ninguna manera se excluyan otros géneros de música sacra, especialmente la polifonía, con tal que sean conformes con el espíritu de la acción litúrgica y favorezcan la participación de todos los fieles. Como cada día es más frecuente que se reúnan fieles de diversas naciones, conviene que esos mismos fieles sepan cantar juntos en lengua latina, por lo menos algunas partes del Ordinario de la Misa, especialmente el símbolo de la fe y la Oración del Señor, usando las melodías más fáciles."
+ },
+ {
+  "t": "titulo",
+  "texto": "Gestos y posturas corporales"
+ },
+ {
+  "t": "par",
+  "n": 42,
+  "texto": "Los gestos y posturas corporales, tanto del sacerdote, del diácono y de los ministros, como del pueblo, deben tender a que toda la celebración resplandezca por el noble decoro y por la sencillez, a que se comprenda el significado verdadero y pleno de cada una se sus diversas partes y a que se favorezca la participación de todos. Así, pues, se tendrá que prestar atención a aquellas cosas que se establecen por esta Instrucción general y por la praxis tradicional del Rito romano, y a aquellas que contribuyan al bien común espiritual del pueblo de Dios, más que al deseo o a las inclinaciones privadas. La uniformidad de las posturas, que debe ser observada por todos participantes, es signo de la unidad de los miembros de la comunidad cristiana congregados para la sagrada Liturgia: expresa y promueve, en efecto, la intención y los sentimientos de los participantes."
+ },
+ {
+  "t": "par",
+  "n": 43,
+  "texto": "Los fieles están de pie desde el principio del canto de entrada, o bien, desde cuando el sacerdote se dirige al altar, hasta la colecta inclusive; al canto del Aleluya antes del Evangelio; durante la proclamación del Evangelio; mientras se hacen la profesión de fe y la oración universal; además desde la invitación Oren, hermanos, antes de la oración sobre las ofrendas, hasta el final de la Misa, excepto lo que se dice más abajo. En cambio, estarán sentados mientras se proclaman las lecturas antes del Evangelio y el salmo responsorial; durante la homilía y mientras se hace la preparación de los dones para el ofertorio; también, según las circunstancias, mientras se guarda el sagrado silencio después de la Comunión. Por otra parte, estarán de rodillas, a no ser por causa de salud, por la estrechez del lugar, por el gran número de asistentes o que otras causas razonables lo impidan, durante la consagración. Pero los que no se arrodillen para la consagración, que hagan inclinación profunda mientras el sacerdote hace la genuflexión después de la consagración. Sin embargo, pertenece a la Conferencia Episcopal adaptar los gestos y las posturas descritos en el Ordinario de la Misa a la índole y a las tradiciones razonables de los pueblos, según la norma del derecho. Pero préstese atención a que respondan al sentido y la índole de cada una de las partes de la celebración. Donde existe la costumbre de que el pueblo permanezca de rodillas desde cuando termina la aclamación del “Santo” hasta el final de la Plegaria Eucarística y antes de la Comunión cuando el sacerdote dice “Éste es el Cordero de Dios”, es laudable que se conserve. Para conseguir esta uniformidad en los gestos y en las posturas en una misma celebración, obedezcan los fieles a las moniciones que hagan el diácono o el ministro laico, o el sacerdote, de acuerdo con lo que se establece en el Misal."
+ },
+ {
+  "t": "par",
+  "n": 44,
+  "texto": "Entre los gestos se cuentan también las acciones y las procesiones, con las que el sacerdote con el diácono y los ministros se acercan al altar; cuando el diácono, antes de la proclamación del Evangelio, lleva al ambón el Evangeliario o libro de los Evangelios; cuando los fieles llevan los dones y cuando se acercan a la Comunión. Conviene que tales acciones y procesiones se cumplan decorosamente, mientras se cantan los correspondientes cantos, según las normas establecidas para cada caso."
+ },
+ {
+  "t": "titulo",
+  "texto": "El silencio"
+ },
+ {
+  "t": "par",
+  "n": 45,
+  "texto": "Debe guardarse también, en el momento en que corresponde, como parte de la celebración, un sagrado silencio. Sin embargo, su naturaleza depende del momento en que se observa en cada celebración. Pues en el acto penitencial y después de la invitación a orar, cada uno se recoge en sí mismo; pero terminada la lectura o la homilía, todos meditan brevemente lo que escucharon; y después de la Comunión, alaban a Dios en su corazón y oran. Ya desde antes de la celebración misma, es laudable que se guarde silencio en la iglesia, en la sacristía, en el “secretarium” y en los lugares más cercanos para que todos se dispongan devota y debidamente para la acción sagrada."
+ },
+ {
+  "t": "titulo",
+  "texto": "Los ritos iniciales"
+ },
+ {
+  "t": "par",
+  "n": 46,
+  "texto": "Los ritos que preceden a la Liturgia de la Palabra, es decir, la entrada, el saludo, el acto penitencial, el Señor, ten piedad, el Gloria. y la colecta, tienen el carácter de exordio, de introducción y de preparación. La finalidad de ellos es hacer que los fieles reunidos en la unidad construyan la comunión y se dispongan debidamente a escuchar la Palabra de Dios y a celebrar dignamente la Eucaristía. En algunas celebraciones, que se unen con la Misa, según la norma de los libros litúrgicos, se omiten los ritos iniciales o se realizan de modo especial."
+ },
+ {
+  "t": "titulo",
+  "texto": "Entrada"
+ },
+ {
+  "t": "par",
+  "n": 47,
+  "texto": "Estando el pueblo reunido, cuando avanza el sacerdote con el diácono y con los ministros, se da comienzo al canto de entrada. La finalidad de este canto es abrir la celebración, promover la unión de quienes se están congregados e introducir su espíritu en el misterio del tiempo litúrgico o de la festividad, así como acompañar la procesión del sacerdote y los ministros."
+ },
+ {
+  "t": "par",
+  "n": 48,
+  "texto": "Se canta, o alternándolo entre los cantores y el pueblo o, de igual manera, entre un cantor y el pueblo, o todo por el pueblo, o todo por los cantores. Se puede emplear, o bien la antífona con su salmo como se encuentra en el Graduale Romanum o en el Graduale simplex, o bien otro canto que convenga con la índole de la acción sagrada, del día o del tiempo litúrgico, cuyo texto haya sido aprobado por la Conferencia de los Obispos. Si no hay canto de entrada, los fieles o algunos de ellos o un lector, leerán la antífona propuesta en el Misal, o si no el mismo sacerdote, quien también puede adaptarla a manera de monición inicial (cfr. n. 31)."
+ },
+ {
+  "t": "titulo",
+  "texto": "Saludo al altar y al pueblo congregado"
+ },
+ {
+  "t": "par",
+  "n": 49,
+  "texto": "Cuando llegan al presbiterio, el sacerdote, el diácono y los ministros saludan al altar con una inclinación profunda. Sin embargo, como signo de veneración, el sacerdote y el diácono besan el altar; y el sacerdote, según las circunstancias, inciensa la cruz y el altar."
+ },
+ {
+  "t": "par",
+  "n": 50,
+  "texto": "Concluido el canto de entrada, el sacerdote de pie, en la sede, se signa juntamente con toda la asamblea con la señal de la cruz; después, por medio del saludo, expresa a la comunidad reunida la presencia del Señor. Con este saludo y con la respuesta del pueblo se manifiesta el misterio de la Iglesia congregada. Terminado el saludo del pueblo, el sacerdote, o el diácono o un ministro laico, puede introducir a los fieles en la Misa del día con brevísimas palabras."
+ },
+ {
+  "t": "titulo",
+  "texto": "Acto penitencial"
+ },
+ {
+  "t": "par",
+  "n": 51,
+  "texto": "Después el sacerdote invita al acto penitencial que, tras una breve pausa de silencio, se lleva a cabo por medio de la fórmula de la confesión general de toda la comunidad, y se concluye con la absolución del sacerdote que, no obstante, carece de la eficacia del sacramento de la Penitencia. El domingo, especialmente en el tiempo pascual, a veces puede hacerse la bendición y aspersión del agua en memoria del Bautismo, en vez del acostumbrado acto penitencial."
+ },
+ {
+  "t": "titulo",
+  "texto": "Señor, ten piedad"
+ },
+ {
+  "t": "par",
+  "n": 52,
+  "texto": "Después del acto penitencial, se tiene siempre el Señor, ten piedad, a no ser que quizás haya tenido lugar ya en el mismo acto penitencial. Por ser un canto con el que los fieles aclaman al Señor e imploran su misericordia, deben hacerlo ordinariamente todos, es decir, que tanto el pueblo como el coro o el cantor, toman parte en él. Cada aclamación de ordinario se repite dos veces, pero no se excluyen más veces, teniendo en cuenta la índole de las diversas lenguas y también el arte musical o las circunstancias. Cuando el Señor, ten piedad se canta como parte del acto penitencial, se le antepone un “tropo” a cada una de las aclamaciones."
+ },
+ {
+  "t": "titulo",
+  "texto": "Gloria a Dios en el cielo"
+ },
+ {
+  "t": "par",
+  "n": 53,
+  "texto": "El Gloria es un himno antiquísimo y venerable con el que la Iglesia, congregada en el Espíritu Santo, glorifica a Dios Padre y glorifica y le suplica al Cordero. El texto de este himno no puede cambiarse por otro. Lo inicia el sacerdote o, según las circunstancias, el cantor o el coro, y en cambio, es cantado simultáneamente por todos, o por el pueblo alternando con los cantores, o por los mismos cantores. Si no se canta, lo dirán en voz alta todos simultáneamente, o en dos coros que se responden el uno al otro. Se canta o se dice en voz alta los domingos fuera de los tiempos de Adviento y de Cuaresma, en las solemnidades y en las fiestas, y en algunas celebraciones peculiares más solemnes."
+ },
+ {
+  "t": "titulo",
+  "texto": "Colecta"
+ },
+ {
+  "t": "par",
+  "n": 54,
+  "texto": "En seguida, el sacerdote invita al pueblo a orar, y todos, juntamente con el sacerdote, guardan un momento de silencio para hacerse conscientes de que están en la presencia de Dios y puedan formular en su espíritu sus deseos. Entonces el sacerdote dice la oración que suele llamarse “colecta” y por la cual se expresa el carácter de la celebración. Por una antigua tradición de la Iglesia, la oración colecta ordinariamente se dirige a Dios Padre, por Cristo en el Espíritu Santo y termina con la conclusión trinitaria, es decir, con la más larga, de este modo: Si se dirige al Padre: Por nuestro Señor Jesucristo, tu Hijo, que vive y reina contigo en la unidad del Espíritu Santo y es Dios por los siglos de los siglos. Si se dirige al Padre, pero al final se menciona al Hijo: Él, que vive y reina contigo en la unidad del Espíritu Santo y es Dios por los siglos de los siglos. Si se dirige al Hijo: Tú que vives y reinas con el Padre en la unidad del Espíritu Santo y eres Dios por los siglos de los siglos. El pueblo uniéndose a la súplica, con la aclamación Amén la hace suya la oración. En la Misa se siempre se dice una sola colecta."
+ },
+ {
+  "t": "titulo",
+  "texto": "La Liturgia de la Palabra"
+ },
+ {
+  "t": "par",
+  "n": 55,
+  "texto": "La parte principal de la Liturgia de la Palabra la constituyen las lecturas tomadas de la Sagrada Escritura, junto con los cánticos que se intercalan entre ellas; y la homilía, la profesión de fe y la oración universal u oración de los fieles, la desarrollan y la concluyen. Pues en las lecturas, que la homilía explica, Dios habla a su pueblo, le desvela los misterios de la redención y de la salvación, y le ofrece alimento espiritual; en fin, Cristo mismo, por su palabra, se hace presente en medio de los fieles. El pueblo hace suya esta palabra divina por el silencio y por los cantos; se adhiere a ella por la profesión de fe; y nutrido por ella, expresa sus súplicas con la oración universal por las necesidades de toda la Iglesia y por la salvación de todo el mundo."
+ },
+ {
+  "t": "titulo",
+  "texto": "Silencio"
+ },
+ {
+  "t": "par",
+  "n": 56,
+  "texto": "La Liturgia de la Palabra se debe celebrar de tal manera que favorezca la meditación; por eso hay que evitar en todo caso cualquier forma de apresuramiento que impida el recogimiento. Además conviene que durante la misma haya breves momentos de silencio, acomodados a la asamblea reunida, gracias a los cuales, con la ayuda del Espíritu Santo, se saboree la Palabra de Dios en los corazones y, por la oración, se prepare la respuesta. Dichos momentos de silencio pueden observarse oportunamente, por ejemplo, antes de que se inicie la misma Liturgia de la Palabra, después de la primera lectura, de la segunda y, finalmente, una vez terminada la homilía."
+ },
+ {
+  "t": "titulo",
+  "texto": "Lecturas bíblicas"
+ },
+ {
+  "t": "par",
+  "n": 57,
+  "texto": "Por las lecturas se prepara para los fieles la mesa de la Palabra de Dios y abren para ellos los tesoros de la Biblia. Conviene, por lo tanto, que se conserve la disposición de las lecturas, que aclara la unidad de los dos Testamentos y de la historia de la salvación; y no es lícito que las lecturas y el salmo responsorial, que contienen la Palabra de Dios, sean cambiados por otros textos no bíblicos."
+ },
+ {
+  "t": "par",
+  "n": 58,
+  "texto": "En la celebración de la Misa con el pueblo, las lecturas se proclamarán siempre desde el ambón."
+ },
+ {
+  "t": "par",
+  "n": 59,
+  "texto": "Según la tradición, el servicio de proclamar las lecturas no es presidencial, sino ministerial. Por consiguiente, que las lecturas sean proclamadas por un lector; en cambio, que el diácono, o estando éste ausente, otro sacerdote, anuncie el Evangelio. Sin embargo, si no está presente un diácono u otro sacerdote, corresponde al mismo sacerdote celebrante leer el Evangelio; y si no se encuentra presente otro lector idóneo, el sacerdote celebrante proclamará también las lecturas. Después de cada lectura, el lector propone una aclamación, con cuya respuesta el pueblo congregado tributa honor a la Palabra de Dios recibida con fe y con ánimo agradecido."
+ },
+ {
+  "t": "par",
+  "n": 60,
+  "texto": "La lectura del Evangelio constituye la cumbre de la Liturgia de la Palabra. La Liturgia misma enseña que debe tributársele suma veneración, cuando la distingue entre las otras lecturas con especial honor, sea por parte del ministro delegado para anunciarlo y por la bendición o la oración con que se prepara; sea por parte de los fieles, que con sus aclamaciones reconocen y profesan la presencia de Cristo que les habla, y escuchan de pie la lectura misma; sea por los mismos signos de veneración que se tributan al Evangeliario."
+ },
+ {
+  "t": "titulo",
+  "texto": "Salmo responsorial"
+ },
+ {
+  "t": "par",
+  "n": 61,
+  "texto": "Después de la primera lectura, sigue el salmo responsorial, que es parte integral de la Liturgia de la Palabra y en sí mismo tiene gran importancia litúrgica y pastoral, ya que favorece la meditación de la Palabra de Dios. El salmo responsorial debe corresponder a cada una de las lecturas y se toma habitualmente del leccionario. Conviene que el salmo responsorial sea cantado, al menos la respuesta que pertenece al pueblo. Así pues, el salmista o el cantor del salmo, desde el ambón o en otro sitio apropiado, proclama las estrofas del salmo, mientras que toda la asamblea permanece sentada, escucha y, más aún, de ordinario participa por medio de la respuesta, a menos que el salmo se proclame de modo directo, es decir, sin respuesta. Pero, para que el pueblo pueda unirse con mayor facilidad a la respuesta salmódica, se escogieron unos textos de respuesta y unos de los salmos, según los distintos tiempos del año o las diversas categorías de Santos, que pueden emplearse en vez del texto correspondiente a la lectura, siempre que el salmo sea cantado. Si el salmo no puede cantarse, se proclama de la manera más apta para facilitar la meditación de la Palabra de Dios. En vez del salmo asignado en el leccionario, puede también cantarse el responsorio gradual tomado del Gradual Romano, o el salmo responsorial o aleluyático tomado del Gradual Simple, tal como se presentan en esos libros."
+ },
+ {
+  "t": "titulo",
+  "texto": "Aclamación antes de la lectura del Evangelio"
+ },
+ {
+  "t": "par",
+  "n": 62,
+  "texto": "Después de la lectura, que precede inmediatamente al Evangelio, se canta el Aleluya u otro canto determinado por las rúbricas, según lo pida el tiempo litúrgico. Esta aclamación constituye por sí misma un rito, o bien un acto, por el que la asamblea de los fieles acoge y saluda al Señor, quien le hablará en el Evangelio, y en la cual profesa su fe con el canto. Se canta estando todos de pie, iniciándolo los cantores o el cantor, y si fuere necesario, se repite, pero el versículo es cantado por los cantores o por un cantor. a) El Aleluya se canta en todo tiempo, excepto durante la Cuaresma. Los versículos se toman del leccionario o del Gradual. b) En tiempo de Cuaresma, en vez del Aleluya, se canta el versículo antes del Evangelio que aparece en el leccionario. También puede cantarse otro salmo u otra selección (tracto), según se encuentra en el Gradual."
+ },
+ {
+  "t": "par",
+  "n": 63,
+  "texto": "Cuando hay solo una lectura antes del Evangelio: a) En el tiempo en que debe decirse Aleluya, puede tomarse o el salmo aleluyático o el salmo y el Aleluya con su versículo. b) En el tiempo en que no debe decirse Aleluya, puede tomarse o el salmo y el versículo antes del Evangelio, o solamente el salmo.. c) El Aleluya o el versículo antes del Evangelio, si no se canta, puede omitirse."
+ },
+ {
+  "t": "par",
+  "n": 64,
+  "texto": "La Secuencia, que sólo es obligatoria los días de Pascua y de Pentecostés, se canta antes del Aleluya."
+ },
+ {
+  "t": "titulo",
+  "texto": "Homilía"
+ },
+ {
+  "t": "par",
+  "n": 65,
+  "texto": "La homilía es parte de la Liturgia y es muy recomendada, pues es necesaria para alimentar la vida cristiana. Conviene que sea una explicación o de algún aspecto de las lecturas de la Sagrada Escritura, o de otro texto del Ordinario, o del Propio de la Misa del día, teniendo en cuenta, sea el misterio que se celebra, sean las necesidades particulares de los oyentes."
+ },
+ {
+  "t": "par",
+  "n": 66,
+  "texto": "La homilía la hará de ordinario el mismo sacerdote celebrante, o éste se la encomendará a un sacerdote concelebrante, o alguna vez, según las circunstancias, también a un diácono, pero nunca a un laico. En casos especiales, y por justa causa, la homilía puede hacerla también el Obispo o el presbítero que esté presente en la celebración sin que pueda concelebrar. Los domingos y las fiestas del precepto debe tenerse la homilía en todas las Misas que se celebran con asistencia del pueblo y no puede omitirse sin causa grave, por otra parte, se recomienda tenerla todos días especialmente en las ferias de Adviento, Cuaresma y durante el tiempo pascual, así como también en otras fiestas y ocasiones en que el pueblo acude numeroso a la Iglesia. Es conveniente que se guarde un breve espacio de silencio después de la homilía."
+ },
+ {
+  "t": "titulo",
+  "texto": "Profesión de fe"
+ },
+ {
+  "t": "par",
+  "n": 67,
+  "texto": "El Símbolo o Profesión de Fe, se orienta a que todo el pueblo reunido responda a la Palabra de Dios anunciada en las lecturas de la Sagrada Escritura y explicada por la homilía. Y para que sea proclamado como regla de fe, mediante una fórmula aprobada para el uso litúrgico, que recuerde, confiese y manifieste los grandes misterios de la fe, antes de comenzar su celebración en la Eucaristía."
+ },
+ {
+  "t": "par",
+  "n": 68,
+  "texto": "El Símbolo debe ser cantado o recitado por el sacerdote con el pueblo los domingos y en las solemnidades; puede también decirse en celebraciones especiales más solemnes. Si se canta, lo inicia el sacerdote, o según las circunstancias, el cantor o los cantores, pero será cantado o por todos juntamente, o por el pueblo alternando con los cantores. Si no se canta, será recitado por todos en conjunto o en dos coros que se alternan."
+ },
+ {
+  "t": "titulo",
+  "texto": "Oración universal"
+ },
+ {
+  "t": "par",
+  "n": 69,
+  "texto": "En la oración universal, u oración de los fieles, el pueblo responde en cierto modo a la Palabra de Dios recibida en la fe y, ejercitando el oficio de su sacerdocio bautismal, ofrece súplicas a Dios por la salvación de todos. Conviene que esta oración se haga de ordinario en las Misas con participación del pueblo, de tal manera que se hagan súplicas por la santa Iglesia, por los gobernantes, por los que sufren diversas necesidades y por todos los hombres y por la salvación de todo el mundo."
+ },
+ {
+  "t": "par",
+  "n": 70,
+  "texto": "Las serie de intenciones de ordinario será: a) Por las necesidades de la Iglesia. b) Por los que gobiernan y por la salvación del mundo. c) Por los que sufren por cualquier dificultad. d) Por la comunidad local. Sin embargo, en alguna celebración particular, como la Confirmación, el Matrimonio o las Exequias, el orden de las intenciones puede tener en cuenta más expresamente la ocasión particular."
+ },
+ {
+  "t": "par",
+  "n": 71,
+  "texto": "Pertenece al sacerdote celebrante dirigir las preces desde la sede. Él mismo las introduce con una breve monición, en la que invita a los fieles a orar, y la termina con la oración. Las intenciones que se proponen deben ser sobrias, compuestas con sabia libertad y con pocas palabras y expresar la súplica de toda la comunidad. Las propone el diácono, o un cantor, o un lector, o bien, uno de los fieles laicos desde el ambón o desde otro lugar conveniente. Por su parte, el pueblo, de pie, expresa su súplica, sea con una invocación común después de cada intención, sea orando en silencio."
+ },
+ {
+  "t": "titulo",
+  "texto": "La Liturgia Eucarística"
+ },
+ {
+  "t": "par",
+  "n": 72,
+  "texto": "En la última Cena, Cristo instituyó el sacrificio y el banquete pascuales. Por estos misterios el sacrificio de la cruz se hace continuamente presente en la Iglesia, cuando el sacerdote, representando a Cristo Señor, realiza lo mismo que el Señor hizo y encomendó a sus discípulos que hicieran en memoria de Él. Cristo, pues, tomó el pan y el cáliz, dio gracias, partió el pan, y los dio a sus discípulos, diciendo: Tomad, comed, bebed; esto es mi Cuerpo; éste es el cáliz de mi Sangre. Haced esto en conmemoración mía. Por eso, la Iglesia ha ordenado toda la celebración de la Liturgia Eucarística con estas partes que responden a las palabras y a las acciones de Cristo, a saber: 1) En la preparación de los dones se llevan al altar el pan y el vino con agua, es decir, los mismos elementos que Cristo tomó en sus manos. 2) En la Plegaria Eucarística se dan gracias a Dios por toda la obra de la salvación y las ofrendas se convierten en el Cuerpo y en la Sangre de Cristo. 3) Por la fracción del pan y por la Comunión, los fieles, aunque sean muchos, reciben de un único pan el Cuerpo, y de un único cáliz la Sangre del Señor, del mismo modo como los Apóstoles lo recibieron de las manos del mismo Cristo."
+ },
+ {
+  "t": "titulo",
+  "texto": "Preparación de los dones"
+ },
+ {
+  "t": "par",
+  "n": 73,
+  "texto": "Al comienzo de la Liturgia Eucarística se llevan al altar los dones que se convertirán en el Cuerpo y en la Sangre de Cristo. En primer lugar se prepara el altar, o mesa del Señor, que es el centro de toda la Liturgia Eucarística, y en él se colocan el corporal, el purificador, el misal y el cáliz, cuando éste no se prepara en la credencia. En seguida se traen las ofrendas: el pan y el vino, que es laudable que sean presentados por los fieles. Cuando las ofrendas son traídas por los fieles, el sacerdote o el diácono las reciben en un lugar apropiado y son ellos quienes las llevan al altar. Aunque los fieles ya no traigan, de los suyos, el pan y el vino destinados para la liturgia, como se hacía antiguamente, sin embargo el rito de presentarlos conserva su fuerza y su significado espiritual. También pueden recibirse dinero u otros dones para los pobres o para la iglesia, traídos por los fieles o recolectados en la iglesia, los cuales se colocarán en el sitio apropiado, fuera de la mesa eucarística."
+ },
+ {
+  "t": "par",
+  "n": 74,
+  "texto": "Acompaña a esta procesión en la que se llevan los dones, el canto del ofertorio (cfr. n.37 b), que se prolonga por lo menos hasta cuando los dones hayan sido depositados sobre el altar. Las normas sobre el modo de cantarlo son las mismas que para canto de entrada (cfr. n. 48). El canto se puede asociar siempre al rito para el ofertorio, aún sin la procesión con los dones."
+ },
+ {
+  "t": "par",
+  "n": 75,
+  "texto": "El sacerdote coloca sobre el altar el pan y el vino acompañándolos con las fórmulas establecidas; el sacerdote puede incensar los dones colocados sobre el altar, y después la cruz y el altar mismo, para significar que la oblación de la Iglesia y su oración suben como incienso hasta la presencia de Dios. Después el sacerdote, por el sagrado ministerio, y el pueblo por razón de su dignidad bautismal, pueden ser incensados por el diácono, o por otro ministro."
+ },
+ {
+  "t": "par",
+  "n": 76,
+  "texto": "En seguida, el sacerdote se lava las manos a un lado del altar, rito con el cual se expresa el deseo de purificación interior."
+ },
+ {
+  "t": "titulo",
+  "texto": "Oración sobre las ofrendas"
+ },
+ {
+  "t": "par",
+  "n": 77,
+  "texto": "Depositadas las ofrendas y concluidos los ritos que las acompañan, con la invitación a orar junto con el sacerdote, y con la oración sobre las ofrendas, se concluye la preparación de los dones y se prepara la Plegaria Eucarística. En la Misa se dice una sola oración sobre las ofrendas, que se concluye con la conclusión más breve, es decir: Por Jesucristo, nuestro Señor; y si al final de ella se hace mención del Hijo: (Él) que vive y reina por los siglos de los siglos. El pueblo uniéndose a la súplica con la aclamación Amén, hace suya la oración."
+ },
+ {
+  "t": "titulo",
+  "texto": "Plegaria Eucarística"
+ },
+ {
+  "t": "par",
+  "n": 78,
+  "texto": "En este momento comienza el centro y la cumbre de toda la celebración, esto es, la Plegaria Eucarística, que ciertamente es una oración de acción de gracias y de santificación. El sacerdote invita al pueblo a elevar los corazones hacia el Señor, en oración y en acción de gracias, y lo asocia a sí mismo en la oración que él dirige en nombre de toda la comunidad a Dios Padre, por Jesucristo, en el Espíritu Santo. El sentido de esta oración es que toda la asamblea de los fieles se una con Cristo en la confesión de las maravillas de Dios y en la ofrenda del sacrificio. La Plegaria Eucarística exige que todos la escuchen con reverencia y con silencio."
+ },
+ {
+  "t": "par",
+  "n": 79,
+  "texto": "Los principales elementos de que consta la Plegaria Eucarística pueden distinguirse de esta manera: a) Acción de gracias (que se expresa especialmente en el Prefacio), en la cual el sacerdote, en nombre de todo el pueblo santo, glorifica a Dios Padre y le da gracias por toda la obra de salvación o por algún aspecto particular de ella, de acuerdo con la índole del día, de la fiesta o del tiempo litúrgico. b) Aclamación: con la cual toda la asamblea, uniéndose a los coros celestiales, canta el Santo. Esta aclamación, que es parte de la misma Plegaria Eucarística, es proclamada por todo el pueblo juntamente con el sacerdote. c) Epíclesis: con la cual la Iglesia, por medio de invocaciones especiales, implora la fuerza del Espíritu Santo para que los dones ofrecidos por los hombres sean consagrados, es decir, se conviertan en el Cuerpo y en la Sangre de Cristo, y para que la víctima inmaculada que se va a recibir en la Comunión sirva para la salvación de quienes van a participar en ella. d) Narración de la institución y consagración: por las palabras y por las acciones de Cristo se lleva a cabo el sacrificio que el mismo Cristo instituyó en la última Cena, cuando ofreció su Cuerpo y su Sangre bajo las especies de pan y vino, y los dio a los Apóstoles para que comieran y bebieran, dejándoles el mandato de perpetuar el mismo misterio. e) Anámnesis: por la cual la Iglesia, al cumplir el mandato que recibió de Cristo por medio de los Apóstoles, realiza el memorial del mismo Cristo, renovando principalmente su bienaventurada pasión, su gloriosa resurrección y su ascensión al cielo. f) Oblación: por la cual, en este mismo memorial, la Iglesia, principalmente la que se encuentra congregada aquí y ahora, ofrece al Padre en el Espíritu Santo la víctima inmaculada. La Iglesia, por su parte, pretende que los fieles, no sólo ofrezcan la víctima inmaculada, sino que también aprendan a ofrecerse a sí mismos, y día a día se perfeccionen, por la mediación de Cristo, en la unidad con Dios y entre ellos, para que finalmente, Dios sea todo en todos. g) Intercesiones: por las cuales se expresa que la Eucaristía se celebra en comunión con toda la Iglesia, tanto con la del cielo, como con la de la tierra; y que la oblación se ofrece por ella misma y por todos sus miembros, vivos y difuntos, llamados a participar de la redención y de la salvación adquiridas por el Cuerpo y la Sangre de Cristo. h) Doxología final: por la cual se expresa la glorificación de Dios, que es afirmada y concluida con la aclamación Amén del pueblo."
+ },
+ {
+  "t": "titulo",
+  "texto": "Rito de la comunión"
+ },
+ {
+  "t": "par",
+  "n": 80,
+  "texto": "Puesto que la celebración eucarística es el banquete pascual, conviene que, según el mandato del Señor, su Cuerpo y su Sangre sean recibidos como alimento espiritual por los fieles debidamente dispuestos. A esto tienden la fracción y los demás ritos preparatorios, con los que los fieles son conducidos inmediatamente a la Comunión."
+ },
+ {
+  "t": "titulo",
+  "texto": "Oración del Señor"
+ },
+ {
+  "t": "par",
+  "n": 81,
+  "texto": "En la Oración del Señor se pide el pan de cada día, que para los cristianos indica principalmente el pan eucarístico, y se implora la purificación de los pecados, de modo que, en realidad, las cosas santas se den a los santos. El sacerdote hace la invitación a la oración y todos los fieles, juntamente con el sacerdote, dicen la oración. El sacerdote solo añade el embolismo, que el pueblo concluye con la doxología. El embolismo que desarrolla la última petición de la Oración del Señor pide con ardor, para toda la comunidad de los fieles, la liberación del poder del mal. La invitación, la oración misma, el embolismo y la doxología con la que el pueblo concluye lo anterior, se cantan o se dicen en voz alta."
+ },
+ {
+  "t": "titulo",
+  "texto": "Rito de la paz"
+ },
+ {
+  "t": "par",
+  "n": 82,
+  "texto": "Sigue el rito de la paz, con el que la Iglesia implora la paz y la unidad para sí misma y para toda la familia humana, y con el que los fieles se expresan la comunión eclesial y la mutua caridad, antes de la comunión sacramental. En cuanto al signo mismo para dar la paz, establezca la Conferencia de Obispos el modo, según la idiosincrasia y las costumbres de los pueblos. Conviene, sin embargo, que cada uno exprese la paz sobriamente sólo a los más cercanos a él."
+ },
+ {
+  "t": "titulo",
+  "texto": "Fracción del Pan"
+ },
+ {
+  "t": "par",
+  "n": 83,
+  "texto": "El sacerdote parte el pan eucarístico, con la ayuda, si es del caso, del diácono o de un concelebrante. El gesto de la fracción del Pan realizado por Cristo en la Última Cena, que en el tiempo apostólico designó a toda la acción eucarística, significa que los fieles siendo muchos, en la Comunión de un solo Pan de vida, que es Cristo muerto y resucitado para la salvación del mundo, forman un solo cuerpo (1Co 10, 17). La fracción comienza después de haberse dado la paz y se lleva a cabo con la debida reverencia, pero no se debe prolongar innecesariamente, ni se le considere de excesiva importancia. Este rito está reservado al sacerdote y al diácono. El sacerdote parte el pan e introduce una parte de la Hostia en el cáliz para significar la unidad del Cuerpo y de la Sangre del Señor en la obra de la redención, a saber, del Cuerpo de Cristo Jesús viviente y glorioso. La súplica Cordero de Dios se canta según la costumbre, bien sea por los cantores, o por el cantor seguido de la respuesta del pueblo el pueblo, o por lo menos se dice en voz alta. La invocación acompaña la fracción del pan, por lo que puede repetirse cuantas veces sea necesario hasta cuando haya terminado el rito. La última vez se concluye con las palabras danos la paz."
+ },
+ {
+  "t": "titulo",
+  "texto": "Comunión"
+ },
+ {
+  "t": "par",
+  "n": 84,
+  "texto": "El sacerdote se prepara para recibir fructuosamente el Cuerpo y la Sangre de Cristo con una oración en secreto. Los fieles hacen lo mismo orando en silencio. Después el sacerdote muestra a los fieles el Pan Eucarístico sobre la patena o sobre el cáliz y los invita al banquete de Cristo; además, juntamente con los fieles, pronuncia un acto de humildad, usando las palabras evangélicas prescritas."
+ },
+ {
+  "t": "par",
+  "n": 85,
+  "texto": "Es muy de desear que los fieles, como está obligado a hacerlo también el mismo sacerdote, reciban el Cuerpo del Señor de las hostias consagradas en esa misma Misa, y en los casos previstos (cfr. n. 283), participen del cáliz, para que aún por los signos aparezca mejor que la Comunión es una participación en el sacrificio que entonces mismo se está celebrando."
+ },
+ {
+  "t": "par",
+  "n": 86,
+  "texto": "Mientras el sacerdote toma el Sacramento, se inicia el canto de Comunión, que debe expresar, por la unión de las voces, la unión espiritual de quienes comulgan, manifestar el gozo del corazón y esclarecer mejor la índole “comunitaria” de la procesión para recibir la Eucaristía. El canto se prolonga mientras se distribuye el Sacramento a los fieles. Pero si se ha de tener un himno después de la Comunión, el canto para la Comunión debe ser terminado oportunamente. Téngase cuidado de que también los cantores puedan comulgar en el momento más conveniente."
+ },
+ {
+  "t": "par",
+  "n": 87,
+  "texto": "Para canto de Comunión puede emplearse la antífona del Gradual Romano, con su salmo o sin él, o la antífona con el salmo del Graduale Simplex, o algún otro canto adecuado aprobado por la Conferencia de los Obispos. Lo canta el coro solo, o el coro con el pueblo, o un cantor con el pueblo. Por otra parte, cuando no hay canto, se puede decir la antífona propuesta en el Misal. La pueden decir los fieles, o sólo algunos de ellos, o un lector, o en último caso el mismo sacerdote, después de haber comulgado, antes de distribuir la Comunión a los fieles."
+ },
+ {
+  "t": "par",
+  "n": 88,
+  "texto": "Terminada la distribución de la Comunión, si resulta oportuno, el sacerdote y los fieles oran en silencio por algún intervalo de tiempo. Si se quiere, la asamblea entera también puede cantar un salmo u otro canto de alabanza o un himno."
+ },
+ {
+  "t": "par",
+  "n": 89,
+  "texto": "Para terminar la súplica del pueblo de Dios y también para concluir todo el rito de la Comunión, el sacerdote dice la oración después de la Comunión, en la que se suplican los frutos del misterio celebrado. En la Misa se dice una sola oración después de la Comunión, que termina con conclusión breve, es decir: — Si se dirige al Padre: Por Jesucristo, nuestro Señor. — Si se dirige al Padre, pero al fin se menciona el Hijo: Que vive y reina por siglos de los siglos. — Si se dirige al Hijo: Tú, que vives y reinas por los siglos de los siglos. El pueblo hace suya la oración con la aclamación: Amén."
+ },
+ {
+  "t": "titulo",
+  "texto": "El rito de conclusión"
+ },
+ {
+  "t": "par",
+  "n": 90,
+  "texto": "Al rito de conclusión pertenecen: a) Breves avisos, si fuere necesario. b) El saludo y la bendición del sacerdote, que en algunos días y ocasiones se enriquece y se expresa con la oración sobre el pueblo o con otra fórmula más solemne. c) La despedida del pueblo, por parte del diácono o del sacerdote, para que cada uno regrese a su bien obrar, alabando y bendiciendo a Dios. d) El beso del altar por parte del sacerdote y del diácono y después la inclinación profunda al altar de parte del sacerdote, del diácono y de los demás ministros."
+ }
+]
