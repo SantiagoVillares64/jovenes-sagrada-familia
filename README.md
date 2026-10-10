@@ -24,7 +24,7 @@ gratis en **GitHub Pages**.
 | Palabras del crucigrama                              | `herramientas/banco_crucigrama.py` y después `generar_crucigramas.py --sumar N` + `armar_juegos.py` |
 | Categorías de Conexiones                             | `herramientas/banco_conexiones.py` y después `generar_conexiones.py --sumar N` + `armar_juegos.py` |
 | Jugadores del ranking                                | La planilla de Google del ranking (ver `herramientas/ranking/LEEME.md`) |
-| Cursos de Formación con certificado                  | `herramientas/banco_formacion.py` y después `python herramientas/armar_formacion.py` |
+| Cursos de la Academia Frassati                  | `herramientas/banco_formacion.py` y después `python herramientas/armar_formacion.py` |
 | Fotos                                                | carpeta `img/` (reemplazá el archivo con el mismo nombre) |
 
 `js/site.js` arma todas las páginas a partir de esos datos: normalmente no hace falta tocarlo.

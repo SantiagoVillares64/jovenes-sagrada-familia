@@ -40,6 +40,20 @@
     });
     return m;
   }
+  /* Academia Frassati: isotipo (cordada) y sello, del manual de marca */
+  var ISO_D = "M2 84 C7 77 12 73 17 72 C21 71 22 71 25 68 L34 60 C37 57 39 56 41 57 L45 61 C49 56 53 51 55.5 47.5 C56.5 46 57.3 44.8 58 44 L58 24 L58 30 L52 30 L64 30 L58 30 L58 44 C59.5 46 61.5 49 64 52 C67 56 70 58 73 59 C75 59 76 58 78 57 C79 56 80 56 81 57 C86 63 92 72 98 84";
+  function isoSVG(cls) {
+    return '<svg class="' + cls + '" viewBox="0 12 100 64" aria-hidden="true" focusable="false"><path d="' + ISO_D + '" transform="translate(0 -10)" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  }
+  var selloN = 0;
+  function selloSVG(cls) {
+    var id = "sello-c" + (++selloN);
+    return '<svg class="' + cls + '" viewBox="0 0 100 100" role="img" aria-label="Sello de la Academia Frassati"><defs><path id="' + id + '" d="M50 50 m-37.5 0 a37.5 37.5 0 1 1 75 0 a37.5 37.5 0 1 1 -75 0"/></defs>' +
+      '<circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="50" cy="50" r="33" fill="none" stroke="currentColor" stroke-width="1.1"/>' +
+      '<text fill="currentColor" font-family="Lora, Georgia, serif" font-size="7" letter-spacing="1"><textPath href="#' + id + '" textLength="232" lengthAdjust="spacing">ACADEMIA FRASSATI · HACIA LO ALTO ·</textPath></text>' +
+      '<g transform="translate(25 27) scale(.5)"><path d="' + ISO_D + '" transform="translate(0 -10)" fill="none" stroke="currentColor" stroke-width="2.42" stroke-linecap="round" stroke-linejoin="round"/></g></svg>';
+  }
+
   /* podio de la semana pasada, del ranking parroquial */
   function podioHtml(podio) {
     if (!podio || !podio.length) return "";
@@ -444,7 +458,7 @@
         navLink("calendario.html", "Calendario", "calendario") +
         navLink("juegos.html", "Juegos", "juegos") +
         navLink("horarios.html", "Horarios", "horarios") +
-        navLink("recursos.html", "Recursos", PAGE === "santos" || PAGE === "formacion" ? PAGE : "recursos") +
+        navLink("recursos.html", "Recursos", PAGE === "santos" || PAGE === "academia" ? PAGE : "recursos") +
         '<a class="btn btn--small" href="sumate.html"' + (PAGE === "sumate" ? ' aria-current="page"' : "") + ">Sumate</a>" +
       "</nav></div></header>";
 
@@ -696,10 +710,10 @@
       "</div></section>" +
       '<section class="section"><div class="wrap">' + head("Modelos de vida", "Santos queridos por la comunidad", "Más de 60 santos y beatos con su fiesta, su historia y sus datos.", '<a class="link" href="santos.html">Abrir el diccionario de santos →</a>') +
         '<div class="saints">' + (C.santos || []).slice(0, 3).map(santoCard).join("") + "</div></div></section>" +
-      '<section class="section section--tight"><div class="wrap"><a class="daily-teaser" href="formacion.html">' +
-        '<span class="daily-teaser__icons" aria-hidden="true">🎓</span><span><strong>Formación con certificado</strong>' +
-        '<span>Cursos cortos con examen: los sacramentos, la misa parte por parte, cómo ser un buen coordinador y más. Aprobá y llevate tu insignia.</span></span>' +
-        '<span class="gcard__go">Ver cursos ' + ICON.right + "</span></a></div></section>";
+      '<section class="section section--tight"><div class="wrap"><a class="ac-teaser" href="academia.html">' + isoSVG("ac-teaser__iso") +
+        '<span class="ac-teaser__txt"><span class="ac-rotulo ac-rotulo--claro">Academia</span><strong>Frassati</strong><em>Hacia lo alto</em></span>' +
+        '<span class="ac-teaser__desc">Cursos cortos con examen y certificado: los sacramentos, la misa parte por parte, cómo ser un buen coordinador y más. Cada curso es una cumbre.</span>' +
+        '<span class="ac-teaser__go">Empezar a subir ' + ICON.right + "</span></a></div></section>";
   };
 
   /* Diccionario de santos: todos los santos del juego, con su ficha completa cuando existe */
@@ -788,9 +802,16 @@
         '<div class="quiz" id="quiz" aria-live="polite"></div></div></section>';
   };
 
-  P.formacion = function () {
-    return pagehead("Formación", "Formación con certificado", "Cursos cortos para crecer en la fe: leés un documento, hacés un examen de 10 preguntas y, si aprobás, te llevás una insignia y tu certificado.") +
-      '<section class="section section--first"><div class="wrap"><div id="formacion"><p class="muted">Cargando…</p></div></div></section>';
+  P.academia = function () {
+    return '<section class="ac-hero"><div class="wrap ac-hero__in">' +
+        '<div class="ac-hero__marca">' + isoSVG("ac-hero__iso") + '<p class="ac-rotulo ac-rotulo--claro">Academia</p><h1 class="ac-h1">Frassati</h1><p class="ac-lema">Hacia lo alto</p></div>' +
+        '<div class="ac-hero__txt"><p>La Academia Frassati es el espacio de formación de Jóvenes Sagrada Familia. Cada curso es una cumbre: leés, rendís y, si llegás arriba, te llevás tu certificado.</p>' +
+        "<p>Lleva el nombre de san Pier Giorgio Frassati (1901–1925): estudiante, alpinista y amigo de los pobres de Turín. Su lema era <em>Verso l'alto</em>: hacia lo alto.</p></div>" +
+      "</div></section>" +
+      '<section class="ac-cuerpo"><div class="wrap"><div id="formacion"><p class="ac-ayuda">Cargando…</p></div></div></section>' +
+      '<section class="ac-cita"><div class="wrap ac-cita__in">' + selloSVG("ac-sello") +
+        '<div><p class="ac-cita__txt">«Vivir sin fe, sin un patrimonio que defender, sin luchar por la verdad, no es vivir, sino ir tirando.»</p><p class="ac-rotulo">San Pier Giorgio Frassati</p></div>' +
+      "</div></section>";
   };
 
   P.privacidad = function () {
@@ -841,6 +862,7 @@
       "</div></section>";
   };
 
+  if (PAGE === "academia") document.body.classList.add("pg-academia");
   var main = $("page");
   if (activeGroup && grupo(activeGroup)) {
     var G = grupo(activeGroup);
@@ -1558,7 +1580,7 @@
     });
   })();
 
-  /* ---------- Formación con certificado ---------- */
+  /* ---------- Academia Frassati (manual de marca: Academia Frassati_ Manual de marca) ---------- */
   if ($("formacion") && window.FORMACION) (function () {
     var FD = window.FORMACION, cont = $("formacion"), N_PREG = 10, APRUEBA = 8;
     var MESES_C = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
@@ -1566,11 +1588,12 @@
     var estado = function (id) { return leerLS("curso:" + id) || {}; };
     var guardarE = function (id, e) { try { localStorage.setItem("curso:" + id, JSON.stringify(e)); } catch (x) {} };
     var curso = function (id) { return FD.cursos.filter(function (c) { return c.id === id; })[0]; };
+    var numero = function (c) { var i = FD.cursos.indexOf(c); return (i < 9 ? "0" : "") + (i + 1); };
     var mezclar = function (a) { a = a.slice(); for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t; } return a; };
     var fechaLarga = function (f) { var p = f.split("-"); return (+p[2]) + " de " + MESES_C[+p[1] - 1] + " de " + p[0]; };
     var examen = null;
 
-    /* la insignia se guarda en la planilla si la persona entró con su cuenta de Google */
+    /* la cumbre se registra en la planilla si la persona entró con su cuenta de Google */
     var enviarInsignia = function (c, cb) {
       var e = estado(c.id);
       if (!CUENTA.url || !CUENTA.datos() || !e.aprobado || e.enviada) { if (cb) cb(); return; }
@@ -1581,32 +1604,39 @@
     };
 
     var lista = function () {
-      cont.innerHTML = '<div class="cursos">' + FD.cursos.map(function (c) {
-        var e = estado(c.id);
-        return '<a class="curso" href="#' + esc(c.id) + '"><span class="curso__ico" aria-hidden="true">' + c.icono + "</span>" +
-          "<h3>" + esc(c.titulo) + "</h3><p>" + esc(c.resumen) + "</p>" +
-          '<p class="curso__meta">' + (e.aprobado ? '<span class="curso__ok">🎓 Aprobado · ' + e.aprobado.nota + "/10</span>" : "Unos " + c.minutos + " minutos de lectura + examen") + "</p>" +
-          '<span class="link">' + (e.aprobado ? "Ver mi certificado →" : "Empezar →") + "</span></a>";
-      }).join("") + FD.proximos.map(function (c) {
-        return '<div class="curso is-prox"><span class="curso__ico" aria-hidden="true">' + c.icono + "</span><h3>" + esc(c.titulo) + "</h3><p>" + esc(c.resumen) + '</p><p class="curso__meta">Próximamente</p></div>';
-      }).join("") + "</div>" +
-      '<p class="cursos__nota">Cada examen tiene 10 preguntas sobre la lectura y se aprueba con 8. Es a libro abierto: podés volver al texto todas las veces que quieras. Si no aprobás, podés volver a intentarlo al día siguiente.</p>';
+      var alcanzadas = FD.cursos.filter(function (c) { return estado(c.id).aprobado; }).length;
+      cont.innerHTML =
+        '<div class="ac-sec"><p class="ac-rotulo">El camino</p><h2 class="ac-h2">Cómo se sube</h2>' +
+        '<ol class="ac-pasos3"><li><span>01</span><h3>Leé</h3><p>Cada cumbre tiene su lectura, con una guía de qué buscar.</p></li>' +
+        "<li><span>02</span><h3>Rendí</h3><p>" + N_PREG + " preguntas sobre la lectura, a libro abierto. Se aprueba con " + APRUEBA + ".</p></li>" +
+        "<li><span>03</span><h3>Llegá a la cumbre</h3><p>Te llevás tu certificado y la cumbre queda registrada en tu cuenta.</p></li></ol></div>" +
+        '<div class="ac-sec"><p class="ac-rotulo">Las cumbres' + (alcanzadas ? " · alcanzaste " + alcanzadas + " de " + FD.cursos.length : "") + '</p><h2 class="ac-h2">Elegí tu próxima subida</h2>' +
+        '<div class="ac-cumbres">' + FD.cursos.map(function (c) {
+          var e = estado(c.id);
+          return '<a class="ac-cumbre' + (e.aprobado ? " is-ok" : "") + '" href="#' + esc(c.id) + '"><p class="ac-rotulo">Cumbre ' + numero(c) + "</p>" +
+            '<h3 class="ac-h3">' + esc(c.titulo) + "</h3><p>" + esc(c.resumen) + "</p>" +
+            '<p class="ac-meta">' + (e.aprobado ? isoSVG("ac-iso-mini") + " Cumbre alcanzada · " + e.aprobado.nota + "/10" : "Unos " + c.minutos + " minutos de lectura · examen de " + N_PREG + " preguntas") + "</p>" +
+            '<span class="ac-link">' + (e.aprobado ? "Ver mi certificado" : "Empezar el ascenso") + " →</span></a>";
+        }).join("") + FD.proximos.map(function (c, i) {
+          var n = FD.cursos.length + i + 1;
+          return '<div class="ac-cumbre is-prox"><p class="ac-rotulo">Cumbre ' + (n < 10 ? "0" : "") + n + ' · Próximamente</p><h3 class="ac-h3">' + esc(c.titulo) + "</h3><p>" + esc(c.resumen) + "</p></div>";
+        }).join("") + "</div></div>";
     };
 
     var detalle = function (c) {
       var e = estado(c.id), falloHoy = !e.aprobado && e.ultimoIntento === hoyF;
-      cont.innerHTML = '<a class="link curso__volver" href="#">← Todos los cursos</a>' +
-        '<div class="curso-det"><div class="curso-det__head"><span class="curso__ico" aria-hidden="true">' + c.icono + "</span><div><h2>" + esc(c.titulo) + "</h2><p>" + esc(c.para) + "</p></div></div>" +
-        '<ol class="pasos">' +
-          '<li><h3>Leé</h3><ul class="lecturas">' + c.lecturas.map(function (l) {
-            return "<li>" + ext(l.url, "link", esc(l.texto) + " →") + "<p>" + esc(l.guia) + "</p></li>";
+      cont.innerHTML = '<a class="ac-volver" href="#">← Todas las cumbres</a>' +
+        '<header class="ac-det-head"><p class="ac-rotulo">Cumbre ' + numero(c) + '</p><h2 class="ac-h1 ac-h1--det">' + esc(c.titulo) + '</h2><p class="ac-lead">' + esc(c.resumen) + " " + esc(c.para) + "</p></header>" +
+        '<ol class="ac-tramos">' +
+          '<li><p class="ac-rotulo">Tramo 01</p><h3 class="ac-h3">Leé</h3><ul class="ac-lecturas">' + c.lecturas.map(function (l) {
+            return "<li>" + ext(l.url, "ac-link", esc(l.texto) + " →") + "<p>" + esc(l.guia) + "</p></li>";
           }).join("") + "</ul></li>" +
-          "<li><h3>Hacé el examen</h3><p>" + N_PREG + " preguntas sobre la lectura. Aprobás con " + APRUEBA + ".</p>" +
-            (e.aprobado ? '<p class="curso__ok">🎓 Ya lo aprobaste con ' + e.aprobado.nota + "/10 el " + fechaLarga(e.aprobado.fecha) + ".</p>"
-              : falloHoy ? '<p class="curso__espera">Hoy sacaste ' + e.ultimaNota + "/10. Repasá la lectura y volvé a intentarlo mañana.</p>"
-              : '<button type="button" class="btn" data-f="empezar">Empezar el examen</button>') + "</li>" +
-          "<li><h3>Tu certificado</h3>" + (e.aprobado ? certForm(c, e) : "<p>Cuando apruebes, vas a poder descargar tu certificado y sumar la insignia " + c.icono + " al ranking.</p>") + "</li>" +
-        '</ol></div><div id="examen"></div>';
+          '<li><p class="ac-rotulo">Tramo 02</p><h3 class="ac-h3">Rendí</h3><p>' + N_PREG + " preguntas sobre la lectura, a libro abierto. Se aprueba con " + APRUEBA + ". Si no llegás, podés volver a intentarlo al día siguiente.</p>" +
+            (e.aprobado ? '<p class="ac-ok">' + isoSVG("ac-iso-mini") + " Alcanzaste esta cumbre con " + e.aprobado.nota + "/10 el " + fechaLarga(e.aprobado.fecha) + ".</p>"
+              : falloHoy ? '<p class="ac-espera">Hoy sacaste ' + e.ultimaNota + "/10. Repasá la lectura y volvé a intentarlo mañana.</p>"
+              : '<button type="button" class="ac-btn" data-f="empezar">Empezar el examen</button>') + "</li>" +
+          '<li><p class="ac-rotulo">Tramo 03</p><h3 class="ac-h3">La cumbre</h3>' + (e.aprobado ? certForm(c, e) : "<p>Cuando apruebes, vas a poder descargar tu certificado de la Academia y la cumbre queda registrada en tu cuenta.</p>") + "</li>" +
+        '</ol><div id="examen"></div>';
       if ($("f-google")) CUENTA.boton($("f-google"), function (estado, nombre) {
         if (CUENTA.datos()) enviarInsignia(c, function () { detalle(c); });
         else $("f-msg").innerHTML = CUENTA.mensaje(estado, nombre);
@@ -1615,22 +1645,22 @@
 
     var certForm = function (c, e) {
       var yo = CUENTA.datos();
-      return '<form class="cert-form" data-f="cert"><label for="cert-nombre">Nombre y apellido para el certificado</label>' +
-        '<div class="rk__fila"><input id="cert-nombre" type="text" maxlength="60" required value="' + esc(e.nombre || "") + '" placeholder="Ej.: Juliana Rodríguez">' +
-        '<button type="submit" class="btn btn--small">Descargar certificado</button></div>' +
-        "<p class=\"rk__ayuda\">Se abre para imprimir: elegí <strong>Guardar como PDF</strong>. En el celular, desde Compartir → Imprimir.</p></form>" +
-        '<div class="daily__share">' + ext("https://wa.me/?text=" + encodeURIComponent("🎓 Aprobé el curso «" + c.titulo + "» de Jóvenes Sagrada Familia (" + e.aprobado.nota + "/10)\n" + location.href.split("#")[0]), "btn btn--small btn--ghost", "Compartir por WhatsApp") + "</div>" +
-        (yo ? '<p class="rk__ayuda">' + (e.enviada ? "La insignia " + c.icono + " ya aparece al lado de tu nombre en el ranking." : "La insignia " + c.icono + " se va a sumar a tu nombre en el ranking.") + "</p>"
-            : '<p class="rk__ayuda">Si entrás con tu cuenta de Google, la insignia ' + c.icono + ' queda registrada y aparece al lado de tu nombre en el ranking.</p><div id="f-google"></div><p class="rk__msg" id="f-msg" aria-live="polite"></p>');
+      return '<form class="ac-cert-form" data-f="cert"><label for="cert-nombre">Nombre y apellido para el certificado</label>' +
+        '<div class="ac-fila"><input id="cert-nombre" type="text" maxlength="60" required value="' + esc(e.nombre || "") + '" placeholder="Ej.: Juliana Rodríguez">' +
+        '<button type="submit" class="ac-btn">Descargar certificado</button></div>' +
+        '<p class="ac-ayuda">Se abre para imprimir: elegí <strong>Guardar como PDF</strong>. En el celular, desde Compartir → Imprimir.</p></form>' +
+        '<p class="ac-compartir">' + ext("https://wa.me/?text=" + encodeURIComponent("Alcancé la cumbre «" + c.titulo + "» de la Academia Frassati (" + e.aprobado.nota + "/10). Hacia lo alto.\n" + location.href.split("#")[0]), "ac-link", "Compartir por WhatsApp →") + "</p>" +
+        (yo ? '<p class="ac-ayuda">' + (e.enviada ? "La cumbre ya quedó registrada en tu cuenta." : "La cumbre se está registrando en tu cuenta.") + "</p>"
+            : '<p class="ac-ayuda">Entrá con tu cuenta de Google para que la cumbre quede registrada a tu nombre.</p><div id="f-google"></div><p class="rk__msg" id="f-msg" aria-live="polite"></p>');
     };
 
     var empezar = function (c) {
       examen = { c: c, qs: mezclar(c.preguntas).slice(0, N_PREG).map(function (q) { return { q: q, ops: mezclar([q.ok].concat(q.otras)) }; }) };
-      $("examen").innerHTML = '<form class="examen" data-f="entregar"><h3>Examen: ' + esc(c.titulo) + "</h3>" + examen.qs.map(function (x, i) {
-        return '<fieldset class="examen__q"><legend><span>' + (i + 1) + ".</span> " + esc(x.q.p) + "</legend>" + x.ops.map(function (o, j) {
-          return '<label class="examen__op"><input type="radio" name="q' + i + '" value="' + j + '" required> <span>' + esc(o) + "</span></label>";
+      $("examen").innerHTML = '<form class="ac-examen" data-f="entregar"><p class="ac-rotulo">Examen</p><h3 class="ac-h2">' + esc(c.titulo) + "</h3>" + examen.qs.map(function (x, i) {
+        return '<fieldset class="ac-q"><legend><span>' + (i < 9 ? "0" : "") + (i + 1) + "</span>" + esc(x.q.p) + "</legend>" + x.ops.map(function (o, j) {
+          return '<label class="ac-op"><input type="radio" name="q' + i + '" value="' + j + '" required> <span>' + esc(o) + "</span></label>";
         }).join("") + "</fieldset>";
-      }).join("") + '<button type="submit" class="btn">Entregar</button><p class="examen__falta" aria-live="polite"></p></form>';
+      }).join("") + '<button type="submit" class="ac-btn">Entregar</button><p class="ac-falta" aria-live="polite"></p></form>';
       $("examen").scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
@@ -1646,24 +1676,27 @@
       guardarE(c.id, e);
       if (aprobo) enviarInsignia(c);
       detalle(c);
-      $("examen").innerHTML = '<div class="examen__res ' + (aprobo ? "is-ok" : "is-bad") + '"><p class="examen__nota">' + bien + "/10</p>" +
-        "<p>" + (aprobo ? "¡Aprobaste! Ya podés descargar tu certificado." : "Esta vez no alcanzó. Repasá las partes que te marcamos y volvé a intentarlo mañana.") + "</p></div>" +
-        '<ol class="examen__repaso">' + res.map(function (r) {
-          return '<li class="' + (r.ok ? "is-ok" : "is-bad") + '">' + (r.ok ? "✓ " : "✗ ") + esc(r.x.q.p) + (r.ok ? "" : ' <span class="examen__ref">Repasá: ' + esc(r.x.q.ref) + "</span>") + "</li>";
+      $("examen").innerHTML = '<div class="ac-res ' + (aprobo ? "is-ok" : "is-bad") + '">' + (aprobo ? isoSVG("ac-iso-res") : "") +
+        '<p class="ac-nota">' + bien + "<span>/10</span></p>" +
+        '<p class="ac-lead">' + (aprobo ? "¡Llegaste a la cumbre! Ya podés descargar tu certificado." : "Esta vez no alcanzó. Repasá lo que te marcamos y volvé a intentarlo mañana.") + "</p></div>" +
+        '<ol class="ac-repaso">' + res.map(function (r) {
+          return '<li class="' + (r.ok ? "is-ok" : "is-bad") + '"><span>' + (r.ok ? "✓" : "✗") + "</span> " + esc(r.x.q.p) + (r.ok ? "" : ' <em>Repasá: ' + esc(r.x.q.ref) + "</em>") + "</li>";
         }).join("") + "</ol>";
       examen = null;
       $("examen").scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
+    /* certificado: A4 apaisado, diseño del manual (10 · Diploma) */
     var imprimir = function (c, e, nombre) {
       var cert = $("cert");
       if (!cert) { cert = document.createElement("div"); cert.id = "cert"; cert.className = "cert"; document.body.appendChild(cert); }
-      cert.innerHTML = '<div class="cert__marco"><img class="cert__logo" src="img/logo-sagrada.png" alt="Jóvenes Sagrada Familia">' +
-        '<p class="cert__tit">Certificado</p><p class="cert__txt">Jóvenes Sagrada Familia otorga el presente certificado a</p>' +
+      cert.innerHTML = '<div class="cert__marco"><div class="cert__in">' +
+        selloSVG("cert__sello") + '<p class="cert__marca">Academia Frassati</p>' +
+        '<p class="cert__certifica">certifica que</p>' +
         '<p class="cert__nombre">' + esc(nombre) + "</p>" +
-        '<p class="cert__txt">por haber completado el curso</p><p class="cert__curso">' + c.icono + " " + esc(c.titulo) + "</p>" +
-        '<p class="cert__txt">aprobando el examen con ' + e.aprobado.nota + " de 10 respuestas correctas.</p>" +
-        '<p class="cert__pie">Parroquia Sagrada Familia · Nordelta · ' + fechaLarga(e.aprobado.fecha) + "</p></div>";
+        '<p class="cert__txt">alcanzó la cumbre <strong>' + esc(c.titulo) + "</strong> de la Academia Frassati,<br>aprobando el examen con " + e.aprobado.nota + " de 10 respuestas correctas.</p>" +
+        '<div class="cert__firmas"><div><span></span>Director/a académico/a</div><p>Hacia lo alto</p><div><span></span>Asesor espiritual</div></div>' +
+        '<p class="cert__pie">Jóvenes Sagrada Familia · Nordelta, ' + fechaLarga(e.aprobado.fecha) + "</p></div></div>";
       document.body.classList.add("imprimiendo");
       var fin = function () { document.body.classList.remove("imprimiendo"); window.removeEventListener("afterprint", fin); };
       window.addEventListener("afterprint", fin);
@@ -1683,7 +1716,7 @@
       var c = curso(location.hash.slice(1)); if (!c) return;
       if (f.getAttribute("data-f") === "entregar") {
         var falta = examen.qs.filter(function (_, i) { return !f.querySelector('input[name="q' + i + '"]:checked'); }).length;
-        if (falta) { f.querySelector(".examen__falta").textContent = "Te " + (falta === 1 ? "falta 1 pregunta" : "faltan " + falta + " preguntas") + "."; return; }
+        if (falta) { f.querySelector(".ac-falta").textContent = "Te " + (falta === 1 ? "falta 1 pregunta" : "faltan " + falta + " preguntas") + "."; return; }
         corregir(f);
       } else if (f.getAttribute("data-f") === "cert") {
         var e = estado(c.id), nombre = String($("cert-nombre").value || "").trim();
@@ -1692,7 +1725,7 @@
       }
     });
     window.addEventListener("hashchange", function () { pintar(); window.scrollTo(0, 0); });
-    FD.cursos.forEach(function (c) { enviarInsignia(c); }); /* por si aprobó antes de entrar con su código */
+    FD.cursos.forEach(function (c) { enviarInsignia(c); }); /* por si aprobó antes de entrar con su cuenta */
     pintar();
   })();
 

@@ -678,65 +678,155 @@ a.lib__item:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(29
 .tip-inicio__ico { font-size: 1.4rem; line-height: 1; }
 .tip-inicio__x { border: 0; background: none; font-size: 1.4rem; line-height: 1; cursor: pointer; color: var(--muted); padding: 0 .2rem; }
 
-/* ---------- Formación con certificado ---------- */
-.cursos { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
-.curso { display: flex; flex-direction: column; gap: .4rem; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: #fff; color: inherit; text-decoration: none; transition: transform .15s, box-shadow .15s; }
-a.curso:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,.06); }
-.curso h3 { font-size: 1.2rem; margin: .2rem 0 0; }
-.curso p { color: var(--muted); font-size: .92rem; margin: 0; }
-.curso .link { margin-top: auto; padding-top: .4rem; }
-.curso.is-prox { opacity: .6; background: var(--tint); }
-.curso__ico { font-size: 2rem; line-height: 1; }
-.curso__meta { font-size: .85rem !important; }
-.curso__ok { color: #3f6b35; font-weight: 600; }
-.curso__espera { color: #8a5a12; font-weight: 600; }
-.cursos__nota { margin-top: 1.2rem; font-size: .9rem; color: var(--muted); max-width: 720px; }
-.curso__volver { display: inline-block; margin-bottom: 1rem; }
-.curso-det { max-width: 760px; }
-.curso-det__head { display: flex; gap: 1rem; align-items: center; margin-bottom: 1.4rem; }
-.curso-det__head h2 { margin: 0; }
-.curso-det__head p { margin: .2rem 0 0; color: var(--muted); }
-.pasos { list-style: none; counter-reset: paso; margin: 0; padding: 0; display: grid; gap: 14px; }
-.pasos > li { counter-increment: paso; position: relative; padding: 18px 20px 18px 64px; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
-.pasos > li::before { content: counter(paso); position: absolute; left: 18px; top: 16px; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--sage-dark); color: #fff; font-weight: 700; }
-.pasos h3 { font-size: 1.1rem; margin: 0 0 .4rem; }
-.pasos p { margin: .2rem 0 .6rem; }
-.lecturas { list-style: none; margin: 0; padding: 0; display: grid; gap: .7rem; }
-.lecturas p { font-size: .88rem; color: var(--muted); margin: .2rem 0 0; }
-.cert-form label { font-weight: 600; display: block; margin-bottom: .4rem; }
-.examen { max-width: 760px; margin-top: 24px; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: #fff; scroll-margin-top: 90px; }
-.examen__q { border: 0; border-top: 1px solid var(--line); margin: 0; padding: 16px 0; }
-.examen__q legend { font-weight: 600; padding: 0; margin-bottom: .6rem; }
-.examen__q legend span { color: var(--muted); }
-.examen__op { display: flex; gap: .6rem; align-items: flex-start; padding: .55rem .7rem; border-radius: 10px; cursor: pointer; }
-.examen__op:hover { background: var(--tint); }
-.examen__op input { margin-top: .25rem; accent-color: var(--sage-dark); }
-.examen__falta { color: #9a3b3b; font-weight: 600; min-height: 1.2em; margin-top: .6rem; }
-.examen__res { max-width: 760px; margin-top: 24px; padding: 20px; border-radius: 18px; text-align: center; scroll-margin-top: 90px; }
-.examen__res.is-ok { background: #eef5e9; }
-.examen__res.is-bad { background: #fbeee9; }
-.examen__nota { font-family: "League Spartan", sans-serif; font-size: 2.6rem; font-weight: 700; margin: 0; }
-.examen__repaso { max-width: 760px; margin: 14px 0 0; padding-left: 1.2rem; font-size: .92rem; }
-.examen__repaso li { margin: .35rem 0; }
-.examen__repaso li.is-ok { color: #3f6b35; }
-.examen__repaso li.is-bad { color: #9a3b3b; }
-.examen__ref { display: inline-block; margin-left: .3rem; font-size: .8rem; padding: 0 .5rem; border-radius: 99px; background: #fff; border: 1px solid #e5c9bf; color: #7a3b2b; }
-@media (max-width: 520px) { .pasos > li { padding: 16px 14px 16px 54px; } .pasos > li::before { left: 12px; } .examen { padding: 16px 12px; } }
+/* ---------- Academia Frassati ----------
+   Manual de marca (Proyecto Sagrada/Academia Frassati_ Manual de marca), paleta "Celeste":
+   Papel #F3F2F2 · Tinta #16294A · Celeste #2F7FE0 (solo trazos, filetes y detalles) ·
+   Celeste profundo #1B55A3 (texto en acento) · Azul noche #0F1F3C (portadas y piezas de impacto).
+   Títulos en Cormorant Garamond (nunca negrita: cuanto más grande, más liviano); texto en Lora. */
+:root {
+  --ac-papel: #F3F2F2; --ac-tinta: #16294A; --ac-celeste: #2F7FE0; --ac-celeste-p: #1B55A3; --ac-noche: #0F1F3C;
+  --ac-linea: rgba(22, 41, 74, .16); --ac-gris: #5b6577;
+  --ac-tit: "Cormorant Garamond", "Cormorant", Georgia, "Times New Roman", serif;
+  --ac-txt: "Lora", Georgia, "Times New Roman", serif;
+}
+.pg-academia main { background: var(--ac-papel); color: var(--ac-tinta); font-family: var(--ac-txt); }
+.pg-academia main p { line-height: 1.7; }
+.ac-rotulo { font-family: var(--ac-txt); font-size: .72rem; letter-spacing: .28em; text-transform: uppercase; color: var(--ac-celeste-p); margin: 0 0 .6rem; }
+.ac-rotulo--claro { color: #fff; }
+.ac-h1 { font-family: var(--ac-tit); font-weight: 400; font-size: clamp(3.6rem, 10vw, 6.6rem); line-height: .95; letter-spacing: -.01em; margin: 0; color: inherit; }
+.ac-h1--det { font-size: clamp(2.6rem, 6vw, 4rem); line-height: 1.05; }
+.ac-h2 { font-family: var(--ac-tit); font-weight: 400; font-size: clamp(2rem, 4.4vw, 2.8rem); line-height: 1.1; margin: 0 0 1.4rem; color: var(--ac-tinta); }
+.ac-h3 { font-family: var(--ac-tit); font-weight: 500; font-size: 1.65rem; line-height: 1.15; margin: 0 0 .5rem; color: var(--ac-tinta); }
+.ac-lema { font-family: var(--ac-tit); font-style: italic; font-size: clamp(1.5rem, 3vw, 2rem); color: #7fb0f2; margin: .8rem 0 0; }
+.ac-lead { font-size: 1.05rem; color: var(--ac-tinta); }
+.ac-link { color: var(--ac-celeste-p); text-decoration: underline; text-decoration-color: rgba(27, 85, 163, .35); text-underline-offset: .2em; font-family: var(--ac-txt); }
+.ac-link:hover { text-decoration-color: var(--ac-celeste-p); }
+.ac-btn { font-family: var(--ac-txt); font-weight: 600; font-size: .9rem; letter-spacing: .04em; background: var(--ac-tinta); color: var(--ac-papel); border: 1px solid var(--ac-tinta); border-radius: 2px; padding: .75rem 1.3rem; cursor: pointer; transition: background .15s; }
+.ac-btn:hover { background: var(--ac-noche); }
+.ac-ayuda { font-size: .88rem; color: var(--ac-gris); }
 
-/* certificado: solo se ve al imprimir */
+/* portada */
+.ac-hero { background: var(--ac-noche); color: #fff; padding: clamp(56px, 9vw, 110px) 0 clamp(48px, 8vw, 96px); }
+.ac-hero__in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(32px, 6vw, 80px); align-items: end; }
+.ac-hero__iso { width: 150px; color: #fff; display: block; margin-bottom: 2.2rem; }
+.ac-hero__iso path { stroke-width: 1.9; }
+.ac-hero__txt { font-family: var(--ac-txt); color: rgba(255, 255, 255, .86); font-size: 1rem; border-top: 1px solid rgba(127, 176, 242, .35); padding-top: 1.4rem; }
+.ac-hero__txt p { margin: 0 0 1rem; line-height: 1.75; }
+.ac-hero__txt em { color: #fff; }
+
+/* cuerpo */
+.ac-cuerpo { padding: clamp(48px, 7vw, 88px) 0; }
+.ac-sec + .ac-sec { margin-top: clamp(48px, 7vw, 80px); padding-top: clamp(40px, 6vw, 64px); border-top: 1px solid var(--ac-linea); }
+.ac-pasos3 { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; }
+.ac-pasos3 li { border-top: 1px solid var(--ac-celeste); padding-top: 1rem; }
+.ac-pasos3 span { font-family: var(--ac-tit); font-size: 1.1rem; color: var(--ac-celeste-p); letter-spacing: .1em; }
+.ac-pasos3 h3 { font-family: var(--ac-tit); font-weight: 500; font-size: 1.6rem; margin: .2rem 0 .4rem; }
+.ac-pasos3 p { margin: 0; color: var(--ac-gris); font-size: .95rem; }
+.ac-cumbres { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
+.ac-cumbre { display: flex; flex-direction: column; padding: 26px 24px 22px; border: 1px solid var(--ac-linea); border-radius: 4px; background: rgba(255, 255, 255, .55); color: var(--ac-tinta); text-decoration: none; transition: border-color .15s, background .15s; }
+a.ac-cumbre:hover { border-color: var(--ac-celeste); background: #fff; }
+.ac-cumbre p { color: var(--ac-gris); font-size: .93rem; margin: 0 0 .9rem; }
+.ac-cumbre .ac-rotulo { margin-bottom: .7rem; }
+.ac-cumbre.is-ok { border-color: rgba(47, 127, 224, .45); }
+.ac-cumbre.is-prox { opacity: .55; background: transparent; border-style: dashed; }
+.ac-meta { font-size: .85rem !important; display: flex; align-items: center; gap: .45rem; color: var(--ac-tinta) !important; }
+.ac-cumbre .ac-link { margin-top: auto; text-decoration: none; }
+.ac-iso-mini { width: 22px; color: var(--ac-celeste); flex: none; }
+.ac-iso-mini path { stroke-width: 4; }
+
+/* detalle de una cumbre */
+.ac-volver { display: inline-block; font-family: var(--ac-txt); font-size: .9rem; color: var(--ac-celeste-p); text-decoration: none; margin-bottom: 1.6rem; }
+.ac-det-head { max-width: 760px; margin-bottom: 2.4rem; }
+.ac-det-head .ac-lead { margin-top: 1rem; color: var(--ac-gris); }
+.ac-tramos { list-style: none; margin: 0; padding: 0; max-width: 780px; }
+.ac-tramos > li { border-left: 1px solid var(--ac-celeste); padding: 0 0 2.2rem 1.6rem; position: relative; }
+.ac-tramos > li::before { content: ""; position: absolute; left: -4px; top: .2rem; width: 7px; height: 7px; border-radius: 50%; background: var(--ac-celeste); }
+.ac-tramos > li:last-child { padding-bottom: .5rem; }
+.ac-tramos p { margin: 0 0 .9rem; }
+.ac-lecturas { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+.ac-lecturas p { font-size: .9rem; color: var(--ac-gris); margin: .3rem 0 0; }
+.ac-ok { display: flex; align-items: center; gap: .5rem; color: var(--ac-celeste-p); font-weight: 600; }
+.ac-espera { color: #8a5a12; font-weight: 600; }
+.ac-cert-form label { display: block; font-size: .9rem; margin-bottom: .4rem; }
+.ac-fila { display: flex; gap: .6rem; flex-wrap: wrap; }
+.ac-fila input { flex: 1 1 240px; min-width: 0; font: inherit; font-family: var(--ac-txt); padding: .7rem .9rem; border: 1px solid var(--ac-linea); border-radius: 2px; background: #fff; color: var(--ac-tinta); }
+.ac-fila input:focus { outline: 2px solid var(--ac-celeste); outline-offset: 1px; }
+.ac-compartir { margin: 1rem 0 .4rem; }
+
+/* examen */
+.ac-examen { max-width: 780px; margin-top: 2.4rem; padding: clamp(22px, 4vw, 36px); background: #fff; border: 1px solid var(--ac-linea); border-radius: 4px; scroll-margin-top: 90px; }
+.ac-q { border: 0; border-top: 1px solid var(--ac-linea); margin: 0; padding: 1.3rem 0; }
+.ac-q legend { font-family: var(--ac-txt); font-weight: 600; padding: 0; margin-bottom: .7rem; line-height: 1.5; }
+.ac-q legend span { font-family: var(--ac-tit); font-weight: 500; color: var(--ac-celeste-p); margin-right: .6rem; font-size: 1.15rem; }
+.ac-op { display: flex; gap: .7rem; align-items: flex-start; padding: .55rem .7rem; border-radius: 2px; cursor: pointer; font-size: .95rem; }
+.ac-op:hover { background: var(--ac-papel); }
+.ac-op input { margin-top: .3rem; accent-color: var(--ac-celeste-p); }
+.ac-falta { color: #9a3b3b; font-weight: 600; min-height: 1.2em; margin-top: .8rem; }
+.ac-res { max-width: 780px; margin-top: 2.4rem; padding: 32px 24px; text-align: center; border: 1px solid var(--ac-linea); border-radius: 4px; background: #fff; scroll-margin-top: 90px; }
+.ac-res.is-ok { border-color: rgba(47, 127, 224, .5); }
+.ac-iso-res { width: 90px; color: var(--ac-celeste); display: block; margin: 0 auto 1rem; }
+.ac-nota { font-family: var(--ac-tit); font-weight: 400; font-size: 4.2rem; line-height: 1; margin: 0; color: var(--ac-tinta); }
+.ac-nota span { font-size: 1.6rem; color: var(--ac-gris); }
+.ac-repaso { max-width: 780px; margin: 1.4rem 0 0; padding: 0; list-style: none; font-size: .93rem; }
+.ac-repaso li { padding: .5rem 0; border-bottom: 1px solid var(--ac-linea); }
+.ac-repaso li span { display: inline-block; width: 1.2rem; font-weight: 600; }
+.ac-repaso li.is-ok span { color: var(--ac-celeste-p); }
+.ac-repaso li.is-bad span { color: #9a3b3b; }
+.ac-repaso em { display: inline-block; margin-left: .4rem; font-size: .82rem; color: var(--ac-celeste-p); }
+
+/* cita y sello */
+.ac-cita { padding: clamp(48px, 7vw, 88px) 0; border-top: 1px solid var(--ac-linea); background: var(--ac-papel); }
+.ac-cita__in { display: grid; grid-template-columns: 140px minmax(0, 1fr); gap: clamp(24px, 5vw, 56px); align-items: center; max-width: 900px; }
+.ac-sello { width: 140px; color: var(--ac-tinta); }
+.ac-cita__txt { font-family: var(--ac-tit); font-style: italic; font-size: clamp(1.6rem, 3.4vw, 2.2rem); line-height: 1.25; color: var(--ac-tinta); margin: 0 0 1rem; }
+
+/* aviso de la Academia en Recursos */
+.ac-teaser { display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto; gap: 28px; align-items: center; padding: 30px 34px; background: var(--ac-noche); color: #fff; border-radius: 4px; text-decoration: none; }
+.ac-teaser__iso { width: 84px; color: #fff; }
+.ac-teaser__txt { display: flex; flex-direction: column; line-height: 1; }
+.ac-teaser__txt .ac-rotulo { font-size: .62rem; margin-bottom: .35rem; }
+.ac-teaser__txt strong { font-family: var(--ac-tit, Georgia, serif); font-weight: 400; font-size: 2.5rem; }
+.ac-teaser__txt em { font-family: var(--ac-tit, Georgia, serif); color: #7fb0f2; font-size: 1.1rem; margin-top: .3rem; }
+.ac-teaser__desc { font-size: .92rem; color: rgba(255, 255, 255, .8); }
+.ac-teaser__go { display: inline-flex; align-items: center; gap: .3rem; font-weight: 600; white-space: nowrap; }
+.ac-teaser__go svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+.ac-teaser:hover .ac-teaser__go { text-decoration: underline; }
+
+@media (max-width: 860px) {
+  .ac-hero__in { grid-template-columns: 1fr; }
+  .ac-pasos3 { grid-template-columns: 1fr; }
+  .ac-teaser { grid-template-columns: auto minmax(0, 1fr); }
+  .ac-teaser__desc, .ac-teaser__go { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  .ac-hero__iso { width: 110px; margin-bottom: 1.6rem; }
+  .ac-cita__in { grid-template-columns: 1fr; text-align: center; }
+  .ac-sello { margin: 0 auto; width: 110px; }
+  .ac-tramos > li { padding-left: 1.1rem; }
+  .ac-teaser { padding: 24px 20px; gap: 16px; }
+  .ac-teaser__iso { width: 64px; }
+}
+
+/* certificado: solo se ve al imprimir (A4 apaisado, diseño del manual) */
 .cert { display: none; }
 @media print {
-  @page { size: A4 landscape; margin: 12mm; }
+  @page { size: A4 landscape; margin: 10mm; }
   body.imprimiendo > *:not(#cert) { display: none !important; }
   body.imprimiendo { background: #fff !important; margin: 0 !important; padding: 0 !important; }
   body.imprimiendo #cert { display: block; }
-  .cert__marco { border: 3px double #26342f; border-radius: 6px; padding: 12mm 18mm; text-align: center; font-family: "Montserrat", sans-serif; color: #1d2623; height: 178mm; overflow: hidden; break-inside: avoid; page-break-inside: avoid; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; }
-  .cert__logo { height: 22mm; margin: 0 auto 6mm; }
-  .cert__tit { font-family: "League Spartan", sans-serif; font-size: 34pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 6mm; }
-  .cert__txt { font-size: 13pt; margin: 2mm 0; }
-  .cert__nombre { font-family: "League Spartan", sans-serif; font-size: 30pt; font-weight: 700; margin: 4mm 0; border-bottom: 1px solid #c9cfcb; display: inline-block; padding: 0 10mm 2mm; align-self: center; }
-  .cert__curso { font-family: "League Spartan", sans-serif; font-size: 20pt; font-weight: 600; margin: 3mm 0; }
-  .cert__pie { margin-top: 10mm; font-size: 11pt; color: #4e5f58; }
+  .cert__marco { height: 186mm; box-sizing: border-box; padding: 3.5mm; border: 1.4pt solid #2F7FE0; background: #FBF9F4; break-inside: avoid; page-break-inside: avoid; overflow: hidden; }
+  .cert__in { height: 100%; box-sizing: border-box; border: .6pt solid rgba(47, 127, 224, .45); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 10mm 26mm; color: #16294A; }
+  .cert__sello { width: 25mm; color: #16294A; }
+  .cert__marca { font-family: "Lora", Georgia, serif; font-size: 8.5pt; letter-spacing: .38em; text-transform: uppercase; margin: 3mm 0 0; }
+  .cert__certifica { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 15pt; color: #1B55A3; margin: 11mm 0 2mm; }
+  .cert__nombre { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 400; font-size: 36pt; line-height: 1.1; margin: 0; padding: 0 14mm 2.5mm; border-bottom: .5pt solid #b6c1d2; }
+  .cert__txt { font-family: "Lora", Georgia, serif; font-size: 10.5pt; line-height: 1.65; margin: 5mm 0 0; }
+  .cert__txt strong { font-weight: 600; }
+  .cert__firmas { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10mm; align-items: end; width: 100%; margin-top: 16mm; }
+  .cert__firmas div { font-family: "Lora", Georgia, serif; font-size: 7.5pt; }
+  .cert__firmas div span { display: block; border-top: .7pt solid #16294A; margin: 0 6mm 1.5mm; }
+  .cert__firmas p { font-family: "Cormorant Garamond", Georgia, serif; font-style: italic; font-size: 13pt; color: #1B55A3; margin: 0 0 1mm; }
+  .cert__pie { font-family: "Lora", Georgia, serif; font-size: 7.5pt; color: #5b6577; margin: 9mm 0 0; }
 }
 .rk__ins { margin-left: .3rem; font-size: .9rem; letter-spacing: .05em; }
 

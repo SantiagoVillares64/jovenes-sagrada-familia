@@ -19,7 +19,7 @@ PAGES = [
     ('horarios.html', 'horarios', 'Horarios · Jóvenes Sagrada Familia', 'Horarios de misa, confesiones y adoración de la Parroquia Sagrada Familia de Nordelta.'),
     ('recursos.html', 'recursos', 'Recursos · Jóvenes Sagrada Familia', 'Biblioteca temática para crecer en la fe: lecturas, podcasts, pelis y santos.'),
     ('santos.html', 'santos', 'Diccionario de santos · Jóvenes Sagrada Familia', 'Diccionario de santos: fiestas, historias y datos de los santos y beatos queridos por la comunidad.'),
-    ('formacion.html', 'formacion', 'Formación · Jóvenes Sagrada Familia', 'Cursos cortos con examen y certificado: los sacramentos, la misa parte por parte y cómo ser un buen coordinador.'),
+    ('academia.html', 'academia', 'Academia Frassati · Jóvenes Sagrada Familia', 'Academia Frassati: cursos cortos de formación con examen y certificado. Los sacramentos, la misa parte por parte, cómo ser un buen coordinador y más. Hacia lo alto.'),
     ('juegos.html', 'juegos', 'Juegos · Jóvenes Sagrada Familia', 'Santo del día, Versículo del día, Conexiones, Crucigrama del día, ranking parroquial y un quiz sobre la fe y la comunidad.'),
     ('calendario.html', 'calendario', 'Calendario · Jóvenes Sagrada Familia', 'Retiros, misiones, peregrinaciones y eventos de los grupos de jóvenes de Sagrada Familia.'),
     ('privacidad.html', 'privacidad', 'Privacidad · Jóvenes Sagrada Familia', 'Política de privacidad de Jóvenes Sagrada Familia y la Academia Frassati: qué datos guardamos y cómo pedir que los borremos.'),
@@ -43,7 +43,7 @@ TPL = '''<!doctype html>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+{fuentes}  <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/paginas.css">
 </head>
 <body data-page="{page}">
@@ -77,8 +77,9 @@ else:
 todas = PAGES + [('404.html', 'noencontrado', 'Página no encontrada · Jóvenes Sagrada Familia', 'Esta página no existe.')]
 for f, page, title, desc in todas:
     extra = '\n  <script src="js/juegos-datos.js"></script>' if page in ('juegos', 'santos', 'calendario') else ''
-    if page == 'formacion':
+    if page == 'academia':
         extra = '\n  <script src="js/formacion-datos.js"></script>'
+    fuentes = ('  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">\n') if page in ('academia', 'recursos') else ''
     pagina_url = url + ('' if f == 'index.html' else f)
     if page == 'noencontrado':
         abs_ = '\n  <meta name="robots" content="noindex">'
@@ -87,8 +88,15 @@ for f, page, title, desc in todas:
     else:
         abs_ = ''
     open(os.path.join(OUT, f), 'w', encoding='utf-8').write(TPL.format(
-        title=title, desc=desc, page=page, extra=extra, base=url, abs=abs_,
+        title=title, desc=desc, page=page, extra=extra, base=url, abs=abs_, fuentes=fuentes,
         basetag=BASE_404 if page == 'noencontrado' else ''))
+
+# la dirección vieja de la Academia redirige a la nueva
+open(os.path.join(OUT, 'formacion.html'), 'w', encoding='utf-8').write(
+    '<!doctype html>\n<html lang="es-AR"><head><meta charset="utf-8"><title>Academia Frassati</title>\n'
+    '<meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=academia.html">\n'
+    '<script>location.replace("academia.html" + location.hash);</script></head>\n'
+    '<body><p><a href="academia.html">La Academia Frassati se mudó: entrá acá.</a></p></body></html>\n')
 
 manifest = {
     'name': 'Jóvenes Sagrada Familia', 'short_name': 'Jóvenes SF', 'lang': 'es-AR',

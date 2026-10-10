@@ -61,7 +61,7 @@ def excel():
 def main():
     controlar()
     datos = {'cursos': CURSOS, 'proximos': PROXIMOS}
-    js = ('/* Cursos de Formación con certificado.\n'
+    js = ('/* Cursos de la Academia Frassati.\n'
           '   NO editar a mano: se genera con  python herramientas/armar_formacion.py */\n'
           'window.FORMACION = ' + json.dumps(datos, ensure_ascii=False, separators=(',', ':')) + ';\n')
     open(os.path.join(WEB, 'js', 'formacion-datos.js'), 'w', encoding='utf-8', newline='\n').write(js)

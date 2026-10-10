@@ -1,4 +1,4 @@
-"""Cursos de "Formación con certificado" (página formacion.html).
+"""Cursos de Academia Frassati (página academia.html).
 
 Cada curso: lectura + examen. El examen toma 10 preguntas al azar del banco y se aprueba con 8.
 Cada pregunta: p (pregunta), ok (respuesta correcta), otras (3 incorrectas), ref (dónde está en la lectura).
