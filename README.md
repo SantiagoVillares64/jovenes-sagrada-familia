@@ -92,8 +92,8 @@ y entrá a <http://localhost:8000>.
 
 ## Publicar en GitHub Pages
 
-**La web ya está publicada** en <https://santiagovillares64.github.io/jovenes-sagrada-familia/>
-(repositorio: <https://github.com/SantiagoVillares64/jovenes-sagrada-familia>).
+**La web ya está publicada** en <https://sagradafamiliajoven.github.io/>
+(repositorio: <https://github.com/sagradafamiliajoven/sagradafamiliajoven.github.io>).
 
 Para publicar un cambio, desde esta carpeta:
 

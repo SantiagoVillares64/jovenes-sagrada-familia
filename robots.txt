@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://santiagovillares64.github.io/jovenes-sagrada-familia/sitemap.xml
+Sitemap: https://sagradafamiliajoven.github.io/sitemap.xml

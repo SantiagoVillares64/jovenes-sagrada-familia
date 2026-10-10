@@ -314,7 +314,7 @@ window.CONTENIDO = {
        Pegá acá el link de "Publicar en la Web → CSV". Si queda vacío, se usan los eventos de abajo.
      OPCIÓN B: escribir los eventos directamente en la lista "eventos". */
   calendario: {
-    hojaCSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vS17fu5wiC0SeFt3B4FkgZ5vF4gdrVmsPgYXftNiF06n__MPFDRq7Aa9FZnN35fiNOfZiyCIKYQs_es/pub?gid=0&single=true&output=csv",
+    hojaCSV: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRFVaf4x4IT6NnYj4i9_T0njw6bXeQMSg2YOT8foehxXFlN8ekqdOGv1f9N68uugXrLU3PFiVtuyHSm/pub?output=csv",
     /* Si la planilla no carga (sin internet, link roto), se muestran estos eventos de respaldo: */
     eventos: [
       { fecha: "2027-03-21", hasta: "2027-03-28", titulo: "Semana Santa · Misión Puente Solidario", grupo: "puente", detalle: "Fechas exactas de la misión a confirmar." },
