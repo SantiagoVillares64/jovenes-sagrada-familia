@@ -15,12 +15,14 @@ de la cuenta **academiafrassati@gmail.com** guarda quién puede entrar, los punt
 6. Si venías del sistema de códigos: **Administración → Pasar jugadores con código a Usuarios** y completá el
    **Email** de cada uno. Cuando entren con esa cuenta de Google, recuperan sus puntos.
 
-## Aprobar a alguien
+## Cuentas nuevas y aprobación
 
-1. La persona toca "Entrar con Google" en la web. Queda en la pestaña **Usuarios** con Estado **pendiente**
-   y te llega un mail avisándote.
-2. Poné su **Estado** en **aprobado** y completá **Nombre en el ranking** (por ejemplo `Juli R.`) y **Grupo**.
-3. Le avisás que vuelva a entrar. Listo: desde ese celular queda adentro unos 4 meses.
+1. La persona toca "Entrar con Google" en la web y **ya puede usar todo**: jugar, sumar puntos, hacer los cursos de la
+   Academia y llevarse sus insignias. Queda en la pestaña **Usuarios** con Estado **pendiente** y te llega un mail.
+2. Mientras esté pendiente **no aparece en el ranking público** (ella sí ve su propio puesto).
+3. Para que aparezca: poné su **Estado** en **aprobado** y revisá **Nombre en el ranking** (si lo dejás vacío se usa
+   su nombre de pila con la inicial del apellido, nunca el apellido completo) y **Grupo**.
+4. El aviso llega a la cuenta que implementó el script. Para mandarlo a otro mail, completá `AVISAR_A` al principio de `Codigo.gs`.
 
 - **Dar de baja:** Estado → **baja**. Deja de sumar y desaparece del ranking (sus datos quedan, por si vuelve).
 - **Borrar a alguien** (si lo pide): borrá su fila en Usuarios y sus filas en Puntajes e Insignias (buscá su ID).
@@ -30,7 +32,7 @@ de la cuenta **academiafrassati@gmail.com** guarda quién puede entrar, los punt
 
 | Pestaña | Qué tiene | ¿Sale a la web? |
 |---|---|---|
-| Usuarios | ID, mail, nombre de Google, nombre en el ranking, grupo, estado, fechas | Solo nombre en el ranking y grupo |
+| Usuarios | ID, mail, nombre de Google, nombre en el ranking, grupo, estado, fechas | Solo nombre en el ranking y grupo, y solo de los aprobados |
 | Puntajes | Fecha, ID, juego, puntos | Solo los totales |
 | Insignias | Fecha, ID, curso, nota | Solo el ícono de la cumbre |
 | Sesiones (oculta) | Huellas de las sesiones abiertas | No |

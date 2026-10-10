@@ -13,7 +13,8 @@
  *
  * Seguridad:
  *   - El inicio de sesión lo hace Google. Acá solo llega un "comprobante" firmado por Google, que se verifica con Google.
- *   - Nadie entra hasta que el administrador pone su Estado en "aprobado".
+ *   - Cualquiera puede entrar y usar todo, pero solo aparece en el ranking PÚBLICO cuando el administrador
+ *     pone su Estado en "aprobado" (y elige con qué nombre). "baja" bloquea la cuenta.
  *   - Las sesiones se guardan como huella (hash): aunque alguien viera la planilla, no podría usarlas.
  *   - La web nunca recibe mails ni IDs de otras personas: solo nombre visible, grupo, puntos e insignias.
  *   - Todo texto que llega de afuera se limpia antes de guardarse (evita fórmulas inyectadas en la planilla).
@@ -26,6 +27,8 @@ var ESTADOS = ['pendiente', 'aprobado', 'baja'];
 var ZONA = 'America/Argentina/Buenos_Aires';
 var TOP = 20;
 var DIAS_SESION = 120;
+/* A quién le llega el aviso de cuenta nueva. Vacío = a la cuenta que implementa el script (academiafrassati). */
+var AVISAR_A = '';
 
 /* ---------- menú de la planilla ---------- */
 function onOpen() {
@@ -61,8 +64,8 @@ function preparar() {
   hojaPuntajes(); hojaInsignias(); hojaSesiones();
   var regla = SpreadsheetApp.newDataValidation().requireValueInList(ESTADOS, true).build();
   u.getRange('F2:F1000').setDataValidation(regla);
-  SpreadsheetApp.getUi().alert('Listo. Cuando alguien entra con Google por primera vez, aparece en "Usuarios" como pendiente. ' +
-    'Para habilitarlo, poné su Estado en "aprobado" y completá "Nombre en el ranking" y "Grupo".');
+  SpreadsheetApp.getUi().alert('Listo. Cuando alguien entra con Google por primera vez, aparece en "Usuarios" como pendiente: ' +
+    'ya puede usar todo, pero no figura en el ranking público. Para que figure, poné su Estado en "aprobado" y revisá "Nombre en el ranking" y "Grupo".');
 }
 
 /* Pasa los jugadores de la pestaña vieja "Jugadores" (con código) a "Usuarios", conservando sus puntos.
@@ -109,19 +112,32 @@ function lunesAR() {
   return Utilities.formatDate(hoy, ZONA, 'yyyy-MM-dd');
 }
 function textoFecha(v) { return v instanceof Date ? Utilities.formatDate(v, ZONA, 'yyyy-MM-dd') : String(v); }
+/* "Juliana Rodríguez Pérez" → "Juliana R." (nunca el apellido completo) */
+function nombreCorto(nombre) {
+  var partes = limpio(nombre, 60).split(' ').filter(String);
+  if (!partes.length) return 'Sin nombre';
+  return partes[0] + (partes.length > 1 ? ' ' + partes[1].charAt(0).toUpperCase() + '.' : '');
+}
 function nuevoId(usados) {
   var letras = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789', c;
   do { c = ''; for (var k = 0; k < 8; k++) c += letras.charAt(Math.floor(Math.random() * letras.length)); } while (usados[c]);
   return c;
 }
 
-/* Usuarios aprobados: { ID: {nombre, grupo} } */
-function aprobados() {
+/* Usuarios que pueden entrar (pendientes y aprobados): { ID: {nombre, grupo, estado} } */
+function usuarios() {
   var out = {};
   hojaUsuarios().getDataRange().getValues().slice(1).forEach(function (f) {
-    var id = String(f[0] || ''), nombre = String(f[3] || '').trim();
-    if (id && f[5] === 'aprobado') out[id] = { nombre: nombre || String(f[2] || '').split(' ')[0] || 'Sin nombre', grupo: String(f[4] || '').trim() };
+    var id = String(f[0] || ''), estado = String(f[5] || 'pendiente');
+    if (!id || estado === 'baja') return;
+    out[id] = { nombre: String(f[3] || '').trim() || nombreCorto(f[2]), grupo: String(f[4] || '').trim(), estado: estado };
   });
+  return out;
+}
+/* Solo los aprobados: son los que aparecen en el ranking público */
+function aprobados() {
+  var todos = usuarios(), out = {};
+  Object.keys(todos).forEach(function (id) { if (todos[id].estado === 'aprobado') out[id] = todos[id]; });
   return out;
 }
 
@@ -144,7 +160,7 @@ function doPost(e) {
     var yo = sesion(p.sesion);
     if (p.accion === 'ranking') return respuesta(p.sesion && !yo ? { ok: false, error: 'sesion' } : ranking(yo));
     if (!yo) return respuesta({ ok: false, error: 'sesion' });
-    if (p.accion === 'yo') return respuesta({ ok: true, nombre: yo.nombre, grupo: yo.grupo });
+    if (p.accion === 'yo') return respuesta({ ok: true, nombre: yo.nombre, grupo: yo.grupo, estado: yo.estado });
     if (p.accion === 'puntaje') return respuesta(puntaje(yo, p));
     if (p.accion === 'insignia') return respuesta(insignia(yo, p));
     if (p.accion === 'salir') return respuesta(salir(p.sesion));
@@ -178,18 +194,21 @@ function login(p) {
       usados[String(datos[i][0])] = true;
       if (String(datos[i][1]).toLowerCase().trim() === g.email) fila = i;
     }
+    var id, estado, visible, grupo = '';
     if (fila < 0) {
-      u.appendRow([nuevoId(usados), g.email, g.nombre, '', '', 'pendiente', new Date(), new Date()]);
+      id = nuevoId(usados); estado = 'pendiente'; visible = nombreCorto(g.nombre);
+      u.appendRow([id, g.email, g.nombre, '', '', 'pendiente', new Date(), new Date()]);
       avisarNuevo(g);
-      return { ok: true, estado: 'pendiente', nombre: g.nombre.split(' ')[0] };
+    } else {
+      var f = datos[fila];
+      id = String(f[0]); estado = String(f[5] || 'pendiente'); visible = String(f[3] || '').trim() || nombreCorto(f[2] || g.nombre); grupo = String(f[4] || '').trim();
+      if (!f[2]) u.getRange(fila + 1, 3).setValue(g.nombre);
+      u.getRange(fila + 1, 8).setValue(new Date());
+      if (estado === 'baja') return { ok: true, estado: 'baja' };
     }
-    var f = datos[fila], estado = String(f[5] || 'pendiente');
-    if (!f[2]) u.getRange(fila + 1, 3).setValue(g.nombre);
-    u.getRange(fila + 1, 8).setValue(new Date());
-    if (estado !== 'aprobado') return { ok: true, estado: estado, nombre: g.nombre.split(' ')[0] };
     var token = Utilities.getUuid() + Utilities.getUuid(), vence = new Date(Date.now() + DIAS_SESION * 864e5);
-    hojaSesiones().appendRow([huella(token), String(f[0]), vence]);
-    return { ok: true, estado: 'aprobado', sesion: token, nombre: String(f[3] || '').trim() || g.nombre.split(' ')[0], grupo: String(f[4] || '').trim() };
+    hojaSesiones().appendRow([huella(token), id, vence]);
+    return { ok: true, estado: estado, sesion: token, nombre: visible, grupo: grupo };
   } finally {
     lock.releaseLock();
   }
@@ -198,13 +217,14 @@ function login(p) {
 /* Un mail al administrador cuando alguien nuevo pide entrar (solo nombre, para que lo apruebe). */
 function avisarNuevo(g) {
   try {
-    MailApp.sendEmail(Session.getEffectiveUser().getEmail(), 'Nueva cuenta pendiente: ' + g.nombre,
-      g.nombre + ' (' + g.email + ') entró por primera vez con Google y está esperando aprobación.\n\n' +
-      'Para habilitarlo: abrí la planilla, pestaña Usuarios, poné su Estado en "aprobado" y completá Nombre en el ranking y Grupo.');
+    MailApp.sendEmail(AVISAR_A || Session.getEffectiveUser().getEmail(), 'Cuenta nueva: ' + g.nombre,
+      g.nombre + ' (' + g.email + ') entró por primera vez con Google. Ya puede jugar y hacer los cursos, ' +
+      'pero no aparece en el ranking público hasta que lo apruebes.\n\n' +
+      'Para aprobarlo: abrí la planilla, pestaña Usuarios, poné su Estado en "aprobado" y revisá Nombre en el ranking y Grupo.');
   } catch (x) { /* si falla el mail, el pedido igual queda en la planilla */ }
 }
 
-/* Devuelve {id, nombre, grupo} si la sesión es válida y el usuario sigue aprobado. */
+/* Devuelve {id, nombre, grupo, estado} si la sesión es válida y la cuenta no está dada de baja. */
 function sesion(token) {
   if (!token || String(token).length > 200) return null;
   var h = huella(token), datos = hojaSesiones().getDataRange().getValues(), id = null;
@@ -212,8 +232,8 @@ function sesion(token) {
     if (datos[i][0] === h && new Date(datos[i][2]).getTime() > Date.now()) { id = String(datos[i][1]); break; }
   }
   if (!id) return null;
-  var a = aprobados()[id];
-  return a ? { id: id, nombre: a.nombre, grupo: a.grupo } : null;
+  var a = usuarios()[id];
+  return a ? { id: id, nombre: a.nombre, grupo: a.grupo, estado: a.estado } : null;
 }
 
 function salir(token) {
@@ -312,11 +332,17 @@ function tablaGrupos(totales, js) {
   return filas;
 }
 
+function totalesDe(filas, permitidos) {
+  var t = {};
+  filas.forEach(function (f) { if (permitidos[f.id]) t[f.id] = f.puntos; });
+  return t;
+}
+
 function ranking(yo) {
   var cache = CacheService.getScriptCache(), base = cache.get('ranking'), r;
   if (base) r = JSON.parse(base);
   else {
-    var js = aprobados(), datos = hojaPuntajes().getDataRange().getValues(), lunes = lunesAR();
+    var js = usuarios(), datos = hojaPuntajes().getDataRange().getValues(), lunes = lunesAR();
     var d = new Date(lunes + 'T12:00:00'); d.setDate(d.getDate() - 7);
     var lunesPasado = Utilities.formatDate(d, ZONA, 'yyyy-MM-dd');
     var semana = {}, historico = {}, pasada = {};
@@ -328,21 +354,35 @@ function ranking(yo) {
     });
     r = {
       semana: tabla(semana, js), historico: tabla(historico, js),
-      podio: tabla(pasada, js).filter(function (f) { return f.pos <= 3 && f.puntos > 0; }),
-      grupos: tablaGrupos(semana, js), insignias: insigniasPorJugador()
+      pasada: tabla(pasada, js),
+      insignias: insigniasPorJugador()
     };
     cache.put('ranking', JSON.stringify(r), 60);
   }
-  var mio = {};
-  if (yo) ['semana', 'historico'].forEach(function (k) {
-    var f = r[k].filter(function (x) { return x.id === yo.id; })[0];
-    if (f) mio[k] = { pos: f.pos, puntos: f.puntos };
+  /* tabla pública = solo aprobados; el puesto propio se calcula entre los aprobados + uno mismo */
+  var visibles = aprobados(), mio = {};
+  var soloPublicos = function (filas, conmigo) {
+    var out = [], pos = 0, ant = null, n = 0;
+    filas.forEach(function (f) {
+      if (!visibles[f.id] && !(conmigo && yo && f.id === yo.id)) return;
+      n++; if (f.puntos !== ant) { pos = n; ant = f.puntos; }
+      out.push({ id: f.id, nombre: f.nombre, grupo: f.grupo, puntos: f.puntos, pos: pos, publico: !!visibles[f.id] });
+    });
+    return out;
+  };
+  var semanaV = soloPublicos(r.semana, true), historicoV = soloPublicos(r.historico, true);
+  if (yo) [['semana', semanaV], ['historico', historicoV]].forEach(function (par) {
+    var f = par[1].filter(function (x) { return x.id === yo.id; })[0];
+    if (f) mio[par[0]] = { pos: f.pos, puntos: f.puntos };
   });
   var ins = r.insignias || {};
   /* a la web solo salen nombre visible, grupo, puntos e insignias (nunca IDs ni mails) */
   var publico = function (filas) {
-    return filas.slice(0, TOP).map(function (f) { return { pos: f.pos, nombre: f.nombre, grupo: f.grupo, puntos: f.puntos, insignias: ins[f.id] || [], yo: !!(yo && f.id === yo.id) }; });
+    return filas.slice(0, TOP).map(function (f) {
+      return { pos: f.pos, nombre: f.nombre, grupo: f.grupo, puntos: f.puntos, insignias: ins[f.id] || [], yo: !!(yo && f.id === yo.id), oculto: !f.publico };
+    });
   };
-  return { ok: true, semana: publico(r.semana), historico: publico(r.historico), podio: publico(r.podio || []),
-           grupos: r.grupos || [], yo: mio, misInsignias: yo ? (ins[yo.id] || []) : [] };
+  return { ok: true, semana: publico(semanaV), historico: publico(historicoV), podio: publico(soloPublicos(r.pasada || [], false).filter(function (f) { return f.pos <= 3 && f.puntos > 0; })),
+           grupos: tablaGrupos(totalesDe(r.semana, visibles), visibles), yo: mio, miEstado: yo ? yo.estado : '',
+           misInsignias: yo ? (ins[yo.id] || []) : [] };
 }

@@ -96,7 +96,7 @@
     var entrar = function (credencial, alTerminar) {
       post("login", { credencial: credencial }, function (err, r) {
         if (err || !r || !r.ok) { alTerminar("error"); return; }
-        if (r.estado === "aprobado") guardarC({ sesion: r.sesion, nombre: r.nombre, grupo: r.grupo });
+        if (r.sesion) guardarC({ sesion: r.sesion, nombre: r.nombre, grupo: r.grupo, estado: r.estado });
         alTerminar(r.estado, r.nombre);
       });
     };
@@ -108,12 +108,13 @@
       if (cb) cb();
     };
     var mensaje = function (estado, nombre) {
-      if (estado === "pendiente") return "<strong>¡Gracias" + (nombre ? ", " + esc(nombre) : "") + "!</strong> Registramos tu pedido. Avisale a " + esc(cfg.aprueba || "los coordinadores") + " para que apruebe tu cuenta y, cuando te confirme, volvé a entrar.";
+      if (estado === "pendiente") return "Todavía no aparecés en el ranking público: cuando " + esc(cfg.aprueba || "los coordinadores") + " apruebe tu cuenta, vas a figurar con tu nombre. Mientras tanto ya sumás puntos e insignias.";
       if (estado === "baja") return "Tu cuenta está dada de baja. Si creés que es un error, escribinos.";
       if (estado === "error") return "No se pudo entrar. Probá de nuevo en un rato.";
       return "";
     };
-    return { url: URL_C, datos: datos, post: post, boton: boton, salir: salir, mensaje: mensaje, entrar: entrar };
+    var actualizar = function (estado) { var d = datos(); if (d && estado && d.estado !== estado) { d.estado = estado; guardarC(d); } };
+    return { url: URL_C, datos: datos, post: post, boton: boton, salir: salir, mensaje: mensaje, entrar: entrar, actualizar: actualizar };
   })();
 
   var ICON = {
@@ -1461,7 +1462,8 @@
       if (!filas || !filas.length) return '<p class="muted">Todavía no hay puntajes. ¡Sé el primero!</p>';
       return '<ol class="rk__tabla">' + filas.map(function (x) {
         return '<li class="' + (x.yo ? "is-yo" : "") + '"><span class="rk__pos">' + x.pos + '</span><span class="rk__nombre">' + esc(x.nombre) + grupoRK(x.grupo) +
-          ((x.insignias || []).length ? ' <span class="rk__ins" title="Cumbres de la Academia Frassati">' + x.insignias.map(esc).join("") + "</span>" : "") + '</span><span class="rk__pts">' + x.puntos + "</span></li>";
+          ((x.insignias || []).length ? ' <span class="rk__ins" title="Cumbres de la Academia Frassati">' + x.insignias.map(esc).join("") + "</span>" : "") +
+          (x.oculto ? ' <span class="rk__oculto">solo lo ves vos</span>' : "") + '</span><span class="rk__pts">' + x.puntos + "</span></li>";
       }).join("") + "</ol>";
     };
     var cargarTablas = function (cb) {
@@ -1479,7 +1481,7 @@
           '<p class="rk__ayuda">' + esc(C.ranking.pedirUsuario || "") + ' La primera vez, tu cuenta queda pendiente hasta que la aprueben. En el ranking solo se ve tu nombre, nunca tu mail. <a href="privacidad.html">Privacidad</a></p></div>' +
           '<div id="rk-tablas"><p class="muted">Cargando ranking…</p></div>';
         CUENTA.boton($("rk-google"), function (estado, nombre) {
-          if (estado === "aprobado") {
+          if (CUENTA.datos()) {
             msgRK = "";
             var pend = JUEGOS_RK.length; /* sube lo que ya jugó hoy antes de entrar */
             JUEGOS_RK.forEach(function (j) { enviarRK(j, function () { if (--pend === 0) pintarRK(); }); });
@@ -1497,6 +1499,7 @@
           return '<li class="' + (p !== null ? "is-ok" : "") + '"><span aria-hidden="true">' + d.icono + "</span> " + esc(d.nombre) + ": <strong>" + (p !== null ? p : "—") + "</strong>" + esc(extra) + "</li>";
         }).join("");
         cont.innerHTML = '<div class="rk__yo"><p>Jugás como <strong>' + esc(yo.nombre) + "</strong>" + (yo.grupo ? grupoRK(yo.grupo) : "") + ' · <button type="button" class="link" data-rk="salir">Salir</button></p>' +
+          (yo.estado === "pendiente" ? '<p class="rk__msg">' + CUENTA.mensaje("pendiente") + "</p>" : "") +
           '<p class="rk__hoy">Hoy: <strong>' + hoy + "</strong> de 400 puntos · " + jugados + " de 4 desafíos</p>" +
           '<ul class="rk__desglose">' + desglose + "</ul>" +
           '<details class="rk__reglas"><summary>¿Cómo se calculan los puntos?</summary><ul>' +
@@ -1511,6 +1514,7 @@
         var t = $("rk-tablas"); if (!t) return;
         if (yo && !CUENTA.datos()) { pintarRK(); return; } /* la sesión venció: vuelve a mostrar el botón */
         if (err || !d || !d.ok) { t.innerHTML = '<p class="muted">No se pudo cargar el ranking. Probá en un rato.</p>'; return; }
+        if (yo && d.miEstado && d.miEstado !== yo.estado) { CUENTA.actualizar(d.miEstado); pintarRK(); return; }
         t.innerHTML = '<div class="rk__tabs" role="tablist">' +
           '<button type="button" role="tab" class="fchip' + (vistaRK === "semana" ? " is-on" : "") + '" data-rk="semana" aria-selected="' + (vistaRK === "semana") + '">Esta semana</button>' +
           '<button type="button" role="tab" class="fchip' + (vistaRK === "historico" ? " is-on" : "") + '" data-rk="historico" aria-selected="' + (vistaRK === "historico") + '">Histórico</button>' +
@@ -1604,7 +1608,7 @@
           "<li><h3>Tu certificado</h3>" + (e.aprobado ? certForm(c, e) : "<p>Cuando apruebes, vas a poder descargar tu certificado y sumar la insignia " + c.icono + " al ranking.</p>") + "</li>" +
         '</ol></div><div id="examen"></div>';
       if ($("f-google")) CUENTA.boton($("f-google"), function (estado, nombre) {
-        if (estado === "aprobado") enviarInsignia(c, function () { detalle(c); });
+        if (CUENTA.datos()) enviarInsignia(c, function () { detalle(c); });
         else $("f-msg").innerHTML = CUENTA.mensaje(estado, nombre);
       });
     };

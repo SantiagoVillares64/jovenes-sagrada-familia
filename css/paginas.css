@@ -750,3 +750,4 @@ a.curso:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,
 .rk__msg { background: var(--tint); border-radius: 12px; padding: .7rem .9rem; font-size: .92rem; }
 .rk__msg:empty { display: none; }
 #f-google { margin: .6rem 0; min-height: 44px; }
+.rk__oculto { margin-left: .3rem; font-size: .7rem; color: var(--muted); border: 1px dashed var(--line); border-radius: 99px; padding: 0 .45rem; white-space: nowrap; }
