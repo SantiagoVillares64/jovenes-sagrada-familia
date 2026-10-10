@@ -49,6 +49,73 @@
         (f.grupo ? '<span class="podio__grupo">' + esc(f.grupo) + "</span>" : "") + '<span class="podio__pts">' + f.puntos + " pts</span></li>";
     }).join("") + "</ol></div>";
   }
+  /* ---------- cuenta: "Entrar con Google" (la usan el ranking y la Academia) ----------
+     Google hace el inicio de sesión; la planilla (herramientas/ranking/Codigo.gs) verifica el comprobante
+     y, si la persona está aprobada, devuelve una sesión. Acá solo se guarda esa sesión, el nombre visible y el grupo. */
+  var CUENTA = (function () {
+    var cfg = C.ranking || {}, URL_C = cfg.url || "", gisCargando = null, gisListo = false, alTerminarActual = null;
+    try { localStorage.removeItem("ranking:yo"); } catch (e) {} /* el sistema viejo de códigos */
+    var datos = function () { return leerLS("cuenta"); };
+    var guardarC = function (d) { try { if (d) localStorage.setItem("cuenta", JSON.stringify(d)); else localStorage.removeItem("cuenta"); } catch (e) {} };
+    var post = function (accion, extra, cb) {
+      var body = { accion: accion }, d = datos();
+      if (d && d.sesion) body.sesion = d.sesion;
+      for (var k in extra) body[k] = extra[k];
+      fetch(URL_C, { method: "POST", body: JSON.stringify(body) }).then(function (r) { return r.json(); }).then(function (r) {
+        if (r && r.error === "sesion") guardarC(null); /* sesión vencida o cuenta dada de baja */
+        cb(null, r);
+      }, function (e) { cb(e || true); });
+    };
+    var cargarGIS = function (cb) {
+      if (window.google && google.accounts && google.accounts.id) { cb(); return; }
+      if (!gisCargando) {
+        gisCargando = [];
+        var s = document.createElement("script");
+        s.src = "https://accounts.google.com/gsi/client"; s.async = true;
+        s.onload = function () { gisCargando.forEach(function (f) { f(); }); };
+        document.head.appendChild(s);
+      }
+      gisCargando.push(cb);
+    };
+    /* dibuja el botón de Google en el elemento; alTerminar(estado, nombre) cuando vuelve la respuesta */
+    var boton = function (el, alTerminar) {
+      if (!URL_C || !cfg.clientId) { el.innerHTML = '<p class="muted">El inicio de sesión todavía no está disponible.</p>'; return; }
+      alTerminarActual = alTerminar;
+      cargarGIS(function () {
+        if (!gisListo) {
+          gisListo = true;
+          google.accounts.id.initialize({
+            client_id: cfg.clientId, ux_mode: "popup", auto_select: false, cancel_on_tap_outside: true,
+            callback: function (resp) { entrar(resp.credential, alTerminarActual); }
+          });
+        }
+        el.innerHTML = "";
+        google.accounts.id.renderButton(el, { theme: "outline", size: "large", text: "signin_with", shape: "pill", locale: "es" });
+      });
+    };
+    var entrar = function (credencial, alTerminar) {
+      post("login", { credencial: credencial }, function (err, r) {
+        if (err || !r || !r.ok) { alTerminar("error"); return; }
+        if (r.estado === "aprobado") guardarC({ sesion: r.sesion, nombre: r.nombre, grupo: r.grupo });
+        alTerminar(r.estado, r.nombre);
+      });
+    };
+    var salir = function (cb) {
+      var d = datos();
+      if (d && d.sesion) post("salir", {}, function () {});
+      guardarC(null);
+      try { if (window.google && google.accounts) google.accounts.id.disableAutoSelect(); } catch (e) {}
+      if (cb) cb();
+    };
+    var mensaje = function (estado, nombre) {
+      if (estado === "pendiente") return "<strong>¡Gracias" + (nombre ? ", " + esc(nombre) : "") + "!</strong> Registramos tu pedido. Avisale a " + esc(cfg.aprueba || "los coordinadores") + " para que apruebe tu cuenta y, cuando te confirme, volvé a entrar.";
+      if (estado === "baja") return "Tu cuenta está dada de baja. Si creés que es un error, escribinos.";
+      if (estado === "error") return "No se pudo entrar. Probá de nuevo en un rato.";
+      return "";
+    };
+    return { url: URL_C, datos: datos, post: post, boton: boton, salir: salir, mensaje: mensaje, entrar: entrar };
+  })();
+
   var ICON = {
     play: '<svg viewBox="0 0 24 24" aria-hidden="true" class="i-fill"><path d="M8 5.5v13l11-6.5z"/></svg>',
     clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
@@ -1358,28 +1425,21 @@
     }
 
     /* --- Ranking parroquial: suma de los 4 desafíos del día (máximo 100 puntos cada uno) ---
-       Los jugadores y los puntajes viven en una planilla de Google (ver herramientas/ranking/LEEME.md).
-       Solo juegan quienes tienen un código que dan los coordinadores. */
+       Los puntajes viven en la planilla de la Academia (ver herramientas/ranking/LEEME.md).
+       Suman quienes entran con su cuenta de Google y fueron aprobados. */
     var JUEGOS_RK = ["santo", "versiculo", "crucigrama", "conexiones"];
-    var NOMBRE_RK = { santo: "Santo del día", versiculo: "Versículo del día", crucigrama: "Crucigrama", conexiones: "Conexiones" };
     var puntosDe = puntosHoy;
-    var RK = (C.ranking && C.ranking.url) ? C.ranking.url : "";
-    var yoRK = function () { return leer("ranking:yo"); };
-    var llamarRK = function (params, cb) {
-      var q = Object.keys(params).map(function (k) { return k + "=" + encodeURIComponent(params[k]); }).join("&");
-      fetch(RK + (RK.indexOf("?") < 0 ? "?" : "&") + q).then(function (r) { return r.json(); })
-        .then(function (d) { cb(null, d); }, function (e) { cb(e || true); });
-    };
+    var RK = CUENTA.url;
     var enviarRK = function (juego, cb) {
-      var yo = yoRK(), pts = puntosDe(juego), f = claveFecha(HOY), k = "ranking:enviado:" + f + ":" + juego;
-      if (!RK || !yo || pts === null || leer(k)) { if (cb) cb(); return; }
-      llamarRK({ accion: "puntaje", codigo: yo.codigo, fecha: f, juego: juego, puntos: pts, num: NUM }, function (err, d) {
+      var pts = puntosDe(juego), f = claveFecha(HOY), k = "ranking:enviado:" + f + ":" + juego;
+      if (!RK || !CUENTA.datos() || pts === null || leer(k)) { if (cb) cb(); return; }
+      CUENTA.post("puntaje", { fecha: f, juego: juego, puntos: pts, num: NUM }, function (err, d) {
         if (!err && d && d.ok) guardar(k, true);
         if (cb) cb();
       });
     };
     var avisarPuntaje = function (juego) { enviarRK(juego, function () { if ($("ranking")) pintarRK(); }); };
-    var vistaRK = "semana";
+    var vistaRK = "semana", msgRK = "";
     /* etiqueta del grupo (columna Grupo de la planilla), con el color del grupo si coincide */
     var grupoRK = function (txt) {
       txt = String(txt || "").trim(); if (!txt) return "";
@@ -1397,22 +1457,34 @@
           ' <span class="rk__cuantos">' + x.jugadores + (x.jugadores === 1 ? " jugador" : " jugadores") + '</span></span><span class="rk__pts">' + x.promedio + "</span></li>";
       }).join("") + "</ol>";
     };
-    var tablaRK = function (filas, yo) {
+    var tablaRK = function (filas) {
       if (!filas || !filas.length) return '<p class="muted">Todavía no hay puntajes. ¡Sé el primero!</p>';
       return '<ol class="rk__tabla">' + filas.map(function (x) {
-        return '<li class="' + (yo && x.nombre === yo.nombre ? "is-yo" : "") + '"><span class="rk__pos">' + x.pos + '</span><span class="rk__nombre">' + esc(x.nombre) + grupoRK(x.grupo) + ((x.insignias || []).length ? ' <span class="rk__ins" title="Cursos de Formación aprobados">' + x.insignias.map(esc).join("") + "</span>" : "") + '</span><span class="rk__pts">' + x.puntos + "</span></li>";
+        return '<li class="' + (x.yo ? "is-yo" : "") + '"><span class="rk__pos">' + x.pos + '</span><span class="rk__nombre">' + esc(x.nombre) + grupoRK(x.grupo) +
+          ((x.insignias || []).length ? ' <span class="rk__ins" title="Cumbres de la Academia Frassati">' + x.insignias.map(esc).join("") + "</span>" : "") + '</span><span class="rk__pts">' + x.puntos + "</span></li>";
       }).join("") + "</ol>";
+    };
+    var cargarTablas = function (cb) {
+      if (CUENTA.datos()) CUENTA.post("ranking", {}, cb);
+      else fetch(RK + (RK.indexOf("?") < 0 ? "?" : "&") + "accion=ranking").then(function (r) { return r.json(); }).then(function (d) { cb(null, d); }, function (e) { cb(e || true); });
     };
     var pintarRK = function () {
       var cont = $("ranking"); if (!cont) return;
       if (!RK) { cont.innerHTML = '<p class="muted">El ranking parroquial arranca muy pronto.</p>'; return; }
-      var yo = yoRK();
+      var yo = CUENTA.datos();
       if (!yo) {
-        cont.innerHTML = '<form class="rk__login" id="rk-login"><label for="rk-codigo">Entrá con tu código</label>' +
-          '<div class="rk__fila"><input id="rk-codigo" type="text" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="12" placeholder="Ej.: K7PM3Q" required>' +
-          '<button type="submit" class="btn btn--small">Entrar</button></div>' +
-          '<p class="rk__ayuda"><strong>' + esc(C.ranking.pedirUsuario || "¿Querés tu propio usuario? Pedíselo a los coordinadores.") + "</strong> En el ranking solo aparece el nombre que elijan ellos.</p>" +
-          '<p class="rk__error" id="rk-error" aria-live="polite"></p></form><div id="rk-tablas"><p class="muted">Cargando ranking…</p></div>';
+        cont.innerHTML = '<div class="rk__login"><p class="rk__entrar">Entrá con tu cuenta de Google para sumar tus puntos al ranking.</p>' +
+          '<div id="rk-google" class="rk__google"></div>' +
+          (msgRK ? '<p class="rk__msg" aria-live="polite">' + msgRK + "</p>" : "") +
+          '<p class="rk__ayuda">' + esc(C.ranking.pedirUsuario || "") + ' La primera vez, tu cuenta queda pendiente hasta que la aprueben. En el ranking solo se ve tu nombre, nunca tu mail. <a href="privacidad.html">Privacidad</a></p></div>' +
+          '<div id="rk-tablas"><p class="muted">Cargando ranking…</p></div>';
+        CUENTA.boton($("rk-google"), function (estado, nombre) {
+          if (estado === "aprobado") {
+            msgRK = "";
+            var pend = JUEGOS_RK.length; /* sube lo que ya jugó hoy antes de entrar */
+            JUEGOS_RK.forEach(function (j) { enviarRK(j, function () { if (--pend === 0) pintarRK(); }); });
+          } else { msgRK = CUENTA.mensaje(estado, nombre); pintarRK(); }
+        });
       } else {
         var hoy = 0, jugados = 0;
         var desglose = DESAFIOS.map(function (d) {
@@ -1424,7 +1496,7 @@
           }
           return '<li class="' + (p !== null ? "is-ok" : "") + '"><span aria-hidden="true">' + d.icono + "</span> " + esc(d.nombre) + ": <strong>" + (p !== null ? p : "—") + "</strong>" + esc(extra) + "</li>";
         }).join("");
-        cont.innerHTML = '<div class="rk__yo"><p>Jugás como <strong>' + esc(yo.nombre) + '</strong> · <button type="button" class="link" data-rk="salir">Salir</button></p>' +
+        cont.innerHTML = '<div class="rk__yo"><p>Jugás como <strong>' + esc(yo.nombre) + "</strong>" + (yo.grupo ? grupoRK(yo.grupo) : "") + ' · <button type="button" class="link" data-rk="salir">Salir</button></p>' +
           '<p class="rk__hoy">Hoy: <strong>' + hoy + "</strong> de 400 puntos · " + jugados + " de 4 desafíos</p>" +
           '<ul class="rk__desglose">' + desglose + "</ul>" +
           '<details class="rk__reglas"><summary>¿Cómo se calculan los puntos?</summary><ul>' +
@@ -1435,38 +1507,25 @@
           "</ul></details></div>" +
           '<div id="rk-tablas"><p class="muted">Cargando ranking…</p></div>';
       }
-      llamarRK({ accion: "ranking", codigo: yo ? yo.codigo : "" }, function (err, d) {
+      cargarTablas(function (err, d) {
         var t = $("rk-tablas"); if (!t) return;
+        if (yo && !CUENTA.datos()) { pintarRK(); return; } /* la sesión venció: vuelve a mostrar el botón */
         if (err || !d || !d.ok) { t.innerHTML = '<p class="muted">No se pudo cargar el ranking. Probá en un rato.</p>'; return; }
         t.innerHTML = '<div class="rk__tabs" role="tablist">' +
           '<button type="button" role="tab" class="fchip' + (vistaRK === "semana" ? " is-on" : "") + '" data-rk="semana" aria-selected="' + (vistaRK === "semana") + '">Esta semana</button>' +
           '<button type="button" role="tab" class="fchip' + (vistaRK === "historico" ? " is-on" : "") + '" data-rk="historico" aria-selected="' + (vistaRK === "historico") + '">Histórico</button>' +
           '<button type="button" role="tab" class="fchip' + (vistaRK === "grupos" ? " is-on" : "") + '" data-rk="grupos" aria-selected="' + (vistaRK === "grupos") + '">Por grupos</button></div>' +
-          (vistaRK === "grupos" ? tablaGruposRK(d.grupos) : tablaRK(d[vistaRK], yo)) +
+          (vistaRK === "grupos" ? tablaGruposRK(d.grupos) : tablaRK(d[vistaRK])) +
           (d.yo && d.yo[vistaRK] && d.yo[vistaRK].pos > (d[vistaRK] || []).length ? '<p class="rk__mio">Tu puesto: <strong>' + d.yo[vistaRK].pos + "°</strong> con " + d.yo[vistaRK].puntos + " puntos</p>" : "") +
           '<p class="rk__nota">' + (vistaRK === "grupos" ? "Promedio de puntos de esta semana por cada jugador del grupo que sumó algo. Así no gana el grupo con más chicos." : (vistaRK === "semana" ? "La semana va de lunes a domingo." : "Desde el lanzamiento.") + " Cada desafío suma hasta 100 puntos por día.") + "</p>";
         if ($("rk-podio")) $("rk-podio").innerHTML = podioHtml(d.podio);
       });
     };
     if ($("ranking")) {
-      $("ranking").addEventListener("submit", function (ev) {
-        ev.preventDefault();
-        var cod = String($("rk-codigo").value || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
-        if (!cod) return;
-        $("rk-error").textContent = "Revisando…";
-        llamarRK({ accion: "entrar", codigo: cod }, function (err, d) {
-          if (err || !d) { $("rk-error").textContent = "No se pudo conectar. Probá de nuevo."; return; }
-          if (!d.ok) { $("rk-error").textContent = "Ese código no existe o está dado de baja."; return; }
-          guardar("ranking:yo", { codigo: cod, nombre: d.nombre });
-          /* sube lo que ya jugó hoy antes de entrar */
-          var pend = JUEGOS_RK.length;
-          JUEGOS_RK.forEach(function (j) { enviarRK(j, function () { if (--pend === 0) pintarRK(); }); });
-        });
-      });
       $("ranking").addEventListener("click", function (ev) {
         var b = ev.target.closest("[data-rk]"); if (!b) return;
         var a = b.getAttribute("data-rk");
-        if (a === "salir") { try { localStorage.removeItem("ranking:yo"); } catch (e) {} pintarRK(); }
+        if (a === "salir") CUENTA.salir(pintarRK);
         else { vistaRK = a; pintarRK(); }
       });
       /* por si jugó sin conexión: reintenta subir lo de hoy */
@@ -1507,13 +1566,14 @@
     var fechaLarga = function (f) { var p = f.split("-"); return (+p[2]) + " de " + MESES_C[+p[1] - 1] + " de " + p[0]; };
     var examen = null;
 
-    /* la insignia se guarda en la planilla del ranking si la persona entró con su código */
-    var enviarInsignia = function (c) {
-      var yo = leerLS("ranking:yo"), e = estado(c.id);
-      if (!C.ranking || !C.ranking.url || !yo || !e.aprobado || e.enviada) return;
-      var url = C.ranking.url + (C.ranking.url.indexOf("?") < 0 ? "?" : "&") + "accion=insignia&codigo=" + encodeURIComponent(yo.codigo) +
-        "&curso=" + encodeURIComponent(c.id) + "&icono=" + encodeURIComponent(c.icono) + "&nota=" + e.aprobado.nota;
-      fetch(url).then(function (r) { return r.json(); }).then(function (d) { if (d && d.ok) { e.enviada = true; guardarE(c.id, e); } }, function () {});
+    /* la insignia se guarda en la planilla si la persona entró con su cuenta de Google */
+    var enviarInsignia = function (c, cb) {
+      var e = estado(c.id);
+      if (!CUENTA.url || !CUENTA.datos() || !e.aprobado || e.enviada) { if (cb) cb(); return; }
+      CUENTA.post("insignia", { curso: c.id, nota: e.aprobado.nota }, function (err, d) {
+        if (!err && d && d.ok) { e.enviada = true; guardarE(c.id, e); }
+        if (cb) cb();
+      });
     };
 
     var lista = function () {
@@ -1543,17 +1603,21 @@
               : '<button type="button" class="btn" data-f="empezar">Empezar el examen</button>') + "</li>" +
           "<li><h3>Tu certificado</h3>" + (e.aprobado ? certForm(c, e) : "<p>Cuando apruebes, vas a poder descargar tu certificado y sumar la insignia " + c.icono + " al ranking.</p>") + "</li>" +
         '</ol></div><div id="examen"></div>';
+      if ($("f-google")) CUENTA.boton($("f-google"), function (estado, nombre) {
+        if (estado === "aprobado") enviarInsignia(c, function () { detalle(c); });
+        else $("f-msg").innerHTML = CUENTA.mensaje(estado, nombre);
+      });
     };
 
     var certForm = function (c, e) {
-      var yo = leerLS("ranking:yo");
+      var yo = CUENTA.datos();
       return '<form class="cert-form" data-f="cert"><label for="cert-nombre">Nombre y apellido para el certificado</label>' +
         '<div class="rk__fila"><input id="cert-nombre" type="text" maxlength="60" required value="' + esc(e.nombre || "") + '" placeholder="Ej.: Juliana Rodríguez">' +
         '<button type="submit" class="btn btn--small">Descargar certificado</button></div>' +
         "<p class=\"rk__ayuda\">Se abre para imprimir: elegí <strong>Guardar como PDF</strong>. En el celular, desde Compartir → Imprimir.</p></form>" +
         '<div class="daily__share">' + ext("https://wa.me/?text=" + encodeURIComponent("🎓 Aprobé el curso «" + c.titulo + "» de Jóvenes Sagrada Familia (" + e.aprobado.nota + "/10)\n" + location.href.split("#")[0]), "btn btn--small btn--ghost", "Compartir por WhatsApp") + "</div>" +
         (yo ? '<p class="rk__ayuda">' + (e.enviada ? "La insignia " + c.icono + " ya aparece al lado de tu nombre en el ranking." : "La insignia " + c.icono + " se va a sumar a tu nombre en el ranking.") + "</p>"
-            : '<p class="rk__ayuda">Si entrás al ranking con tu código (en Juegos), la insignia ' + c.icono + " aparece al lado de tu nombre.</p>");
+            : '<p class="rk__ayuda">Si entrás con tu cuenta de Google, la insignia ' + c.icono + ' queda registrada y aparece al lado de tu nombre en el ranking.</p><div id="f-google"></div><p class="rk__msg" id="f-msg" aria-live="polite"></p>');
     };
 
     var empezar = function (c) {
@@ -1624,7 +1688,7 @@
       }
     });
     window.addEventListener("hashchange", function () { pintar(); window.scrollTo(0, 0); });
-    FD.cursos.forEach(enviarInsignia); /* por si aprobó antes de entrar con su código */
+    FD.cursos.forEach(function (c) { enviarInsignia(c); }); /* por si aprobó antes de entrar con su código */
     pintar();
   })();
 

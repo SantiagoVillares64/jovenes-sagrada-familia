@@ -1,32 +1,41 @@
-# Ranking parroquial: cómo ponerlo en marcha
+# Cuentas, ranking e insignias: cómo funciona
 
-El ranking suma los 4 desafíos del día (Santo, Versículo, Crucigrama y Conexiones, hasta 100 puntos cada uno).
-Los jugadores y los puntajes se guardan en una **planilla de Google** que solo vos podés ver y editar.
-En la web solo aparece el **nombre que vos elijas** para cada jugador.
+La web usa **"Entrar con Google"**. Google hace el inicio de sesión (nosotros nunca vemos contraseñas) y la planilla
+de la cuenta **academiafrassati@gmail.com** guarda quién puede entrar, los puntos de los juegos y las cumbres de la Academia.
 
-## Una sola vez (10 minutos)
+## Instalación (una sola vez)
 
-1. Creá una planilla nueva en Google Drive. Ponele de nombre, por ejemplo, `Ranking juegos`.
-2. En la planilla: **Extensiones → Apps Script**.
-3. Borrá lo que aparece y pegá todo el contenido de `Codigo.gs` (está en esta misma carpeta). Guardá (ícono del disquete).
-4. Arriba a la derecha: **Implementar → Nueva implementación**.
-   - Tipo (el engranaje): **Aplicación web**.
-   - Ejecutar como: **Yo**.
-   - Quién tiene acceso: **Cualquier usuario**.
-   - **Implementar**. Google te va a pedir permiso para que el script use tu planilla: aceptalo
-     (si aparece "Google no verificó esta app", tocá *Configuración avanzada → Ir a … (no seguro)*: es tu propio script).
-5. Copiá la **URL de la aplicación web** (termina en `/exec`) y pasásela a quien mantiene la web,
-   o pegala en `js/contenido.js`, en `ranking: { url: "ACÁ" }`.
-6. Volvé a la planilla y recargala. Va a aparecer el menú **Ranking**: tocá **Preparar pestañas**.
+1. En la planilla del ranking (cuenta academiafrassati): **Extensiones → Apps Script**.
+2. Borrá todo y pegá el contenido de `Codigo.gs`. Guardá.
+3. **Implementar → Nueva implementación** → Aplicación web · Ejecutar como **Yo** · Acceso **Cualquier usuario** → Implementar.
+   Google pide permisos: leer y editar **esta** planilla (solo esta, por `@OnlyCurrentDoc`), conectarse a Google para
+   verificar los inicios de sesión y mandarte un mail cuando alguien nuevo pide entrar. Aceptalos.
+4. Pasá la URL nueva (termina en `/exec`) a quien mantiene la web, o pegala en `js/contenido.js` → `ranking.url`.
+5. Recargá la planilla: aparece el menú **Administración**. Tocá **Preparar pestañas**.
+6. Si venías del sistema de códigos: **Administración → Pasar jugadores con código a Usuarios** y completá el
+   **Email** de cada uno. Cuando entren con esa cuenta de Google, recuperan sus puntos.
 
-## Para sumar jugadores
+## Aprobar a alguien
 
-1. En la pestaña **Jugadores**, escribí en la columna B el nombre que va a aparecer en el ranking
-   (por ejemplo `Santi V.` o `Juli (FARO)`). En la C, si querés, el grupo.
-2. Menú **Ranking → Generar códigos para los nuevos**. Cada uno recibe un código de 6 letras y números.
-3. Pasale a cada uno su código por mensaje privado. En la web lo escriben una sola vez en *Juegos → Ranking parroquial*.
+1. La persona toca "Entrar con Google" en la web. Queda en la pestaña **Usuarios** con Estado **pendiente**
+   y te llega un mail avisándote.
+2. Poné su **Estado** en **aprobado** y completá **Nombre en el ranking** (por ejemplo `Juli R.`) y **Grupo**.
+3. Le avisás que vuelva a entrar. Listo: desde ese celular queda adentro unos 4 meses.
 
-Para dar de baja a alguien, destildá **Activo**: deja de aparecer y no puede sumar más puntos.
+- **Dar de baja:** Estado → **baja**. Deja de sumar y desaparece del ranking (sus datos quedan, por si vuelve).
+- **Borrar a alguien** (si lo pide): borrá su fila en Usuarios y sus filas en Puntajes e Insignias (buscá su ID).
+- **Cerrar todas las sesiones** (si sospechás algo raro): Administración → Cerrar todas las sesiones.
+
+## Qué se guarda y qué se ve
+
+| Pestaña | Qué tiene | ¿Sale a la web? |
+|---|---|---|
+| Usuarios | ID, mail, nombre de Google, nombre en el ranking, grupo, estado, fechas | Solo nombre en el ranking y grupo |
+| Puntajes | Fecha, ID, juego, puntos | Solo los totales |
+| Insignias | Fecha, ID, curso, nota | Solo el ícono de la cumbre |
+| Sesiones (oculta) | Huellas de las sesiones abiertas | No |
+
+Los mails y los IDs **nunca** salen a la web. Política de privacidad: https://sagradafamiliajoven.github.io/privacidad.html
 
 ## Cómo cuenta los puntos
 
@@ -37,14 +46,12 @@ Para dar de baja a alguien, destildá **Activo**: deja de aparecer y no puede su
 | Crucigrama | 100 si lo terminás en menos de 3:30 sin revelar palabras; después −1 por cada 30 segundos y −15 por cada palabra revelada (mínimo 20) |
 | Conexiones | 100 sin errores, 80 con 1, 60 con 2, 40 con 3; si perdés, 10 por grupo encontrado |
 
-- Solo cuenta el desafío **del día** y **una vez** por persona.
-- **Semana**: de lunes a domingo (hora de Argentina). **Histórico**: desde que arrancó.
-- Los puntajes se pueden ver (y borrar, si hiciera falta) en la pestaña **Puntajes**.
+- Solo cuenta el desafío **del día** y **una vez** por persona. Semana: lunes a domingo (hora de Argentina).
 
 > Aviso honesto: los puntos se calculan en el celular de cada uno. Alguien que sepa de programación podría
 > mandarse puntos de más, pero nunca más de 100 por desafío por día. Si ves algo raro, borrá esas filas en *Puntajes*.
 
 ## Si cambiás el código del script
 
-Después de pegar una versión nueva: **Implementar → Administrar implementaciones → editar (lápiz) → Versión: Nueva → Implementar**.
+Pegá la versión nueva y después **Implementar → Administrar implementaciones → lápiz → Versión: Nueva → Implementar**.
 Así la URL sigue siendo la misma.

@@ -347,11 +347,14 @@ window.CONTENIDO = {
 
   /* ---------- Ranking parroquial de los juegos ----------
      url: la dirección de la aplicación web de Google Apps Script (ver herramientas/ranking/LEEME.md).
-     pedirUsuario: el texto que ve quien todavía no tiene código.
+     clientId: el ID de cliente de Google (público, no es secreto).
+     pedirUsuario: el texto que ve quien todavía no entró.
      Vacío = el ranking aparece como "muy pronto". */
   ranking: {
     url: "https://script.google.com/macros/s/AKfycbwHWJrFhnWdO1au2H4ADRgBqy7zVptiTgfRi7DL_79QJ0Hy_t97QdX7yxGT2ffMsAB4og/exec",
-    pedirUsuario: "¿Querés tu propio usuario? Pedíselo a Pola."
+    clientId: "938247619466-bc1mftrsnnrbh9f3hk1i3j1o5r3stoq2.apps.googleusercontent.com",
+    pedirUsuario: "¿Querés sumarte? Pedile a Pola que apruebe tu cuenta.",
+    aprueba: "Pola"
   },
 
   /* ---------- Biblioteca (página Recursos) ----------
