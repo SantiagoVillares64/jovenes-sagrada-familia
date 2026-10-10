@@ -390,7 +390,7 @@
         "<div><h4>Contacto</h4><span class=\"footer__txt\">" + esc(C.secretaria.nombre) + "</span>" + ext(C.secretaria.whatsapp, "", esc(C.secretaria.telefono)) +
           '<a href="mailto:' + esc(C.redes.email) + '">' + esc(C.redes.email) + "</a></div>" +
       "</div></div>" +
-      '<div class="wrap footer__legal small muted">© ' + new Date().getFullYear() + " Jóvenes Sagrada Familia</div></footer>";
+      '<div class="wrap footer__legal small muted">© ' + new Date().getFullYear() + ' Jóvenes Sagrada Familia · <a href="privacidad.html">Privacidad</a></div></footer>';
 
   /* ---------- bloques compartidos ---------- */
   function lujanHtml() {
@@ -723,6 +723,27 @@
   P.formacion = function () {
     return pagehead("Formación", "Formación con certificado", "Cursos cortos para crecer en la fe: leés un documento, hacés un examen de 10 preguntas y, si aprobás, te llevás una insignia y tu certificado.") +
       '<section class="section section--first"><div class="wrap"><div id="formacion"><p class="muted">Cargando…</p></div></div></section>';
+  };
+
+  P.privacidad = function () {
+    var sec = function (t, ps) { return "<h2>" + t + "</h2>" + ps.map(function (x) { return "<p>" + x + "</p>"; }).join(""); };
+    var mail = '<a href="mailto:academiafrassati@gmail.com">academiafrassati@gmail.com</a>';
+    return pagehead("Privacidad", "Política de privacidad", "Qué datos guardamos, para qué y cómo podés pedir que los borremos.") +
+      '<section class="section section--first"><div class="wrap legal">' +
+        '<p class="muted">Última actualización: 10 de octubre de 2026.</p>' +
+        sec("Quiénes somos", ["Esta web es de Jóvenes Sagrada Familia, la pastoral de jóvenes de la Parroquia Sagrada Familia (Nordelta, Buenos Aires), e incluye la Academia Frassati, su espacio de formación. Para cualquier consulta sobre tus datos escribinos a " + mail + "."]) +
+        sec("Qué datos guardamos", [
+          "<strong>Si no iniciás sesión:</strong> no guardamos nada sobre vos. Tu progreso en los juegos (rachas, récords, partidas del día) y en los cursos queda solo en tu navegador, en tu celular o compu. No lo vemos ni sale de tu dispositivo.",
+          "<strong>Si iniciás sesión con Google o con un código del ranking:</strong> guardamos tu nombre y tu mail de Google (o el nombre que te asignamos), el nombre que aparece en el ranking, tu grupo, los puntos de los desafíos diarios y los cursos de la Academia que aprobaste, con su fecha y nota.",
+          "<strong>Nunca</strong> recibimos tu contraseña: el inicio de sesión lo hace Google. No pedimos teléfono, documento, dirección ni fecha de nacimiento."]) +
+        sec("Para qué los usamos", ["Solo para que puedas entrar, mostrar el ranking parroquial y registrar tus cursos y certificados. No los vendemos ni los compartimos, no hacemos publicidad y no usamos cookies de seguimiento ni herramientas de análisis que te identifiquen."]) +
+        sec("Qué es público", ["En el ranking se muestran únicamente el nombre visible que elegimos con vos, tu grupo, tus puntos y tus insignias. Tu mail nunca se muestra en la web."]) +
+        sec("Dónde se guardan y quién los ve", ["En una planilla privada de Google Drive de la cuenta de la Academia Frassati. Solo acceden los administradores de la web de la parroquia. Google procesa esos datos según su propia política de privacidad."]) +
+        sec("Menores de edad", ["Muchos de nuestros participantes son menores. Por eso guardamos lo mínimo indispensable, y la participación en el ranking y la Academia se hace con conocimiento de la parroquia. Si sos madre, padre o tutor y querés consultar o borrar los datos de tu hijo o hija, escribinos."]) +
+        sec("Tus derechos", ["Podés pedir en cualquier momento ver qué datos tenemos tuyos, corregirlos o borrarlos, escribiendo a " + mail + ". Lo hacemos sin costo. Estos derechos están previstos en la Ley 25.326 de Protección de los Datos Personales. La Agencia de Acceso a la Información Pública es el órgano de control de esa ley."]) +
+        sec("Cuánto tiempo los guardamos", ["Mientras participes. Si dejás de participar o nos lo pedís, borramos tus datos del ranking y de la Academia."]) +
+        sec("Cambios", ["Si cambiamos esta política, vamos a actualizar la fecha de arriba."]) +
+      "</div></section>";
   };
 
   P.sumate = function () {

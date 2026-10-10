@@ -22,6 +22,7 @@ PAGES = [
     ('formacion.html', 'formacion', 'Formación · Jóvenes Sagrada Familia', 'Cursos cortos con examen y certificado: los sacramentos, la misa parte por parte y cómo ser un buen coordinador.'),
     ('juegos.html', 'juegos', 'Juegos · Jóvenes Sagrada Familia', 'Santo del día, Versículo del día, Conexiones, Crucigrama del día, ranking parroquial y un quiz sobre la fe y la comunidad.'),
     ('calendario.html', 'calendario', 'Calendario · Jóvenes Sagrada Familia', 'Retiros, misiones, peregrinaciones y eventos de los grupos de jóvenes de Sagrada Familia.'),
+    ('privacidad.html', 'privacidad', 'Privacidad · Jóvenes Sagrada Familia', 'Política de privacidad de Jóvenes Sagrada Familia y la Academia Frassati: qué datos guardamos y cómo pedir que los borremos.'),
     ('sumate.html', 'sumate', 'Sumate · Jóvenes Sagrada Familia', 'Inscripciones y contacto de los grupos de jóvenes de Sagrada Familia.'),
 ]
 TPL = '''<!doctype html>

@@ -739,3 +739,9 @@ a.curso:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,
   .cert__pie { margin-top: 10mm; font-size: 11pt; color: #4e5f58; }
 }
 .rk__ins { margin-left: .3rem; font-size: .9rem; letter-spacing: .05em; }
+
+/* ---------- páginas legales ---------- */
+.legal { max-width: 760px; }
+.legal h2 { font-size: 1.35rem; margin: 2rem 0 .5rem; }
+.legal p { margin: 0 0 .8rem; line-height: 1.65; }
+.footer__legal a { color: inherit; text-decoration: underline; }
