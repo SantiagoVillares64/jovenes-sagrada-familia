@@ -50,7 +50,7 @@
     var id = "sello-c" + (++selloN);
     return '<svg class="' + cls + '" viewBox="0 0 100 100" role="img" aria-label="Sello de la Academia Frassati"><defs><path id="' + id + '" d="M50 50 m-37.5 0 a37.5 37.5 0 1 1 75 0 a37.5 37.5 0 1 1 -75 0"/></defs>' +
       '<circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="1.1"/><circle cx="50" cy="50" r="33" fill="none" stroke="currentColor" stroke-width="1.1"/>' +
-      '<text fill="currentColor" font-family="Lora, Georgia, serif" font-size="7" letter-spacing="1"><textPath href="#' + id + '" textLength="232" lengthAdjust="spacing">ACADEMIA FRASSATI · HACIA LO ALTO ·</textPath></text>' +
+      '<text fill="currentColor" stroke="none" font-family="Lora, Georgia, serif" font-size="7" letter-spacing="1"><textPath href="#' + id + '" textLength="232" lengthAdjust="spacing">ACADEMIA FRASSATI · HACIA LO ALTO ·</textPath></text>' +
       '<g transform="translate(25 27) scale(.5)"><path d="' + ISO_D + '" transform="translate(0 -10)" fill="none" stroke="currentColor" stroke-width="2.42" stroke-linecap="round" stroke-linejoin="round"/></g></svg>';
   }
 

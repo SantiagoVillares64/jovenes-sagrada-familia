@@ -841,3 +841,4 @@ a.ac-cumbre:hover { border-color: var(--ac-celeste); background: #fff; }
 .rk__msg:empty { display: none; }
 #f-google { margin: .6rem 0; min-height: 44px; }
 .rk__oculto { margin-left: .3rem; font-size: .7rem; color: var(--muted); border: 1px dashed var(--line); border-radius: 99px; padding: 0 .45rem; white-space: nowrap; }
+.ac-sello text, .cert__sello text { stroke: none; }
